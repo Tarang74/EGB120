@@ -1,0 +1,167 @@
+%%% Packages
+
+%% Math enhancements
+
+\usepackage{amsmath} % Misc enhancements to math equations
+\usepackage{cancel} % Draw diagonal lines and arrows in math equations
+\usepackage{mathtools} % Starred versions of amsmath matrix environments; Multiline, cases, gathered environment
+
+%% Sybmols 
+
+\usepackage{amssymb} % Extended symbol collection - also loads amsfonts
+\usepackage{stmaryrd} % Extra symbols
+
+%% Fonts
+
+\usepackage{mathrsfs}
+
+%% Environments 
+
+\usepackage{amsthm} % Use theorems
+% \usepackage{framed} % Frame environments
+% \usepackage[many]{tcolorbox} % Box around environments
+
+%% Tables and arrays
+
+\usepackage{booktabs} % Top and bottom rule for tabular
+% \usepackage{longtable} % Allow tables to flow over page boundaries 
+\usepackage{tabularx} % Advanced Tables
+
+%% Lists
+
+\usepackage{enumitem} % Itemize, enumerate, description environments
+
+%% Page layout
+
+\usepackage{fancyhdr} % Page headers and footers
+\usepackage{float} % Float objects such as figures and tables
+\usepackage{geometry} % Page layout customisation
+\usepackage{marginnote} % Add text in margins
+% \usepackage{showframe} % Show page boundaries
+
+%% Text enchancements
+
+\usepackage[none]{hyphenat} % Disable hyphenation of long text
+% \usepackage{textgreek} % Text symbols for Greek alphabet
+\usepackage{ragged2e} % Text alignment options
+
+%% Referencing
+
+\usepackage{tocbibind} % Adds bibliography to the Table of Contents
+\usepackage{url} % Define urls
+
+%% Graphics
+
+\usepackage{graphicx} % Extension to graphics 
+\graphicspath{ {./figures/} }
+% \usepackage{tikz} % Create graphic elements
+% \usetikzlibrary{arrows.meta}
+% \usepackage{pgfplots} % Create plots
+% \pgfplotsset{compat=1.9}
+
+%% Miscellaneous
+
+% \usepackage{listings} % Typeset programming code 
+\usepackage{siunitx} % SI units package
+\usepackage{physics} % Vectors/derivatives/operators
+% \usepackage[dvipsnames]{xcolor} % Extension to color package
+\usepackage{pdfpages} % Import PDFs into document
+
+\usepackage[hidelinks]{hyperref} % Handle cross-referencing
+\usepackage{bookmark} % New bookmark organisation for hyperref
+
+%% Unicode setup
+
+\usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+%%% Preamble 
+
+%% Misc Commands
+
+\newcommand{\e}{\mathbf{e}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\let\exp\relax
+\DeclareMathOperator{\exp}{exp}
+
+%% Hyperbolic Functions
+
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\arcsech}{arcsech}
+\DeclareMathOperator{\arccsch}{arccsch}
+
+%% Linear Algebra
+
+\newcommand*{\vertbar}{\rule[-1ex]{0.5pt}{2.5ex}}
+\newcommand*{\horzbar}{\rule[.5ex]{2.5ex}{0.5pt}}
+
+\let\det\relax
+\DeclareMathOperator{\det}{det}
+\let\tr\relax
+\DeclareMathOperator{\tr}{Tr}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\adj}{adj}
+
+\DeclareMathOperator{\vref}{ref}
+\DeclareMathOperator{\vrref}{rref}
+
+\DeclareMathOperator{\vnull}{null}
+
+\DeclareMathOperator{\proj}{proj}
+
+\DeclareMathOperator{\vim}{im}
+\DeclareMathOperator{\vcoim}{coim}
+\DeclareMathOperator{\vker}{ker}
+\DeclareMathOperator{\vcoker}{coker}
+
+\newcommand{\columnspace}[1]{\func{\mathcal{C}}{\symbfit{#1}}}
+\newcommand{\rowspace}[1]{\func{\mathcal{C}}{\symbfit{#1}^{\top}}}
+\newcommand{\nullspace}[1]{\func{\mathcal{N}}{\symbfit{#1}}}
+\newcommand{\leftnullspace}[1]{\func{\mathcal{N}}{\symbfit{#1}^{\top}}}
+
+%% Integrals
+
+\newcommand{\dintegral}[4]{\int_{#3}^{#4} #1 \dd{#2}}
+\newcommand{\integral}[2]{\int #1 \dd{#2}}
+\newcommand{\iintegral}[4]{\iint_{#4} #1 \dd{#2} \dd{#3}}
+\newcommand{\iiintegral}[5]{\iiint_{#5} #1 \dd{#2} \dd{#3}  \dd{#4}}
+\newcommand{\iiiintegral}[6]{\iiiint_{#6} #1 \dd{#2} \dd{#3} \dd{#4} \dd{#5}}
+
+%% Functions
+
+\newcommand{\func}[2]{{#1}\left({#2}\right)}
+\newcommand{\ffunc}[3]{{#1}\left({#2}, {#3} \right)}
+\newcommand{\fffunc}[4]{{#1}\left({#2}, {#3}, {#4} \right)}
+\newcommand{\nfunc}[3]{{#1}\left({#2}_1, \ldots , {#2}_{#3} \right)}
+
+\newcommand{\vfunc}[4]{\func{\vb*{{#1}}}{{#2}} = \left\langle \func{{#3}}{{#2}}, \func{{#4}}{{#2}} \right\rangle}
+\newcommand{\vffunc}[5]{\func{\vb*{{#1}}}{{#2}} = \left\langle \func{{#3}}{{#2}}, \func{{#4}}{{#2}}, \func{{#5}}{{#2}} \right\rangle}
+\newcommand{\vnfunc}[3]{\func{\vb*{{#1}}}{{#2}} = \left\langle \func{{#1}_{1}}{{#2}}, \ldots, \func{{#1}_{#3}}{{#2}} \right\rangle}
+
+\newcommand{\mvnfunc}[4]{\nfunc{\vb*{{#1}}}{{#2}}{{#3}} = \left\langle \nfunc{{#1}_{1}}{{#2}}{{#3}}, \ldots , \nfunc{{#1}_{#4}}{{#2}}{{#3}} \right\rangle}
+
+%% Laplace Transform
+
+\newcommand{\laplace}[2]{\mathcal{L} \left\{{#1}\right\} \left({#2}\right)}
+\newcommand{\invlaplace}[2]{\mathcal{L}^{-1} \left\{{#1}\right\} \left({#2}\right)}
+
+%% Theorems
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[subsection]
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[subsection]
+
+\newtheorem{axiom}{Axiom}
+
+\newenvironment{solution}[1][Solution]{\proof[#1]\mbox{}\\*}{\endproof}
+\newenvironment{solutionF}[1][Solution]{\proof[#1]\mbox{}}{\endproof}
+
+\newenvironment{proofcase}[1]{\proof[Case #1]\mbox{}}{\endproof}
