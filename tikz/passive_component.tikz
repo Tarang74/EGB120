@@ -6,21 +6,18 @@
 
 \usepackage{circuitikz}
 \usetikzlibrary{decorations.pathmorphing}
+\tikzset{power line/.style ={<-}}
 
 \begin{document}
 \begin{circuitikz}
-    \draw (0, 0) -- (0.5, 0) to[generic] (0.5, 2) -- (0, 2);
+    \draw (0, 0) -- (0.5, 0) to[generic, name = component] (0.5, 2) -- (0, 2);
     % Current direction arrows
-    \draw[->, thick] (-0.5, 2) node[anchor = east] {$i$} -- (-.1, 2);
-    \draw[->, thick] (-0.1, 0) -- (-.5, 0);
+    \draw[-latex] (-0.5, 2) node[anchor = east] {$i$} -- (-.1, 2);
+    \draw[-latex] (-0.1, 0) -- (-.5, 0);
     % Charge signs
     \draw (0.5, 0) node[anchor = west] {$-$};
     \draw (0.5, 2) node[anchor = west] {$+$};
     % Power snake line
-    \draw[->,
-        decorate,
-        decoration = {snake,
-                amplitude = .4mm,
-                segment length = 2mm}] (0.71, 1) -- (1.21, 1.5) node[anchor = west] {$p=vi$};
+    \draw[power line] (1.2, 1.5) node[anchor = west] {$p=vi$} to[out = 180, in = 0] (component.south);
 \end{circuitikz}
 \end{document}

@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \draw (0, 0) to[V=$v$, invert] (0, 3) -- (4, 3) to[generic, a = A] (4, 0) -- (0, 0);
+    \draw[<->] (4, 3.6) arc [start angle = 90, delta angle = -90, radius = 0.6] node[above right, midway] {$i$};
+\end{circuitikz}
+\end{document}

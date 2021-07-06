@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \draw (0, 0) to[current source, label=$i$] (0, 3) -- (4, 3) to[generic, a = A] (4, 0) -- (0, 0);
+    \draw[<->] (2, 0) -- (2, 3) node[midway, fill = white] {$v$};
+\end{circuitikz}
+\end{document}
