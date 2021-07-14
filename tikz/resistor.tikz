@@ -1,0 +1,15 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \ctikzset{voltage=raised}
+    \draw (0, 0) to[short, *-] (1, 0) to[R, name = component, i<=$i$, v^<=$v$] (1, 3) to[short, -*] (0, 3);
+    % \draw (0, 0) -- (0.5, 0) to[R, i=$i$, name = component] (0.5, 2) -- (0, 2);
+\end{circuitikz}
+\end{document}

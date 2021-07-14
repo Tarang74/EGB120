@@ -6,8 +6,8 @@
 *.lof
 *.log
 *.pdf
-*.synctex.gz
 *.synctex(busy)
+*.synctex.gz
 *.toc
 *.xdv
 *.zip

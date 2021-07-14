@@ -9,7 +9,8 @@
 
 \begin{document}
 \begin{circuitikz}[american]
-    \draw (0, 0) to[current source, label=$i$] (0, 3) -- (4, 3) to[generic, a = A] (4, 0) -- (0, 0);
+    \draw (0, 0) to[current source, i=$i$] (0, 3) -- (4, 3) to[generic, name = comp] (4, 0) -- (0, 0);
     \draw[<->] (2, 0) -- (2, 3) node[midway, fill = white] {$v$};
+    \draw (comp) node {$A$};
 \end{circuitikz}
 \end{document}

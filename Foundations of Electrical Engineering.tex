@@ -59,98 +59,135 @@
 
 \section{Electrical Circuits}
 \subsection{Fundamental Quantities}
-\subsubsection{Charge}
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c | >{\centering}p{0.5\textwidth} | c c}
+        \toprule
+        \textbf{Name} & \textbf{Definition} & \textbf{Symbol} & \textbf{Unit} \\
+        \midrule
+        Charge & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
+        & $q$ & Coloumb (\unit{\coulomb}) \\
+        \hline
+        Current & $i=\dv{q}{t}\iff\SI{1}{\ampere}=\SI{1}{\coulomb\per\s}$
+        & $i$ & Ampere (\unit{\ampere}) \\
+        \hline
+        Voltage & $v=\dv{w}{q}\iff\SI{1}{\volt}=\SI{1}{\joule\per\coulomb}$
+        & $v$ & Volt (\unit{\volt}) \\
+        \hline
+        Power & $p=\dv{w}{t}\iff\SI{1}{\watt}=\SI{1}{\joule\per\s}$
+        & $p$ & Watt (\unit{\watt}) \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\endgroup
 \begin{description}
-    \item[Definition.] Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
-    \item[Symbol.] $q$.
-    \item[Unit.] Coloumbs (\unit{\coulomb}).
-    \item[Charge in an electron.] $q=\SI{1.6022e-19}{\coulomb}$. 
-\end{description}
-\subsubsection{Current}
-\begin{description}
-    \item[Definition.] Current is the rate of flow of charge.
-    \item[Symbol.] $i$.
-    \item[Unit.] Amps (\unit{\ampere}).
-    \item[Mathematical Definition.] $i=\dv{q}{t}\iff\SI{1}{\ampere}=\SI{1}{\coulomb\per\s}$. 
-\end{description}
-\subsubsection{Voltage}
-\begin{description}
-    \item[Definition.] Voltage is the amount of energy per unit of charge. Likewise it is the potential difference in charge between two points.
-    \item[Symbol.] $v$.
-    \item[Unit.] Volts (\unit{\volt}).
-    \item[Mathematical Definition.] $v=\dv{w}{q}\iff\SI{1}{\volt}=\SI{1}{\joule\per\coulomb}$. 
-\end{description}
-\subsection{Power and Energy}
-\subsubsection{Power}
-\begin{description}
-    \item[Definition.] Power is the rate of change of energy.
-    \item[Symbol.] $p$.
-    \item[Unit.] Watts (\unit{\watt}).
-    \item[Mathematical Definition.] $p=\dv{w}{t}\iff\SI{1}{\watt}=\SI{1}{\joule\per\s}$.
+    \item[Charge in an electron.] $q=\SI{1.6022e-19}{\coulomb}$.
     \item[Electric Power.] $p=\dv{w}{t}=\frac{\dd{w}}{\cancel{\dd{q}}} \frac{\cancel{\dd{q}}}{\dd{t}}=vi$. 
 \end{description}
-\subsubsection{Passive Sign Convention}
+\subsection{Passive Sign Convention}
 \begin{figure}[H]
     \centering
     \begin{minipage}[H]{0.48\textwidth}
         \textbf{Passive component}
         \centering
-        \includegraphics[height = 4cm]{passive_component}
+        \includegraphics[height = 4cm, keepaspectratio = true]{passive_component}
         \caption{Energy dissipated.}
     \end{minipage}\hfill
     \begin{minipage}[H]{0.48\textwidth}
         \textbf{Active component}
         \centering
-        \includegraphics[height = 4cm]{active_component}
+        \includegraphics[height = 4cm, keepaspectratio = true]{active_component}
         \caption{Energy produced.}
     \end{minipage}
 \end{figure}
-\subsubsection{Power Balance}
-\begin{theorem}
+\begin{theorem}[Power Balance]
     \begin{equation*}
-        p_{\text{net}} = 0
+        p_{\mathrm{net}} = 0
     \end{equation*}
 \end{theorem}
-\subsubsection{Energy}
-\begin{theorem}
+\begin{theorem}[Energy]
     \begin{equation*}
         w\left( \tau \right) = \int_0^\tau p\left( t \right) \dd{t}
     \end{equation*}
 \end{theorem}
 \subsection{Circuits and Sources}
-\subsubsection{Circuits}
-\begin{definition}
-    A circuit is a mathematical model that approximates a real system. It is built from ideal circuit elements, connected by ideal wires. 
+\begin{definition}[Circuits]
+    A circuit is a mathematical model that approximates a real system. It is built from ideal circuit elements connected by ideal wires. 
 \end{definition}
-\subsubsection{Voltage Source}
+\begin{definition}[Voltage Source]
+    Produces or dissipates power at a specified voltage with whatever current is required. 
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics{voltage_source}
+    \caption{Voltage Source -- $v$ is specified, $i$ varies depending on circuit element $A$.}
+\end{figure}
+\begin{definition}[Current Source]
+    Produces or dissipates power at a specified current with whatever voltage is required. 
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics{current_source}
+    \caption{Current Source -- $i$ is specified, $v$ varies depending on circuit element $A$.}
+\end{figure}
+\subsection{Ground}
 \begin{description}
-    \item[Definition.] Produces or dissipates power at a specified voltage with whatever current is required. 
-    \begin{figure}[H]
-        \centering
-        \includegraphics{voltage_source}
-        \caption{Voltage Source -- $v$ is specified, $i$ varies depending on circuit element $A$.}
-    \end{figure}
+    \item[Definition.] The zero volt point is referreed to as the circuit ground.
+    \item[Symbol.] \tikz\draw (0, 0) node [sground] {};
 \end{description}
-\subsubsection{Current Source}
+\subsection{Earth}
 \begin{description}
-    \item[Definition.] Produces or dissipates power at a specified current with whatever voltage is required. 
-    \begin{figure}[H]
-        \centering
-        \includegraphics{current_source}
-        \caption{Current Source -- $i$ is specified, $v$ varies depending on circuit element $A$.}
-    \end{figure}
+    \item[Definition.] An earthed ground is literally a connection to the earth.
+    \item[Symbol.] \tikz\draw (0, 0) node [ground] {};
 \end{description}
-\subsubsection{Ground}
-\begin{description}
-    \item[Definition.] 
-\end{description}
-\subsubsection{Resistor}
-\begin{description}
-    \item[Definition.] Dissipates power so that the voltage across both terminals is proportional to the current.
-\end{description}
+\subsection{Connected Sources}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{connected_sources}
+    \caption{Example of a connected voltage and current source.}
+\end{figure}
+\begin{itemize}
+    \item The voltage source sets $v$ to \SI{10}{\volt}, with the upper wire being positive.
+    \item The current source sets $i$ to \SI{1}{\ampere}, flowing anticlockwise.
+    \item Therefore \SI{10}{\watt} of power is produced by the current source and dissipated by the voltage source.
+\end{itemize}
+\begin{enumerate}
+    \item Two voltage sources must be connected at the same terminals and supply the same voltage.
+    \item Two current sources must flow in the same direction and supply the same current.
+\end{enumerate}
+\subsection{Invalid Circuits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{invalid_voltage_sources}
+    \caption{Voltage terminals are incorrect, and voltages are different.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{invalid_current_sources}
+    \caption{Current flows oppose each other, and currents are different.}
+\end{figure}
+\subsection{Resistors}
+\begin{definition}[Resistor]
+    Dissipates power so that the voltage across both terminals is proportional to the current.
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{resistor}
+    \caption{}
+\end{figure}
+$v=iR$
+$r=\frac{\rho L}{A}$
 \newpage
 \section{Simple Resistive Circuits}
-\newpage
+\subsection{Ignored Physics}
+\begin{enumerate}
+    \item Electrical effects occur instantaneously, so there is no time delay along the wires.
+    \item The net charge on every component is zero. Charge is never lost or gained.
+    \item There is no magnetic coupling between the components.
+\end{enumerate}
+\newpage 
 \section{Diodes}
 \newpage
 \section{Mesh Analysis}
