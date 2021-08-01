@@ -17,7 +17,7 @@
 \newcommand{\uniTitle}{Queensland University of Technology}
 \newcommand{\className}{Foundations of Electrical Engineering}
 \newcommand{\classTime}{Semester 2, 2021}
-\newcommand{\classInstructorName}{Dr Sam Cunningham-Nelson}
+\newcommand{\classInstructorName}{Dr Jasmin Martin}
 \newcommand{\authorName}{Tarang Janawalkar}
 \newcommand{\authorStudentNumber}{n11032201}
 \newcommand{\classCode}{EGB120}
@@ -68,7 +68,7 @@
         \textbf{Name} & \textbf{Definition} & \textbf{Symbol} & \textbf{Unit} \\
         \midrule
         Charge & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
-        & $q$ & Coloumb (\unit{\coulomb}) \\
+        & $q$ & Coulomb (\unit{\coulomb}) \\
         \hline
         Current & $i=\dv{q}{t}\iff\SI{1}{\ampere}=\SI{1}{\coulomb\per\s}$
         & $i$ & Ampere (\unit{\ampere}) \\
@@ -134,7 +134,7 @@
 \end{figure}
 \subsection{Ground}
 \begin{description}
-    \item[Definition.] The zero volt point is referreed to as the circuit ground.
+    \item[Definition.] The zero volt point is referred to as the circuit ground.
     \item[Symbol.] \tikz\draw (0, 0) node [sground] {};
 \end{description}
 \subsection{Earth}
@@ -170,15 +170,21 @@
 \end{figure}
 \subsection{Resistors}
 \begin{definition}[Resistor]
-    Dissipates power so that the voltage across both terminals is proportional to the current.
+    Resistors dissipate power, and the voltage across both terminals is proportional to the current.
 \end{definition}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{resistor}
     \caption{}
 \end{figure}
-$v=iR$
-$r=\frac{\rho L}{A}$
+\begin{theorem}[Voltage through a resistor]
+    \begin{equation*}
+        v=iR
+    \end{equation*}
+    \begin{equation*}
+        R=\frac{\rho L}{A}
+    \end{equation*}
+\end{theorem}
 \newpage
 \section{Simple Resistive Circuits}
 \subsection{Ignored Physics}
@@ -187,6 +193,97 @@ $r=\frac{\rho L}{A}$
     \item The net charge on every component is zero. Charge is never lost or gained.
     \item There is no magnetic coupling between the components.
 \end{enumerate}
+\subsection{Kirchhoff's Laws}
+\begin{definition}[Kirchhoff's Current Law (KCL)]
+    The sum of all currents into a node equals zero.
+    \begin{equation*}
+        \sum i_{node} = 0
+    \end{equation*}
+\end{definition}
+\begin{definition}[Kirchhoff's Voltage Law (KVL)]
+    The sum of all voltages around a loop equals zero.
+    \begin{equation*}
+        \sum v_{loop} = 0
+    \end{equation*}
+\end{definition}
+\subsection{Series and Parallel Circuits}
+\begin{definition}
+    Elements connected end-to-end are in series. If both ends of an element are connected directly to another element, the two elements are in parallel.
+\end{definition}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c | c c}
+        \toprule
+        \textbf{Element} &  \textbf{Series} & \textbf{Parallel} \\
+        \midrule
+        Current Source & $\displaystyle i_{eq} = i_1 = i_2 = \cdots = i_n$             & $i_{eq} = \displaystyle \sum_k i_k$ \\
+        Voltage Source & $\displaystyle v_{eq} = \sum_{k=1}^n v_k$                     & $\displaystyle v_{eq} = v_1 = v_2 = \cdots = v_n$ \\
+        Resistor       & $\displaystyle R_{eq} = \sum_{k=1}^n R_k$                     & $\displaystyle \frac{1}{R_{eq}} = \sum_{k=1}^n \frac{1}{R_k}$ \\
+        Inductor       & $\displaystyle L_{eq} = \sum_{k=1}^n L_k$                     & $\displaystyle \frac{1}{L_{eq}} = \sum_{k=1}^n \frac{1}{L_k}$ \\
+        Conductor      & $\displaystyle \frac{1}{C_{eq}} = \sum_{k=1}^n \frac{1}{C_k}$ & $\displaystyle C_{eq} = \sum_{k=1}^n C_k$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Equivalent values for various components connected in series and parallel.}
+    % \label{}
+\end{table}
+These equations can be used to simplify a complex circuit.
+\begin{proof}
+    Using KVL for voltage sources connected in series
+    \begin{align*}
+        v_1 + v_2 + \cdots + v_n - iR &= 0 \\
+        v_1 + v_2 + \cdots + v_n &= iR
+    \end{align*}
+    Let $v_{eq}$ be the voltage across the resistor so that
+    \begin{equation*}
+        v_{eq} = iR
+    \end{equation*}
+    Therefore
+    \begin{equation*}
+        v_{eq} = v_1 + v_2 + \cdots + v_n
+    \end{equation*}
+    
+    As the current through resistors in series remains the same, using KVL we have
+    \begin{align*}
+        v - iR_1 - iR_2 - \cdots - iR_n &= 0 \\
+        v &= i\left(R_1 + R_2 + \cdots + R_n\right) \\
+        v &= iR_{eq}
+    \end{align*}
+    Hence the resistance across multiple resistors in series is equivalent to the sum of the resistances.
+\end{proof}
+\subsection{Voltage and Current Dividers}
+\begin{definition}[Voltage Divider]
+    A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{voltage_divider}
+    \caption{Resistors connected in series to a voltage source.}
+    % \label{}
+\end{figure}
+\begin{theorem}
+    \begin{equation*}
+        v_k = v \frac{R_k}{R_{eq}}
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    The current through any resistor is
+    \begin{equation*}
+        i = \frac{v}{R_{eq}}
+    \end{equation*}
+    Therefore the voltage drop in any resistor is
+    \begin{align*}
+        v_k &= i R_k \\
+        v_k &= \frac{v}{R_{eq}} R_k
+    \end{align*}
+\end{proof}
+\begin{definition}[Current Divider]
+    A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
+\end{definition}
+\begin{theorem}
+    \begin{equation*}
+        i_k = i \frac{R_{eq}}{R_k}
+    \end{equation*}
+\end{theorem}
 \newpage 
 \section{Diodes}
 \newpage

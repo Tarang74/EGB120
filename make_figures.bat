@@ -68,13 +68,13 @@ SET /A numP=0
 :: Build PDF
 :buildPDF
     ECHO -- Building PDF --
-    xelatex -quiet -output-directory=figures tikz/%tex%.tikz
+    latexmk -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -output-directory=figures -silent -xelatex tikz/%tex%.tikz
     EXIT /B
 
 :: Build PDF verbose
 :buildPDFv
     ECHO -- Building PDF --
-    xelatex -output-directory=figures tikz/%tex%.tikz
+    latexmk -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -output-directory=figures -verbose -xelatex tikz/%tex%.tikz
     EXIT /B
 
 :: Open PDF
