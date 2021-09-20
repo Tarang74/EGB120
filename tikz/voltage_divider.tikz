@@ -9,6 +9,7 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
+    \ctikzset{voltage/american minus=$\vphantom{+}-$}
     % R_1
     \draw (0, 0) to[R=$R_1$, *-*, v=$v_1$] ++ (-2, 0)
     % R_2
@@ -20,7 +21,7 @@
     % Voltage source
     (aux3) to[short] ++ (0, 3) to[short] ++ (4.5, 0) to[V<=$v$, invert, i^=$i$] ++ (3, 0) to[short] ++ (4.5, 0) to[short] ++ (0, -3);
     % Ground
-    \draw (aux3) -- ++ (0, -1) node [sground] {};
+    % \draw (aux3) -- ++ (0, -1) node [sground] {};
     % Dots
     \path (aux1) -- node {\huge$\dots$} ++ (-2, 0)
     (aux2) -- node {\huge$\dots$} ++ (-2, 0);

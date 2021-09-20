@@ -84,7 +84,7 @@
 \endgroup
 \begin{description}
     \item[Charge in an electron.] $q=\SI{1.6022e-19}{\coulomb}$.
-    \item[Electric Power.] $p=\dv{w}{t}=\frac{\dd{w}}{\cancel{\dd{q}}} \frac{\cancel{\dd{q}}}{\dd{t}}=vi$. 
+    \item[Electric Power.] $p=\dv{w}{t}=vi$. 
 \end{description}
 \subsection{Passive Sign Convention}
 \begin{figure}[H]
@@ -132,16 +132,16 @@
     \includegraphics{current_source}
     \caption{Current Source -- $i$ is specified, $v$ varies depending on circuit element $A$.}
 \end{figure}
-\subsection{Ground}
-\begin{description}
-    \item[Definition.] The zero volt point is referred to as the circuit ground.
-    \item[Symbol.] \tikz\draw (0, 0) node [sground] {};
-\end{description}
-\subsection{Earth}
-\begin{description}
-    \item[Definition.] An earthed ground is literally a connection to the earth.
-    \item[Symbol.] \tikz\draw (0, 0) node [ground] {};
-\end{description}
+% \subsection{Ground}
+% \begin{description}
+%     \item[Definition.] The zero volt point is referred to as the circuit ground.
+%     \item[Symbol.] \tikz\draw (0, 0) node[sground] {};
+% \end{description}
+% \subsection{Earth}
+% \begin{description}
+%     \item[Definition.] An earthed ground is literally a connection to the earth.
+%     \item[Symbol.] \tikz\draw (0, 0) node[ground] {};
+% \end{description}
 \subsection{Connected Sources}
 \begin{figure}[H]
     \centering
@@ -157,17 +157,17 @@
     \item Two voltage sources must be connected at the same terminals and supply the same voltage.
     \item Two current sources must flow in the same direction and supply the same current.
 \end{enumerate}
-\subsection{Invalid Circuits}
-\begin{figure}[H]
-    \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{invalid_voltage_sources}
-    \caption{Voltage terminals are incorrect, and voltages are different.}
-\end{figure}
-\begin{figure}[H]
-    \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{invalid_current_sources}
-    \caption{Current flows oppose each other, and currents are different.}
-\end{figure}
+% \subsection{Invalid Circuits}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[height = 4cm, keepaspectratio = true]{invalid_voltage_sources}
+%     \caption{Voltage terminals are incorrect, and voltages are different.}
+% \end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[height = 4cm, keepaspectratio = true]{invalid_current_sources}
+%     \caption{Current flows oppose each other, and currents are different.}
+% \end{figure}
 \subsection{Resistors}
 \begin{definition}[Resistor]
     Resistors dissipate power, and the voltage across both terminals is proportional to the current.
@@ -175,16 +175,21 @@
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{resistor}
-    \caption{}
+    \caption{Resistor Circuit Symbol}
 \end{figure}
 \begin{theorem}[Voltage through a resistor]
     \begin{equation*}
         v=iR
     \end{equation*}
-    \begin{equation*}
-        R=\frac{\rho L}{A}
-    \end{equation*}
+    % \begin{equation*}
+    %     R=\frac{\rho L}{A}
+    % \end{equation*}
 \end{theorem}
+\begin{corollary}[Power dissipated by a resistor]
+    \begin{equation*}
+	p = vi = i^2 R = \frac{v^2}{R}
+    \end{equation*}
+\end{corollary}
 \newpage
 \section{Simple Resistive Circuits}
 \subsection{Ignored Physics}
@@ -197,13 +202,13 @@
 \begin{definition}[Kirchhoff's Current Law (KCL)]
     The sum of all currents into a node equals zero.
     \begin{equation*}
-        \sum i_{node} = 0
+        \sum i_{\mathrm{node}} = 0
     \end{equation*}
 \end{definition}
 \begin{definition}[Kirchhoff's Voltage Law (KVL)]
     The sum of all voltages around a loop equals zero.
     \begin{equation*}
-        \sum v_{loop} = 0
+        \sum v_{\mathrm{loop}} = 0
     \end{equation*}
 \end{definition}
 \subsection{Series and Parallel Circuits}
@@ -216,40 +221,40 @@
         \toprule
         \textbf{Element} &  \textbf{Series} & \textbf{Parallel} \\
         \midrule
-        Current Source & $\displaystyle i_{eq} = i_1 = i_2 = \cdots = i_n$             & $i_{eq} = \displaystyle \sum_k i_k$ \\
-        Voltage Source & $\displaystyle v_{eq} = \sum_{k=1}^n v_k$                     & $\displaystyle v_{eq} = v_1 = v_2 = \cdots = v_n$ \\
-        Resistor       & $\displaystyle R_{eq} = \sum_{k=1}^n R_k$                     & $\displaystyle \frac{1}{R_{eq}} = \sum_{k=1}^n \frac{1}{R_k}$ \\
-        Inductor       & $\displaystyle L_{eq} = \sum_{k=1}^n L_k$                     & $\displaystyle \frac{1}{L_{eq}} = \sum_{k=1}^n \frac{1}{L_k}$ \\
-        Conductor      & $\displaystyle \frac{1}{C_{eq}} = \sum_{k=1}^n \frac{1}{C_k}$ & $\displaystyle C_{eq} = \sum_{k=1}^n C_k$ \\
+        Current Source & $\displaystyle i_{eq} = i_{k\geq1}$             & $i_{eq} = \displaystyle \sum_{k\geq1} i_k$ \\
+        Voltage Source & $\displaystyle v_{eq} = \sum_{k\geq1} v_k$                     & $\displaystyle v_{eq} = v_{k\geq1}$ \\
+        Resistor       & $\displaystyle R_{eq} = \sum_{k\geq1} R_k$                     & $\displaystyle \frac{1}{R_{eq}} = \sum_{k\geq1} \frac{1}{R_k}$ \\
+        Inductor       & $\displaystyle L_{eq} = \sum_{k\geq1} L_k$                     & $\displaystyle \frac{1}{L_{eq}} = \sum_{k\geq1} \frac{1}{L_k}$ \\
+        Capacitor      & $\displaystyle \frac{1}{C_{eq}} = \sum_{k\geq1} \frac{1}{C_k}$ & $\displaystyle C_{eq} = \sum_{k\geq1} C_k$ \\
         \bottomrule
     \end{tabular}
     \caption{Equivalent values for various components connected in series and parallel.}
     % \label{}
 \end{table}
 These equations can be used to simplify a complex circuit.
-\begin{proof}
-    Using KVL for voltage sources connected in series
-    \begin{align*}
-        v_1 + v_2 + \cdots + v_n - iR &= 0 \\
-        v_1 + v_2 + \cdots + v_n &= iR
-    \end{align*}
-    Let $v_{eq}$ be the voltage across the resistor so that
-    \begin{equation*}
-        v_{eq} = iR
-    \end{equation*}
-    Therefore
-    \begin{equation*}
-        v_{eq} = v_1 + v_2 + \cdots + v_n
-    \end{equation*}
+% \begin{proof}
+%     Using KVL for voltage sources connected in series
+%     \begin{align*}
+%         v_1 + v_2 + \cdots + v_n - iR &= 0 \\
+%         v_1 + v_2 + \cdots + v_n &= iR
+%     \end{align*}
+%     Let $v_{eq}$ be the voltage across the resistor so that
+%     \begin{equation*}
+%         v_{eq} = iR
+%     \end{equation*}
+%     Therefore
+%     \begin{equation*}
+%         v_{eq} = v_1 + v_2 + \cdots + v_n
+%     \end{equation*}
     
-    As the current through resistors in series remains the same, using KVL we have
-    \begin{align*}
-        v - iR_1 - iR_2 - \cdots - iR_n &= 0 \\
-        v &= i\left(R_1 + R_2 + \cdots + R_n\right) \\
-        v &= iR_{eq}
-    \end{align*}
-    Hence the resistance across multiple resistors in series is equivalent to the sum of the resistances.
-\end{proof}
+%     As the current through resistors in series remains the same, using KVL we have
+%     \begin{align*}
+%         v - iR_1 - iR_2 - \cdots - iR_n &= 0 \\
+%         v &= i\left(R_1 + R_2 + \cdots + R_n\right) \\
+%         v &= iR_{eq}
+%     \end{align*}
+%     Hence the resistance across multiple resistors in series is equivalent to the sum of the resistances.
+% \end{proof}
 \subsection{Voltage and Current Dividers}
 \begin{definition}[Voltage Divider]
     A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
@@ -284,16 +289,274 @@ These equations can be used to simplify a complex circuit.
         i_k = i \frac{R_{eq}}{R_k}
     \end{equation*}
 \end{theorem}
+\begin{proof}
+    Using KCL we have
+    \begin{align*}
+        i &= \sum_{k\geq1} i_k \\
+        i &= \sum_{k\geq1} \frac{v}{R_k} \\
+        i &= \frac{v}{R_{eq}}
+    \end{align*}
+    Solving for $v$ gives
+    \begin{align*}
+        v &= i R_{eq} 
+    \end{align*}
+    Hence the current through any resistor in parallel is given by
+    \begin{align*}
+        i_k = \frac{v}{R_k} = \frac{iR_{eq}}{R_k}
+    \end{align*}
+\end{proof}
 \newpage 
 \section{Diodes}
+\begin{definition}[Diode]
+    A diode is a semiconductor component in which current flows only in one direction. A diodes requires a voltage to start the flow of current in the forward direction.
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 3cm, keepaspectratio = true]{diode}
+    \caption{Diode Circuit Symbol}
+    % \label{}
+\end{figure}
+\subsection{V-I Characteristic}
+The Voltage-Current characteristic of linear circuit elements can be plotted as shown below.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_voltage_source}
+    \caption{V-I characteristic for a voltage source.}
+    % \label{}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_current_source}
+    \caption{V-I characteristic for a current source.}
+    % \label{}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_resistor}
+    \caption{V-I characteristic for a resistor.}
+    % \label{}
+\end{figure}
+\subsection{V-I Characteristic for Diodes}
+A diode has a non-linear characteristic curve, hence it is often simplified.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_diode}
+    \caption{V-I characteristic for a diode.}
+    % \label{}
+\end{figure}
+\begin{theorem}[Shockley's Diode Equation]
+    A diode can be better modelled using Shockley's equation.
+    \begin{equation*}
+        i_D = I_S \exp{\left( \frac{v_D}{0.026} \right)}
+    \end{equation*}
+    where $I_S$ is the saturation current and $0.026$ is the thermal voltage. 
+\end{theorem}
+\subsection{Operating Points and Load Lines}
+\begin{definition}[Operating Point]
+    The operating point for two elements can be found by determining the intersection 
+    of the two V-I characteristic curves.
+\end{definition}
+\begin{definition}[Load Lines]
+    If a circuit contains three or more elements including a diode, the V-I characteristic curve
+    is found around the diode. This curve is called a load line.
+\end{definition}
+\subsection{Operating Point of Non-Linear Component}
+Given the following circuit with a non-linear component
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{non_linear_component}
+    \caption{Circuit with non-linear element.}
+    % \label{}
+\end{figure}
+the load line is given by the equation
+\begin{equation*}
+    i(v) = -\frac{i_{sc}}{v_{oc}} + i_{sc}
+\end{equation*}
+where the short-circuit current is the current through the non-linear component, and the open circuit voltage is the voltage across the 
+open circuit nodes of the component.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{non_linear_short_circuit_current}
+    \caption{Circuit for Short Circuit Current.}
+    % \label{}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{non_linear_open_circuit_voltage}
+    \caption{Circuit for Open Circuit Voltage.}
+    % \label{}
+\end{figure}
 \newpage
 \section{Mesh Analysis}
+\begin{definition}[Node]
+    A point where two or more circuit elements join.
+\end{definition}
+\begin{definition}[Essential Node]
+    A point where three or more circuit elements join.
+\end{definition}
+\begin{definition}[Loop]
+    A path with the same start and end node.
+\end{definition}
+\begin{definition}[Mesh]
+    A loop that does not enclose any other loops.
+\end{definition}
+\subsection{Mesh Analysis Steps}
+\begin{enumerate}
+    \item Label the unknown mesh currents.
+    \item Find the voltage across each of the circuit elements in terms of mesh currents.
+    \item Use KVL around each mesh to create simultaneous equations.
+    \item Solve simultaneous equations for mesh currents.
+\end{enumerate}
+\subsection{Mesh Analysis with Current Sources}
+If the current source is in a single mesh, then treat the mesh current as known and solve as before.
+
+If the current source is between two meshes, then we must use a supermesh.
+\begin{definition}[Supermesh]
+    A supermesh is a special mesh that surrounds the current source.
+\end{definition}
+\begin{enumerate}
+    \item Label meshes and identify supermesh.
+    \item Write KCL equation for current source.
+    \item Write supermesh equation.
+    \item Use KVL around supermesh.
+\end{enumerate}
 \newpage
-\section{Source Transformation}
+\section{Source Transformations}
+Real sources often have many limitations in terms of voltage and current delivery.
+The most commonly modelled, and most useful for linear circuit theory, is some form of 
+resistance associated with the source.
+\subsection{Thévenin Equivalent Circuit}
+\begin{definition}
+    The Thévenin equivalent circuit is a voltage source with a series resistance.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{thevenin_equivalent}
+        \caption{Thévenin Equivalent Circuit.}
+        % \label{}
+    \end{figure}
+    This circuit has the following properties:
+    \begin{description}
+        \item[Open circuit voltage.] $v_{oc} = v_{Th}$
+        \item[Short circuit current.] $i_{sc} = \frac{v_{Th}}{R_{Th}}$
+    \end{description}
+\end{definition}
+\subsection{Norton Equivalent Circuit}
+\begin{definition}
+    Similar to the Thévenin equivalent model, we can use a current source with 
+    a resistor in parallel to model the same circuit.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{norton_equivalent}
+        \caption{Norton Equivalent Circuit.}
+        % \label{}
+    \end{figure}
+    This circuit has the following properties:
+    \begin{description}
+        \item[Open circuit voltage.] $v_{oc} = i_{sc}R_{p}$
+        \item[Short circuit current.] $i_{sc} = i_{sc}$ 
+    \end{description}
+\end{definition}
+\subsection{Source Transformations}
+A source transformation is the process of simplifying a circuit by transforming 
+voltage sources into current sources, and vice versa, using Thévenin's Theorem and Norton's 
+Theorem.
+\begin{theorem}
+    Thévenin and Norton equivalent circuits have the following relationship
+    \begin{equation*}
+        R_{Th} = R_{p}
+    \end{equation*}
+\end{theorem}
+\subsection{Superposition}
+\begin{theorem}[Thévenin's Theorem]
+    Any linear circuit can be replaced by a voltage source and a resistance.
+\end{theorem}
+\begin{theorem}[Norton's Theorem]
+    Any linear circuit can be replaced by a voltage source and a resistance.
+\end{theorem}
 \newpage
 \section{Inductors and Capacitors}
+\subsection{Capacitors}
+\begin{definition}
+    Capacitors store electrical energy as a voltage. The ratio of voltage 
+    to charge across a capacitor is its capacitance, measured in Farads (\si{\farad}).
+    \begin{equation*}
+        q = C v
+    \end{equation*}
+\end{definition}
+\begin{definition}[VI Relationship]
+    \begin{equation*}
+        i = C \dv{v}{t}
+    \end{equation*}
+    \begin{equation*}
+        v(t) = \frac{1}{C} \int_0^t i \dd{\tau} + v(0)
+    \end{equation*}
+\end{definition}
+\begin{definition}[Energy Stored by an Capacitor]
+    \begin{equation*}
+        W = \frac{1}{2}Cv^2
+    \end{equation*}
+\end{definition}
+\begin{theorem}[Steady State Conditions]
+    When a circuit is in steady state, capacitors can be modelled as open circuits.
+\end{theorem}
+\subsection{Inductors}
+\begin{definition}
+    Inductors create voltage to oppose a change in current. The ratio of voltage 
+    to the rate of change of current through an inductor is its inductance, measured in Henrys (\si{\henry}).
+\end{definition}
+\begin{definition}[VI Relationship]
+    \begin{equation*}
+        v = L \dv{i}{t}
+    \end{equation*}
+    \begin{equation*}
+        i(t) = \frac{1}{L} \int_0^t v \dd{\tau} + i(0)
+    \end{equation*}
+\end{definition}
+\begin{definition}[Energy Stored by an Inductor]
+    \begin{equation*}
+        W = \frac{1}{2}Li^2
+    \end{equation*}
+\end{definition}
+\begin{theorem}[Steady State Conditions]
+    When a circuit is in steady state, inductors can be modelled as short circuits.
+\end{theorem}
 \newpage
 \section{RC and RL Circuits}
+\subsection{Switches}
+\begin{definition}
+    A switch will engage part of a circuit at a specified point in time, as indicated 
+    on the circuit diagram.
+\end{definition}
+\begin{definition}[Poles]
+    ``Pole'' refers to the number of circuits one switch can control.
+\end{definition}
+\begin{definition}[Throw]
+    ``Throw'' refers to the number of output connections each switch 
+    pole can connect its input to.
+\end{definition}
+\subsection{Natural Response}
+\begin{definition}[Natural Response of RC Circuit]
+    For the circuit shown below, using KCL gives the following relationship
+    \begin{equation*}
+        -C \dv{v}{t} = \frac{v}{R}.
+    \end{equation*}
+    By solving this differential equation, we can determine the natural response of a 
+    RC circuit.
+    \begin{equation*}
+        v(t) = v(0)\exp{\left( -\frac{t}{RC} \right)}
+    \end{equation*} 
+\end{definition}
+\begin{definition}[Natural Response of RL Circuit]
+    For the circuit shown below, using mesh analysis gives the following relationship
+    \begin{equation*}
+        L \dv{i}{t} = -iR.
+    \end{equation*}
+    By solving this differential equation, we can determine the natural response of a 
+    RC circuit.
+    \begin{equation*}
+        v(t) = v(0)\exp{\left( -\frac{t}{RC} \right)}
+    \end{equation*} 
+\end{definition}
 \newpage
 \section{Operational Amplifiers}
 \newpage

@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usetikzlibrary{decorations.pathmorphing}
+
+\begin{document}
+\begin{circuitikz}[]
+    % \ctikzset{voltage=raised}
+    \draw (1, 0) to[generic, american voltages, voltage = raised, name = component, v^>=$v$] (4, 0);
+    \draw (1, 0) node[anchor=south west] {$a$} to[short, o-] (1, 0) to[generic, name = component, v^>=$ $] (4, 0) to[short, -o] (4, 0) node[anchor=south east] {$b$};
+    \draw (2.5,-0.5) node {$v_{ab}\: \textrm{positive}$};
+    \draw (2.5,-1) node {$v_{ba}\: \textrm{negative}$};
+\end{circuitikz}
+\end{document}
