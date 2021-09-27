@@ -474,11 +474,22 @@ Theorem.
 \end{theorem}
 \subsection{Superposition}
 \begin{theorem}[Thévenin's Theorem]
-    Any linear circuit can be replaced by a voltage source and a resistance.
+    Any linear circuit can be replaced by a voltage source and a resistance in series.
 \end{theorem}
 \begin{theorem}[Norton's Theorem]
-    Any linear circuit can be replaced by a voltage source and a resistance.
+    Any linear circuit can be replaced by a current source and a resistance in parallel.
 \end{theorem}
+\subsection{Maximum Power Transfer}
+In the circuit shown below, the maximum power transfer to the load is given by
+\begin{equation*}
+    P_L = \frac{v_{Th}^2}{4R_L}.
+\end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{max_power_transfer}
+    \caption{Power Transfer in a Thévenin Model.}
+    % \label{}
+\end{figure}
 \newpage
 \section{Inductors and Capacitors}
 \subsection{Capacitors}
@@ -541,42 +552,164 @@ Theorem.
     pole can connect its input to.
 \end{definition}
 \subsection{Natural Response}
-\begin{definition}[Natural Response of RC Circuit]
+\begin{definition}[RC Circuit Natural Response]
     For the circuit shown below, using KCL gives the following relationship
     \begin{equation*}
         -C \dv{v}{t} = \frac{v}{R}.
     \end{equation*}
     \begin{figure}[H]
         \centering
-        % \includegraphics[height = 6cm, keepaspectratio = true]{rc_natural}
-        \caption{Natural Response RC Circuit.}
+        \includegraphics[height = 4cm, keepaspectratio = true]{rc_natural}
+        \caption{RC Circuit.}
         % \label{}
     \end{figure}
     By solving this differential equation, we can determine the natural response of a 
     RC circuit.
     \begin{equation*}
         v(t) = v(0)\exp{\left( -\frac{t}{RC} \right)}
+    \end{equation*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{rc_natural_plot}
+        \caption{Natural Response of a RC Circuit.}
+        % \label{}
+    \end{figure}
+\end{definition}
+\begin{definition}[Time Constant]
+    The time constant $\tau$ is a parameter for switching circuits. The time constant for a RC circuit is given by
+    \begin{equation*}
+        \tau = RC
+    \end{equation*}
+    The voltage at this time is equal to
+    \begin{equation*}
+        \e^{-1}v(0) \approx 0.368v(0)
     \end{equation*} 
 \end{definition}
-\begin{definition}[Natural Response of RL Circuit]
+\begin{definition}[RL Circuit Natural Response]
     For the circuit shown below, using mesh analysis gives the following relationship
     \begin{equation*}
         L \dv{i}{t} = -iR.
     \end{equation*}
     \begin{figure}[H]
         \centering
-        % \includegraphics[height = 6cm, keepaspectratio = true]{rl_natural}
-        \caption{Natural Response RC Circuit.}
+        \includegraphics[height = 4cm, keepaspectratio = true]{rl_natural}
+        \caption{RL Circuit.}
         % \label{}
     \end{figure}
     By solving this differential equation, we can determine the natural response of a 
     RL circuit.
     \begin{equation*}
-        i(t) = i(0)\exp{\left( -\frac{t}{R\frac{1}{L}} \right)}
+        i(t) = i(0)\exp{\left( -\frac{t}{\frac{1}{R}L} \right)}
     \end{equation*} 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{rl_natural_plot}
+        \caption{Natural Response of a RL Circuit.}
+        % \label{}
+    \end{figure}
+\end{definition}
+\begin{definition}[Time Constant]
+    The time constant $\tau$ is a parameter for switching circuits. The time constant for a RL circuit is given by
+    \begin{equation*}
+        \tau = \frac{1}{R}L
+    \end{equation*}
+    The current at this time is equal to
+    \begin{equation*}
+        \e^{-1}i(0) \approx 0.368i(0)
+    \end{equation*} 
+\end{definition}
+\subsection{Step Response}
+\begin{definition}[RC Circuit Step Response]
+    For the circuit shown below, using KCL at the top node gives the following relationship
+    \begin{equation*}
+        i_s = C\dv{v}{t} + \frac{v}{R}.
+    \end{equation*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{rc_step}
+        \caption{RC Circuit.}
+        % \label{}
+    \end{figure}
+    By solving this differential equation, we can determine the step response of a 
+    RC circuit.
+    \begin{equation*}
+        v(t) = I_sR + \left(V_0 - I_sR\right) \exp{\left( -\frac{t}{RC} \right)}
+    \end{equation*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{rc_step_plot}
+        \caption{Step Response of a RC Circuit.}
+        % \label{}
+    \end{figure}
+    The voltage at $t=\tau$ is equal to
+    \begin{align*}
+        v(\tau) &= \left(1 - \e^{-1}\right)I_sR + V_0 \\
+        &\approx 0.632I_sR + V_0
+    \end{align*} 
+\end{definition}
+\begin{definition}[RL Circuit Step Response]
+    For the circuit shown below, using mesh analysis gives the following relationship
+    \begin{equation*}
+        L\dv{i}{t} + iR = V_s.
+    \end{equation*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{rl_step}
+        \caption{RL Circuit.}
+        % \label{}
+    \end{figure}
+    By solving this differential equation, we can determine the step response of a 
+    RL circuit.
+    \begin{equation*}
+        i(t) = \frac{V_s}{R} + \left(I_0 - \frac{V_s}{R}\right)\exp{\left( -\frac{t}{\frac{1}{R}L} \right)}
+    \end{equation*} 
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{rl_step_plot}
+        \caption{Step Response of a RL Circuit.}
+        % \label{}
+    \end{figure}
+    The current at $t=\tau$ is equal to
+    \begin{align*}
+        i(\tau) &= \left( 1 - \e^{-1} \right)\frac{V_s}{R} + I_0 \\
+        &\approx 0.632\frac{V_s}{R} + I_0
+    \end{align*} 
 \end{definition}
 \newpage
 \section{Operational Amplifiers}
+\begin{definition}[Amplifier]
+    An amplifier is a device for increasing the power of a signal through an external energy source. 
+    In an electronic amplifier, the ``signal'' is usually a voltage or current.
+\end{definition}
+\begin{definition}[Gain]
+    The gain $K$ of an amplifier, is the ratio of the output signal to the input signal.
+    \begin{equation*}
+        v_{out} = K v_{in}
+    \end{equation*}
+\end{definition}
+\begin{definition}[Operational Amplifier]
+    An operational amplifier amplifies the voltage difference between its input terminals. 
+    Operational amplifiers require a power supply to amplify voltage.
+    In an operational amplifier:
+    \begin{enumerate}
+        \item The output cannot exceed the power supply range.
+        \item The inputs should remain within the power supply range.
+    \end{enumerate}
+    The output voltage has the following possibilities:
+    \begin{enumerate}
+        \item If $v_p - v_n > 0$, $v_{out} = V_{CC}$. 
+        \item If $v_p - v_n < 0$, $v_{out} = V_{EE}$. 
+        \item If $v_p - v_n = 0$, $v_{out} = 0$. 
+    \end{enumerate}
+    where $v_p$ is the non-inverting input, $v_n$ is the inverting input, $V_{CC}$ is the positive power supply voltage and 
+    $V_{EE}$ is the negative power supply voltage.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[height = 4cm, keepaspectratio = true]{operational_amplifier}
+        \caption{Operational Amplifier Circuit Symbol.}
+        % \label{}
+    \end{figure}
+\end{definition}
 \newpage
 \section{Sinusoidal Signals}
 \newpage

@@ -1,6 +1,7 @@
 \documentclass[tikz]{standalone}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{gnuplottex}
 
 \pgfplotsset{compat=newest}
 
@@ -16,29 +17,32 @@
     \begin{axis}[
         set layers,
         axis line style={on layer=axis foreground},
-		xmin = -10, xmax = 10,
-		ymin = -10, ymax = 10,
+		xmin = 0, xmax = 3,
+		ymin = 0, ymax = 2,
 		%
 		axis equal image,
 		% axis lines = middle,
-		xtick = {-10, -5, 0, 5, 10},
-		ytick = {-10, -5, 0, 5, 10},
-        xticklabels = {$ $, $ $, $0$, $ $, $ $},
-        yticklabels = {$ $, $ $, $0$, $ $, $ $},
-        extra x tick style = {xticklabel = {$v_f$}},
-        extra x ticks = {3},
+        xtick = {0, 0.5, 1, 1.5, 2, 2.5, 3},
+		ytick = {0, 0.5, 1, 1.5, 2},
+        xticklabels = {$ $, $ $, $ $, $ $, $ $, $ $, $ $},
+        yticklabels = {$ $, $ $, $ $, $ $, $ $, $ $, $ $},
+        extra x tick style = {xticklabel = {$\tau$}},
+        extra x ticks = {1},
+        extra y tick style = {yticklabels = {$I_0$, $\displaystyle 0.632\frac{V_s}{R} + I_0$, $\displaystyle \frac{V_s}{R}$}},
+        extra y ticks = {0, {2*(1 - e^(-1))}, 2},
 		%
-        xtickmin = -10,
-        xtickmax = 10,
+        xtickmin = 0,
+        xtickmax = 3,
         grid = both,
         grid style = {line width = .1pt, draw = gray!10},
         major grid style = {line width = .2pt, draw = black!30},
         minor tick num = 4,
 		%
-		xlabel = {$v$},
+		xlabel = {$t$},
 		ylabel = {$i$}
 	]
-    \draw[<->] (-8, 0) -- (3, 0) -- (3, 6);
+    \draw[smooth, samples=100, domain=0:3] plot(\x, {2*(1 - e^(-1*\x))});
+    \draw (1, 0) -- ++ (0, {2*(1 - e^(-1))}) -- ++ (-1, 0);
     \end{axis}
 \end{tikzpicture}
 \end{document}

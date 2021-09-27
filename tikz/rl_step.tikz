@@ -7,10 +7,13 @@
 \usepackage{circuitikz}
 \usepackage{siunitx}
 
+\newcommand*{\equal}{=}
+
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (3, 0) to[short, o-] (0, 0) to[V=$v_{Th}$, invert] (0, 3) to[R=$R_{Th}$, -o] (3, 3);
+    \draw (0, 3) to[V=$V_s$] (0, 0);
+    \draw (0, 3) to[R=$R$] (3, 3) to[cspst=$t\equal0$] (6, 3) to[L=$L$] (6, 0) to[short] (0, 0);
 \end{circuitikz}
 \end{document}

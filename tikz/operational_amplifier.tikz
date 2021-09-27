@@ -11,6 +11,11 @@
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (0, 0) to[short] (3, 0) to[R=$R$] (3, 3) to[short] (0, 3) to[L=$L$, v=$v$, i=$i$] (0, 0);
+    \draw (0,0) node[op amp, yscale=-1] (opamp) {}
+    (opamp.-) node[left] {inverting input}
+    (opamp.+) node[left] {non-inverting input}
+    (opamp.out) node[right] {output}
+    (opamp.down) -- ++ (0, 0.5) node[vcc] {positive power supply}
+    (opamp.up) -- ++ (0, -0.5) node[vee] {negative power supply};
 \end{circuitikz}
 \end{document}
