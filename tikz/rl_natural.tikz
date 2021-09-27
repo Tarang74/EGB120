@@ -5,12 +5,12 @@
 \setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
 
 \usepackage{circuitikz}
+\usepackage{siunitx}
 
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (0, 3) to[V=$v$, i=$i$] (0, 0);
-    \draw (0, 3) to[R=$R$] (3, 3) to[D] (3, 0) to[short] (0, 0);
+    \draw (3, 0) to[short, o-] (0, 0) to[V=$v_{Th}$, invert] (0, 3) to[R=$R_{Th}$, -o] (3, 3);
 \end{circuitikz}
 \end{document}

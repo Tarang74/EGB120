@@ -10,8 +10,8 @@
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (0, 0) to[V=$v$, i_>=$i$, invert] (0, 3) to[R=$R$,-o] (3, 3)
-    to[short, -o] (3, 0) to[short] (0, 0);
+    \draw (0, 3) to[V=$v$, i=$i$] (0, 0);
+    \draw (0, 3) to[R=$R$,-o] (3, 3) to[short, -o] (3, 0) to[short] (0, 0);
     \draw (3, 1.5) node[anchor=west] {$i_{sc}$};
 \end{circuitikz}
 \end{document}

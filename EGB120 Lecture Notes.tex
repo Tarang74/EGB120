@@ -284,6 +284,12 @@ These equations can be used to simplify a complex circuit.
 \begin{definition}[Current Divider]
     A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
 \end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 3cm, keepaspectratio = true]{current_divider}
+    \caption{Resistors connected in parallel to a current source.}
+    % \label{}
+\end{figure}
 \begin{theorem}
     \begin{equation*}
         i_k = i \frac{R_{eq}}{R_k}
@@ -488,7 +494,7 @@ Theorem.
         i = C \dv{v}{t}
     \end{equation*}
     \begin{equation*}
-        v(t) = \frac{1}{C} \int_0^t i \dd{\tau} + v(0)
+        v(t) = \frac{1}{C} \int_0^t i(\tau) \dd{\tau} + v(0)
     \end{equation*}
 \end{definition}
 \begin{definition}[Energy Stored by an Capacitor]
@@ -509,7 +515,7 @@ Theorem.
         v = L \dv{i}{t}
     \end{equation*}
     \begin{equation*}
-        i(t) = \frac{1}{L} \int_0^t v \dd{\tau} + i(0)
+        i(t) = \frac{1}{L} \int_0^t v(\tau) \dd{\tau} + i(0)
     \end{equation*}
 \end{definition}
 \begin{definition}[Energy Stored by an Inductor]
@@ -540,6 +546,12 @@ Theorem.
     \begin{equation*}
         -C \dv{v}{t} = \frac{v}{R}.
     \end{equation*}
+    \begin{figure}[H]
+        \centering
+        % \includegraphics[height = 6cm, keepaspectratio = true]{rc_natural}
+        \caption{Natural Response RC Circuit.}
+        % \label{}
+    \end{figure}
     By solving this differential equation, we can determine the natural response of a 
     RC circuit.
     \begin{equation*}
@@ -551,10 +563,16 @@ Theorem.
     \begin{equation*}
         L \dv{i}{t} = -iR.
     \end{equation*}
+    \begin{figure}[H]
+        \centering
+        % \includegraphics[height = 6cm, keepaspectratio = true]{rl_natural}
+        \caption{Natural Response RC Circuit.}
+        % \label{}
+    \end{figure}
     By solving this differential equation, we can determine the natural response of a 
-    RC circuit.
+    RL circuit.
     \begin{equation*}
-        v(t) = v(0)\exp{\left( -\frac{t}{RC} \right)}
+        i(t) = i(0)\exp{\left( -\frac{t}{R\frac{1}{L}} \right)}
     \end{equation*} 
 \end{definition}
 \newpage

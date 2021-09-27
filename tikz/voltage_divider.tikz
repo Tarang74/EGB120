@@ -17,9 +17,9 @@
     % R_k
     (aux1) ++ (-2, 0) to[R=$R_k$, *-*, v=$v_k$] ++ (-2, 0) coordinate (aux2)
     % R_n
-    (aux2) ++ (-2, 0) to[R=$R_n$, *-*, v=$v_n$] ++ (-2, 0) coordinate (aux3) 
+    (aux2) ++ (-2, 0) to[R=$R_n$, *-*, v=$v_n$] ++ (-2, 0) coordinate (aux3);
     % Voltage source
-    (aux3) to[short] ++ (0, 3) to[short] ++ (4.5, 0) to[V<=$v$, invert, i^=$i$] ++ (3, 0) to[short] ++ (4.5, 0) to[short] ++ (0, -3);
+    \draw (0, 0) to[short] ++ (0, 3) to[short] ++ (-4.5, 0) to[V=$v$, i=$i$] ++ (-3, 0) to[short] ++ (-4.5, 0) to[short] ++ (0, -3);
     % Ground
     % \draw (aux3) -- ++ (0, -1) node [sground] {};
     % Dots
