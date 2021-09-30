@@ -688,7 +688,7 @@ In the circuit shown below, the maximum power transfer to the load is given by
     \end{equation*}
 \end{definition}
 \begin{definition}[Operational Amplifier]
-    An operational amplifier amplifies the voltage difference between its input terminals. 
+    An operational amplifier (op amp) amplifies the voltage difference between its input terminals. 
     Operational amplifiers require a power supply to amplify voltage.
     In an operational amplifier:
     \begin{enumerate}
@@ -710,8 +710,135 @@ In the circuit shown below, the maximum power transfer to the load is given by
         % \label{}
     \end{figure}
 \end{definition}
+\subsection{Golden Rules for Op Amps}
+\begin{enumerate}
+    \item Infinite input impedance, and so zero input current.
+    \item In a closed loop, the output drives the voltage difference at the inputs to zero.
+\end{enumerate}
+Note the second rule only applies when the op amp has external negative feedback.
+\subsection{Op Amp Analysis}
+Using the golden rules above, the following circuits can be constructed. 
+\subsubsection{Inverting Amplifier}
+\begin{equation*}
+    v_{out} = -\frac{R_2}{R_1}v_{in}
+\end{equation*}
+\subsubsection{Non-Inverting Amplifier}
+\begin{equation*}
+    v_{out} = \frac{R_1 + R_2}{R_1}v_{in}
+\end{equation*}
+\subsubsection{Voltage Follower}
+\begin{equation*}
+    v_{out} = v_{in}
+\end{equation*}
+\subsubsection{Inverting Summing Amplifier}
+\begin{equation*}
+    v_{out} = -R_f \left( \frac{v_1}{R_1} + \frac{v_2}{R_2} + \cdots + \frac{v_n}{R_n} \right)
+\end{equation*}
+where $R_f$ is the feedback resistor.
+\subsubsection{Difference Amplifier}
+\begin{equation*}
+    v_{out} = \frac{R_2}{R_1} \left( v_2 - v_1 \right)
+\end{equation*}
+where the ratio of $\frac{R_2}{R_1}$ must be equal on both legs.
+\subsection{Designing Op Amps}
+In each
+of the following circuits, it is important to choose resistors in the \SI{1}{\kilo\ohm} - \SI{100}{\kilo\ohm}
+range, to prevent a large output current.
 \newpage
 \section{Sinusoidal Signals}
+\begin{definition}
+    A sinusoidal signal is commonly referred to as Alternating Current or AC. 
+\end{definition}
+\subsection{Properties of Sinusoidal Signals}
+These signals will be described using the cosine function.
+\begin{equation*}
+    v = V_{\mathrm{rms}} \cos{\left( \omega t + \phi \right)}
+\end{equation*}
+\subsubsection{Magnitude}
+\begin{definition}
+    The magnitude of a signal is the greatest distance from the line of oscillation, commonly zero, 
+    to the peak of the signal. 
+\end{definition}
+\subsubsection{Angular Frequency}
+\begin{definition}
+    The angular frequency $\omega$ is measured in radians per second (\si{\radian\per\second}), and it allows
+    us to compute the cosine function in radians.
+\end{definition}
+\subsubsection{Period and Frequency}
+\begin{definition}[Period]
+    The period of a signal is its cycle time $T$ in seconds (\si{\second)}.
+\end{definition}
+\begin{definition}[Frequency]
+    The frequency of a signal $f$ is the number of cycles per second, or 
+    the inverse of the period. The frequency is measured in Hertz (\si{\hertz}).
+\end{definition}
+The following equations relate the angular frequency, period and frequency together.
+\begin{align*}
+    f = \frac{1}{T} & & T = \frac{2\pi}{\omega} & & \omega = 2 \pi f
+\end{align*}
+\subsubsection{Phase}
+\begin{definition}
+    The phase of a signal is the position of a signal relative to a zero phase signal, 
+    measured in degrees (\si{\degree}). A \textbf{positive} phase corresponds to a ``leading''
+    signal, and a \textbf{negative} phase corresponds to a ``lagging'' signal.
+    The phase can be determined by calculating the difference in time $\tau$ between two signals.
+    \begin{equation*}
+        \phi = \frac{\tau}{T}
+    \end{equation*}
+\end{definition}
+\subsection{Root Mean Square}
+\begin{definition}
+    Root mean square (rms) is a method of obtaining a useful average of a signal that is symmetric about 
+    the horizontal axis. It is defined as the square \textbf{root} of the \textbf{mean} value of the 
+    function \textbf{squared}.
+    For a sine wave  
+    \begin{equation*}
+        V_{\mathrm{rms}} = \frac{V_{\mathrm{m}}}{\sqrt{2}}
+    \end{equation*}
+    The units in rms quantities are also subscripted with rms, for example, $\si{\volt}_{\mathrm{rms}}$.
+\end{definition}
+\subsection{Power}
+\begin{definition}
+    In a resistive load, the power can be determined using the rms current and rms voltage.
+    \begin{align*}
+        p &= vi \\
+        p &= 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\cos{\left( \omega t + \phi \right)} \\
+        p &= V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
+    \end{align*}
+    The average power is given by
+    \begin{equation*}
+        P_{\mathrm{avg}} = V_{\mathrm{rms}}I_{\mathrm{rms}}
+    \end{equation*}
+\end{definition}
+\subsection{Phasors}
+\begin{definition}
+    To assist in AC analysis, we can express the magnitude and phase of a sinusoidal signal
+    as a phasor. Phasors only 
+\end{definition}
+\subsection{Phasor Transforms}
+\begin{definition}
+    A sinusoidal signal can be converted to a phasor using the Phasor Transform
+    \begin{align*}
+        \symbfit{V} &= \mathscr{P}\left\{ v(t) \right\} \\
+        &= \mathscr{P}\bigl\{ V_m\cos{\left( \omega t + \phi \right)} \bigr\} \\
+        &= V_m \e^{j\phi} \\
+        &= V_m \angle \phi \si{\degree}
+    \end{align*}
+    where $j^2=-1$. Here $\symbfit{V}$ is the phase-domain representation of the
+    time-domain signal $v(t)$.
+\end{definition}
+\subsection{Inverse Phasor Transforms}
+\begin{definition}
+    A phasor can be converted back to a sinusoidal signal using the Inverse Phasor Transform
+    \begin{align*}
+        v(t) &= \mathscr{P}^{-1}\left\{ \symbfit{V} \right\} \\
+        &= \Re\left\{ \symbfit{V} \e^{j\omega t} \right\} \\
+        &= \Re\left\{ V_m \e^{j\phi} \e^{j\omega t} \right\} \\
+        &= V_m\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
+        &= V_m\cos{\left( \omega t + \phi \right)} \\
+    \end{align*}
+\end{definition}
+\subsection{Impedance}
 \newpage
 \section{Frequency Response}
 \newpage

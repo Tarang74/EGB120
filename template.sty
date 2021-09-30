@@ -9,7 +9,6 @@
 %% Sybmols 
 
 \usepackage{amssymb} % Extended symbol collection - also loads amsfonts
-\usepackage{stmaryrd} % Extra symbols
 
 %% Fonts
 
@@ -18,13 +17,10 @@
 %% Environments 
 
 \usepackage{amsthm} % Use theorems
-% \usepackage{framed} % Frame environments
-% \usepackage[many]{tcolorbox} % Box around environments
 
 %% Tables and arrays
 
 \usepackage{booktabs} % Top and bottom rule for tabular
-% \usepackage{longtable} % Allow tables to flow over page boundaries 
 \usepackage{tabularx} % Advanced Tables
 
 %% Lists
@@ -37,12 +33,10 @@
 \usepackage{float} % Float objects such as figures and tables
 \usepackage{geometry} % Page layout customisation
 \usepackage{marginnote} % Add text in margins
-% \usepackage{showframe} % Show page boundaries
 
 %% Text enchancements
 
 \usepackage[none]{hyphenat} % Disable hyphenation of long text
-% \usepackage{textgreek} % Text symbols for Greek alphabet
 \usepackage{ragged2e} % Text alignment options
 
 %% Referencing
@@ -54,14 +48,10 @@
 
 \usepackage{graphicx} % Extension to graphics 
 \graphicspath{ {./figures/} }
-% \usepackage{tikz} % Create graphic elements
-% \usetikzlibrary{arrows.meta}
-% \usepackage{pgfplots} % Create plots
-% \pgfplotsset{compat=1.9}
 
 %% Miscellaneous
 
-% \usepackage{listings} % Typeset programming code 
+\usepackage{listings} % Typeset programming code 
 \usepackage{siunitx} % SI units package
 \usepackage{physics} % Vectors/derivatives/operators
 % \usepackage[dvipsnames]{xcolor} % Extension to color package
@@ -75,12 +65,13 @@
 \usepackage[warnings-off={mathtools-colon, mathtools-overbracket}]{unicode-math}
 \setmathfont{Latin Modern Math}
 \setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
 
 %%% Preamble 
 
 %% Misc Commands
 
-\newcommand{\e}{\mathbf{e}}
+\newcommand{\e}{\mathrm{e}}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
@@ -125,31 +116,15 @@
 \newcommand{\nullspace}[1]{\func{\mathcal{N}}{\symbfit{#1}}}
 \newcommand{\leftnullspace}[1]{\func{\mathcal{N}}{\symbfit{#1}^{\top}}}
 
-%% Integrals
-
-\newcommand{\dintegral}[4]{\int_{#3}^{#4} #1 \dd{#2}}
-\newcommand{\integral}[2]{\int #1 \dd{#2}}
-\newcommand{\iintegral}[4]{\iint_{#4} #1 \dd{#2} \dd{#3}}
-\newcommand{\iiintegral}[5]{\iiint_{#5} #1 \dd{#2} \dd{#3}  \dd{#4}}
-\newcommand{\iiiintegral}[6]{\iiiint_{#6} #1 \dd{#2} \dd{#3} \dd{#4} \dd{#5}}
-
-%% Functions
-
-\newcommand{\func}[2]{{#1}\left({#2}\right)}
-\newcommand{\ffunc}[3]{{#1}\left({#2}, {#3} \right)}
-\newcommand{\fffunc}[4]{{#1}\left({#2}, {#3}, {#4} \right)}
-\newcommand{\nfunc}[3]{{#1}\left({#2}_1, \ldots , {#2}_{#3} \right)}
-
-\newcommand{\vfunc}[4]{\func{\vb*{{#1}}}{{#2}} = \left\langle \func{{#3}}{{#2}}, \func{{#4}}{{#2}} \right\rangle}
-\newcommand{\vffunc}[5]{\func{\vb*{{#1}}}{{#2}} = \left\langle \func{{#3}}{{#2}}, \func{{#4}}{{#2}}, \func{{#5}}{{#2}} \right\rangle}
-\newcommand{\vnfunc}[3]{\func{\vb*{{#1}}}{{#2}} = \left\langle \func{{#1}_{1}}{{#2}}, \ldots, \func{{#1}_{#3}}{{#2}} \right\rangle}
-
-\newcommand{\mvnfunc}[4]{\nfunc{\vb*{{#1}}}{{#2}}{{#3}} = \left\langle \nfunc{{#1}_{1}}{{#2}}{{#3}}, \ldots , \nfunc{{#1}_{#4}}{{#2}}{{#3}} \right\rangle}
-
 %% Laplace Transform
 
-\newcommand{\laplace}[2]{\mathcal{L} \left\{{#1}\right\} \left({#2}\right)}
-\newcommand{\invlaplace}[2]{\mathcal{L}^{-1} \left\{{#1}\right\} \left({#2}\right)}
+\newcommand{\laplace}[2]{\char"2112 \left\{{#1}\right\} \left({#2}\right)}
+\newcommand{\invlaplace}[2]{\char"2112^{-1} \left\{{#1}\right\} \left({#2}\right)}
+
+%% Fourier Transform
+
+\newcommand{\fourier}[2]{\char"2131 \left\{{#1}\right\} \left({#2}\right)}
+\newcommand{\invfourier}[2]{\char"2131^{-1} \left\{{#1}\right\} \left({#2}\right)}
 
 %% Theorems
 
@@ -161,6 +136,7 @@
 \newtheorem{corollary}{Corollary}[theorem]
 
 \newtheorem{axiom}{Axiom}
+\newtheorem*{remark}{Remark}
 
 \newenvironment{solution}[1][Solution]{\proof[#1]\mbox{}\\*}{\endproof}
 \newenvironment{solutionF}[1][Solution]{\proof[#1]\mbox{}}{\endproof}
