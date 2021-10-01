@@ -9,6 +9,7 @@
 
 \pagestyle{fancy}
 \setlength\headheight{24pt}
+\setlength\parindent{0pt}
 
 \lhead{\className}
 \rhead{\leftmark}
@@ -27,6 +28,7 @@
     modifier={by-nc-sa},
     version={4.0},
     imagewidth={5em},
+    hyphenation={raggedright}
 ]{doclicense}
 
 \date{}
@@ -484,6 +486,7 @@ In the circuit shown below, the maximum power transfer to the load is given by
 \begin{equation*}
     P_L = \frac{v_{Th}^2}{4R_L}.
 \end{equation*}
+where $R_L = R_{Th}$.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{max_power_transfer}
@@ -701,14 +704,18 @@ In the circuit shown below, the maximum power transfer to the load is given by
         \item If $v_p - v_n < 0$, $v_{out} = V_{EE}$. 
         \item If $v_p - v_n = 0$, $v_{out} = 0$. 
     \end{enumerate}
-    where $v_p$ is the non-inverting input, $v_n$ is the inverting input, $V_{CC}$ is the positive power supply voltage and 
-    $V_{EE}$ is the negative power supply voltage.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{operational_amplifier}
         \caption{Operational Amplifier Circuit Symbol.}
         % \label{}
     \end{figure}
+    \begin{description}
+        \item[$v_p$] non-inverting input
+        \item[$v_n$] inverting input
+        \item[$V_{CC}$] positive power supply
+        \item[$V_{EE}$] negative power supply
+    \end{description}
 \end{definition}
 \subsection{Golden Rules for Op Amps}
 \begin{enumerate}
@@ -722,27 +729,56 @@ Using the golden rules above, the following circuits can be constructed.
 \begin{equation*}
     v_{out} = -\frac{R_2}{R_1}v_{in}
 \end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{inverting_amplifier}
+    \caption{Inverting Amplifier.}
+    % \label{}
+\end{figure}
 \subsubsection{Non-Inverting Amplifier}
 \begin{equation*}
     v_{out} = \frac{R_1 + R_2}{R_1}v_{in}
 \end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{non_inverting_amplifier}
+    \caption{Non-Inverting Amplifier.}
+    % \label{}
+\end{figure}
 \subsubsection{Voltage Follower}
 \begin{equation*}
     v_{out} = v_{in}
 \end{equation*}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{voltage_follower}
+    \caption{Voltage Follower.}
+    % \label{}
+\end{figure}
 \subsubsection{Inverting Summing Amplifier}
 \begin{equation*}
     v_{out} = -R_f \left( \frac{v_1}{R_1} + \frac{v_2}{R_2} + \cdots + \frac{v_n}{R_n} \right)
 \end{equation*}
 where $R_f$ is the feedback resistor.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{inverting_summing_amplifier}
+    \caption{Inverting Summing Amplifier.}
+    % \label{}
+\end{figure}
 \subsubsection{Difference Amplifier}
 \begin{equation*}
     v_{out} = \frac{R_2}{R_1} \left( v_2 - v_1 \right)
 \end{equation*}
-where the ratio of $\frac{R_2}{R_1}$ must be equal on both legs.
+where the ratio of $\displaystyle \frac{R_2}{R_1}$ must be equal on both legs.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{difference_amplifier}
+    \caption{Difference Amplifier.}
+    % \label{}
+\end{figure}
 \subsection{Designing Op Amps}
-In each
-of the following circuits, it is important to choose resistors in the \SI{1}{\kilo\ohm} - \SI{100}{\kilo\ohm}
+When designed op amps, it is important to choose resistors in the \SIrange{1}{100}{\kilo\ohm}
 range, to prevent a large output current.
 \newpage
 \section{Sinusoidal Signals}
@@ -750,9 +786,9 @@ range, to prevent a large output current.
     A sinusoidal signal is commonly referred to as Alternating Current or AC. 
 \end{definition}
 \subsection{Properties of Sinusoidal Signals}
-These signals will be described using the cosine function.
+These signals are described using cosine functions in the following form.
 \begin{equation*}
-    v = V_{\mathrm{rms}} \cos{\left( \omega t + \phi \right)}
+    v = V_{\mathrm{rms}} \cos{\left( \omega t + \phi\si{\degree} \right)}
 \end{equation*}
 \subsubsection{Magnitude}
 \begin{definition}
@@ -766,7 +802,7 @@ These signals will be described using the cosine function.
 \end{definition}
 \subsubsection{Period and Frequency}
 \begin{definition}[Period]
-    The period of a signal is its cycle time $T$ in seconds (\si{\second)}.
+    The period of a signal $T$ is its cycle time in seconds (\si{\second)}.
 \end{definition}
 \begin{definition}[Frequency]
     The frequency of a signal $f$ is the number of cycles per second, or 
@@ -778,7 +814,7 @@ The following equations relate the angular frequency, period and frequency toget
 \end{align*}
 \subsubsection{Phase}
 \begin{definition}
-    The phase of a signal is the position of a signal relative to a zero phase signal, 
+    The phase $\phi$ of a signal is the position of a signal relative to a zero phase signal, 
     measured in degrees (\si{\degree}). A \textbf{positive} phase corresponds to a ``leading''
     signal, and a \textbf{negative} phase corresponds to a ``lagging'' signal.
     The phase can be determined by calculating the difference in time $\tau$ between two signals.
@@ -795,14 +831,15 @@ The following equations relate the angular frequency, period and frequency toget
     \begin{equation*}
         V_{\mathrm{rms}} = \frac{V_{\mathrm{m}}}{\sqrt{2}}
     \end{equation*}
-    The units in rms quantities are also subscripted with rms, for example, $\si{\volt}_{\mathrm{rms}}$.
+    The units in rms quantities are also subscripted with rms, for example, rms voltage, $\si{\volt}_{\mathrm{rms}}$.
 \end{definition}
 \subsection{Power}
 \begin{definition}
     In a resistive load, the power can be determined using the rms current and rms voltage.
     \begin{align*}
         p &= vi \\
-        p &= 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\cos{\left( \omega t + \phi \right)} \\
+        p &= \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
+        p &= 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)} \\
         p &= V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
     \end{align*}
     The average power is given by
@@ -810,10 +847,17 @@ The following equations relate the angular frequency, period and frequency toget
         P_{\mathrm{avg}} = V_{\mathrm{rms}}I_{\mathrm{rms}}
     \end{equation*}
 \end{definition}
+\subsection{Euler's Formula}
+\begin{theorem}
+    \begin{equation*}
+        \e^{jt} = \cos{\left( t \right)} + j \sin{\left( t \right)}
+    \end{equation*}
+    where $j^2=-1$ and $t$ is the angle in radians.
+\end{theorem}
 \subsection{Phasors}
 \begin{definition}
     To assist in AC analysis, we can express the magnitude and phase of a sinusoidal signal
-    as a phasor. Phasors only 
+    as a phasor. 
 \end{definition}
 \subsection{Phasor Transforms}
 \begin{definition}
@@ -821,11 +865,11 @@ The following equations relate the angular frequency, period and frequency toget
     \begin{align*}
         \symbfit{V} &= \mathscr{P}\left\{ v(t) \right\} \\
         &= \mathscr{P}\bigl\{ V_m\cos{\left( \omega t + \phi \right)} \bigr\} \\
-        &= V_m \e^{j\phi} \\
-        &= V_m \angle \phi \si{\degree}
+        &= V_m \e^{j\phi}
     \end{align*}
     where $j^2=-1$. Here $\symbfit{V}$ is the phase-domain representation of the
     time-domain signal $v(t)$.
+
 \end{definition}
 \subsection{Inverse Phasor Transforms}
 \begin{definition}
@@ -838,6 +882,12 @@ The following equations relate the angular frequency, period and frequency toget
         &= V_m\cos{\left( \omega t + \phi \right)} \\
     \end{align*}
 \end{definition}
+\subsection{Phasor Calculations}
+As phasors are quantities with a magnitude and angle, they can be represented as complex numbers. 
+In rectangular form
+\begin{equation*}
+    \symbfit{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
+\end{equation*}
 \subsection{Impedance}
 \newpage
 \section{Frequency Response}

@@ -12,11 +12,10 @@
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
     \ctikzset{amplifiers/minus={$\vphantom{+}-$}}
-    \draw (0,0) node[op amp, yscale=-1] (opamp) {}
-    (opamp.-) node[left] {$v_n$}
-    (opamp.+) node[left] {$v_p$}
-    (opamp.out) node[right] {$v_{out}$}
-    (opamp.down) -- ++ (0, 0.5) node[vcc] {$V_{CC}$}
-    (opamp.up) -- ++ (0, -0.5) node[vee] {$V_{EE}$};
+    \draw (0,0) node[op amp] (opamp) {}
+    (opamp.-) ++ (0, 1) node[circ] {} to[R, l_=$R_1$] ++ (-2, 0) node[sground] {}
+    (opamp.+) node[ocirc, label={180:$v_{in}$}] {}
+    (opamp.out) node[circ] {} to[short] ++ (1, 0) node[ocirc, label={0:$v_{out}$}] {}
+    (opamp.-) to[short] ++ (0, 1) to[R=$R_2$] ([yshift=1cm]opamp.- -| opamp.out) to[short] (opamp.out);
 \end{circuitikz}
 \end{document}
