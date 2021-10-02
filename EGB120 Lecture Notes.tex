@@ -15,13 +15,9 @@
 \rhead{\leftmark}
 \cfoot{\thepage}
 
-\newcommand{\uniTitle}{Queensland University of Technology}
 \newcommand{\className}{Foundations of Electrical Engineering}
 \newcommand{\classTime}{Semester 2, 2021}
 \newcommand{\classInstructorName}{Dr Jasmin Martin}
-\newcommand{\authorName}{Tarang Janawalkar}
-\newcommand{\authorStudentNumber}{n11032201}
-\newcommand{\classCode}{EGB120}
 
 \usepackage[
     type={CC},
@@ -34,21 +30,20 @@
 \date{}
 
 \begin{document}
+
 \begin{titlepage}
     \vspace*{\fill}
-	\begin{center}
-        \LARGE
-        \textbf{\className}
+    \begin{center}
+        \LARGE{\textbf{\className}}
         \texorpdfstring{\\}{ }
-        \uniTitle
+        \texorpdfstring{\vspace{0.1in}}{ }
+        \normalsize{\classTime}
         \texorpdfstring{\\}{ }
-        \texorpdfstring{\vspace{0.3in}}{ }
+        \texorpdfstring{\vspace{0.1in}}{ }
         \normalsize\textit{\classInstructorName}
         \texorpdfstring{\\}{ }
-        \classTime
-    \end{center}
-    \begin{center}
-        \textbf{\authorName}
+        \texorpdfstring{\vspace{0.2in}}{ }
+        \textsc{Tarang Janawalkar}
     \end{center}
     \vspace*{\fill}
     \doclicenseThis
@@ -848,7 +843,7 @@ The following equations relate the angular frequency, period and frequency toget
     \end{equation*}
 \end{definition}
 \subsection{Euler's Formula}
-\begin{theorem}
+\begin{theorem}\label{theorem:eulers_formula}
     \begin{equation*}
         \e^{jt} = \cos{\left( t \right)} + j \sin{\left( t \right)}
     \end{equation*}
@@ -863,11 +858,11 @@ The following equations relate the angular frequency, period and frequency toget
 \begin{definition}
     A sinusoidal signal can be converted to a phasor using the Phasor Transform
     \begin{align*}
-        \symbfit{V} &= \mathscr{P}\left\{ v(t) \right\} \\
+        \symbf{V} &= \mathscr{P}\left\{ v(t) \right\} \\
         &= \mathscr{P}\bigl\{ V_m\cos{\left( \omega t + \phi \right)} \bigr\} \\
         &= V_m \e^{j\phi}
     \end{align*}
-    where $j^2=-1$. Here $\symbfit{V}$ is the phase-domain representation of the
+    where $j^2=-1$. Here $\symbf{V}$ is the phase-domain representation of the
     time-domain signal $v(t)$.
 
 \end{definition}
@@ -875,8 +870,8 @@ The following equations relate the angular frequency, period and frequency toget
 \begin{definition}
     A phasor can be converted back to a sinusoidal signal using the Inverse Phasor Transform
     \begin{align*}
-        v(t) &= \mathscr{P}^{-1}\left\{ \symbfit{V} \right\} \\
-        &= \Re\left\{ \symbfit{V} \e^{j\omega t} \right\} \\
+        v(t) &= \mathscr{P}^{-1}\left\{ \symbf{V} \right\} \\
+        &= \Re\left\{ \symbf{V} \e^{j\omega t} \right\} \\
         &= \Re\left\{ V_m \e^{j\phi} \e^{j\omega t} \right\} \\
         &= V_m\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
         &= V_m\cos{\left( \omega t + \phi \right)} \\
@@ -884,10 +879,49 @@ The following equations relate the angular frequency, period and frequency toget
 \end{definition}
 \subsection{Phasor Calculations}
 As phasors are quantities with a magnitude and angle, they can be represented as complex numbers. 
-In rectangular form
+Using \hyperref[theorem:eulers_formula]{Theorem \ref{theorem:eulers_formula}}, we can represent a phasor in rectangular form
 \begin{equation*}
-    \symbfit{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
+    \symbf{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
 \end{equation*}
+in polar form, the magnitude is given by
+\begin{align*}
+    \norm{\symbf{V}} &= \sqrt{\Re\left\{ \symbf{V} \right\}^2 + \Im\left\{ \symbf{V} \right\}^2} \\
+    &= V_{\mathrm{m}}
+\end{align*}
+and the angle
+\begin{align*}
+    \arg{\symbf{V}} &= \arctan{\left( \frac{\Im\left\{ \symbf{V} \right\}}{\Re\left\{ \symbf{V} \right\}} \right)} \\
+    &= \phi 
+\end{align*}
+\subsection{Circuit Analysis}
+\subsubsection{Phasor Relationship for Resistors}
+Using a sinusoidal voltage
+\begin{equation*}
+    v = V_m\cos{\left( \omega t + \phi \right)}
+\end{equation*}
+Ohm's Law gives:
+\begin{align*}
+    i &= \frac{v}{R} \\
+    &= \frac{V_m}{R} \cos{\left( \omega t + \phi \right)}
+\end{align*}
+Taking the Phasor Transform gives
+\begin{align*}
+    \mathscr{P}\left\{ v \right\} = \mathscr{P}\left\{ iR \right\}
+    \mathscr{P}\left\{ V_m\cos{\left( \omega t + \phi \right)} \right\} = \mathscr{P}\left\{ \frac{V_m}{R} \cos{\left( \omega t + \phi \right)} \right\} R
+    \symbf{V} = \symbf{I} R
+\end{align*}
+\subsubsection{Phasor Relationship for Inductors}
+Using a sinusoidal current
+\begin{equation*}
+    i = I_m\cos{\left( \omega t + \phi \right)}
+\end{equation*}
+the voltage drop across an inductor is given by:
+\begin{align*}
+    v &= L \dv{i}{t} \\
+    &= -\omega L I_m \sin{\left( \omega t + \phi \right)} \\
+    &= -\omega L I_m \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+\end{align*}
+taking the Phasor Transform gives
 \subsection{Impedance}
 \newpage
 \section{Frequency Response}
@@ -896,5 +930,5 @@ In rectangular form
 \newpage
 \section{Zener Diodes and Voltage Regulators}
 \newpage
-
+\lstlisting
 \end{document}
