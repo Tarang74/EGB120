@@ -20,8 +20,6 @@
     (aux2) ++ (-2, 0) to[R=$R_n$, *-*, v=$v_n$] ++ (-2, 0) coordinate (aux3);
     % Voltage source
     \draw (0, 0) to[short] ++ (0, 3) to[short] ++ (-4.5, 0) to[V=$v$, i=$i$] ++ (-3, 0) to[short] ++ (-4.5, 0) to[short] ++ (0, -3);
-    % Ground
-    % \draw (aux3) -- ++ (0, -1) node [sground] {};
     % Dots
     \path (aux1) -- node {\huge$\dots$} ++ (-2, 0)
     (aux2) -- node {\huge$\dots$} ++ (-2, 0);

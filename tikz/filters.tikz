@@ -1,0 +1,105 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta, matrix}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{groupplots}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\def\axisdefaultwidth{12cm}
+\def\axisdefaultheight{2cm}
+\pgfplotsset{every axis/.style={scale only axis}}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        name = plot1,
+        xticklabels = \empty,
+        xtick = \empty,
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabel = {$\omega_c$}},
+        extra x ticks = {4},
+        %
+        xmin = 0, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {$\omega$},
+        ylabel = {Gain}
+    ]
+        \draw[blue] (0, 1) -| (4, 0) -- (8, 0);
+        \node[label={180:Low pass}] at (8, 1.25) {};
+    \end{axis}
+    \begin{axis}[
+        name = plot2, 
+        at = {($(plot1.south)-(0, 1cm)$)},
+        anchor = north,
+        xticklabels = \empty,
+        xtick = \empty,
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabel = {$\omega_c$}},
+        extra x ticks = {4},
+        %
+        xmin = 0, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {$\omega$},
+        ylabel = {Gain}
+    ]
+        \draw[blue] (0, 0) -| (4, 1) -- (8, 1);
+        \node[label={180:High pass}] at (8, 1.25) {};
+    \end{axis}
+    \begin{axis}[
+        name = plot3, 
+        at = {($(plot2.south)-(0, 1cm)$)},
+        anchor = north,
+        xticklabels = \empty,
+        xtick = \empty,
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabels = \empty},
+        extra x ticks = {2.5, 5.5},
+        %
+        xmin = 0, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {$\omega$},
+        ylabel = {Gain}
+    ]
+        \draw[blue] (0, 0) -| (2.5, 1) -| (5.5, 0) -- (8, 0);
+        \node[label={180:Band pass}] at (8, 1.25) {};
+    \end{axis}
+    \begin{axis}[
+        name = plot4, 
+        at = {($(plot3.south)-(0, 1cm)$)},
+        anchor = north,
+        xticklabels = \empty,
+        xtick = \empty,
+        ytick = {0, 1},
+        axis lines = center,
+        %
+        extra x tick style = {xticklabels = \empty},
+        extra x ticks = {2.5, 5.5},
+        %
+        xmin = 0, xmax = 8,
+        ymin = 0, ymax = 1.5,
+        %
+        xlabel = {$\omega$},
+        ylabel = {Gain}
+    ]
+        \draw[blue] (0, 1) -| (2.5, 0) -| (5.5, 1) -- (8, 1);
+        \node[label={180:Band stop (Notch)}] at (8, 1.25) {};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

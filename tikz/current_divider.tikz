@@ -26,7 +26,7 @@
     % R_k
     \draw (8, 3) to[R=$R_k$, *-*, i=$i_k$] ++ (0, -3);
     % R_n
-    \draw (12, 3) to[R=$R_n$, *-*, i=$i_n$] ++ (0, -3);
+    \draw[line cap=rect] (12, 3) to[R=$R_n$, i=$i_n$] ++ (0, -3);
     % Dots
     \path (aux1) -- node {\huge$\dots$} ++ (4, 0);
     \path (aux2) -- node {\huge$\dots$} ++ (4, 0);

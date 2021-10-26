@@ -14,7 +14,7 @@
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (0, 3) to[V=$v_{Th}$] (0, 0);
+    \draw[line cap=rect] (0, 3) to[V=$v_{Th}$] (0, 0);
     \draw (0, 3) to[R=$R_{Th}$] (3, 3) to[R=$R_L$, name=component] (3, 0) to[short] (0, 0);
     \draw[power line] (component.north west) to[out = 0, in = 180] ++(0.6, 0.5) node[anchor = west] {$P_L$};
 \end{circuitikz}

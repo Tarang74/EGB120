@@ -60,40 +60,38 @@
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
     \centering
-    \begin{tabular}{c | >{\centering}p{0.5\textwidth} | c c}
+    \begin{tabular}{c | >{\centering}p{0.5\textwidth} | c | c}
         \toprule
         \textbf{Name} & \textbf{Definition}                                                                                                      & \textbf{Symbol}           & \textbf{Unit} \\
         \midrule
         Charge        & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
                       & $q$                                                                                                                      & Coulomb (\unit{\coulomb})                 \\
         \hline
-        Current       & $i=\dv{q}{t}\iff\SI{1}{\ampere}=\SI{1}{\coulomb\per\s}$
+        Current       & $\displaystyle i = \dv{q}{t}\iff\SI{1}{\ampere} = \SI{1}{\coulomb\per\s}$
                       & $i$                                                                                                                      & Ampere (\unit{\ampere})                   \\
         \hline
-        Voltage       & $v=\dv{w}{q}\iff\SI{1}{\volt}=\SI{1}{\joule\per\coulomb}$
+        Voltage       & $\displaystyle v = \dv{w}{q}\iff\SI{1}{\volt} = \SI{1}{\joule\per\coulomb}$
                       & $v$                                                                                                                      & Volt (\unit{\volt})                       \\
         \hline
-        Power         & $p=\dv{w}{t}\iff\SI{1}{\watt}=\SI{1}{\joule\per\s}$
+        Power         & $\displaystyle p = \dv{w}{t}\iff\SI{1}{\watt} = \SI{1}{\joule\per\s}$
                       & $p$                                                                                                                      & Watt (\unit{\watt})                       \\
         \bottomrule
     \end{tabular}
 \end{table}
 \endgroup
 \begin{description}
-    \item[Charge in an electron.] $q=\SI{1.6022e-19}{\coulomb}$.
-    \item[Electric Power.] $p=\dv{w}{t}=vi$.
+    \item[Charge in an electron.] $q = \SI{1.6022e-19}{\coulomb}$.
+    \item[Electric Power.] $\displaystyle p = \dv{w}{t} = vi$.
 \end{description}
 \subsection{Passive Sign Convention}
 \begin{figure}[H]
     \centering
     \begin{minipage}[H]{0.48\textwidth}
-        \textbf{Passive component}
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{passive_component}
         \caption{Energy dissipated.}
     \end{minipage}\hfill
     \begin{minipage}[H]{0.48\textwidth}
-        \textbf{Active component}
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{active_component}
         \caption{Energy produced.}
@@ -118,69 +116,30 @@
 \end{definition}
 \begin{figure}[H]
     \centering
-    \includegraphics{voltage_source}
-    \caption{Voltage Source -- $v$ is specified, $i$ varies depending on circuit element $A$.}
+    \includegraphics[height = 4cm, keepaspectratio = true]{voltage_source}
+    \caption{Voltage source -- $v$ is specified, $i$ varies depending on circuit element $A$.}
 \end{figure}
 \begin{definition}[Current Source]
     Produces or dissipates power at a specified current with whatever voltage is required.
 \end{definition}
 \begin{figure}[H]
     \centering
-    \includegraphics{current_source}
-    \caption{Current Source -- $i$ is specified, $v$ varies depending on circuit element $A$.}
+    \includegraphics[height = 4cm, keepaspectratio = true]{current_source}
+    \caption{Current source -- $i$ is specified, $v$ varies depending on circuit element $A$.}
 \end{figure}
-% \subsection{Ground}
-% \begin{description}
-%     \item[Definition.] The zero volt point is referred to as the circuit ground.
-%     \item[Symbol.] \tikz\draw (0, 0) node[sground] {};
-% \end{description}
-% \subsection{Earth}
-% \begin{description}
-%     \item[Definition.] An earthed ground is literally a connection to the earth.
-%     \item[Symbol.] \tikz\draw (0, 0) node[ground] {};
-% \end{description}
-\subsection{Connected Sources}
-\begin{figure}[H]
-    \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{connected_sources}
-    \caption{Example of a connected voltage and current source.}
-\end{figure}
-\begin{itemize}
-    \item The voltage source sets $v$ to \SI{10}{\volt}, with the upper wire being positive.
-    \item The current source sets $i$ to \SI{1}{\ampere}, flowing anticlockwise.
-    \item Therefore \SI{10}{\watt} of power is produced by the current source and dissipated by the voltage source.
-\end{itemize}
-\begin{enumerate}
-    \item Two voltage sources must be connected at the same terminals and supply the same voltage.
-    \item Two current sources must flow in the same direction and supply the same current.
-\end{enumerate}
-% \subsection{Invalid Circuits}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[height = 4cm, keepaspectratio = true]{invalid_voltage_sources}
-%     \caption{Voltage terminals are incorrect, and voltages are different.}
-% \end{figure}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[height = 4cm, keepaspectratio = true]{invalid_current_sources}
-%     \caption{Current flows oppose each other, and currents are different.}
-% \end{figure}
 \subsection{Resistors}
 \begin{definition}[Resistor]
     Resistors dissipate power, and the voltage across both terminals is proportional to the current.
 \end{definition}
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{resistor}
-    \caption{Resistor Circuit Symbol}
+    \includegraphics[height = 3cm, keepaspectratio = true]{resistor}
+    \caption{Resistor circuit symbol.}
 \end{figure}
 \begin{theorem}[Voltage through a resistor]
     \begin{equation*}
-        v=iR
+        v = iR
     \end{equation*}
-    % \begin{equation*}
-    %     R=\frac{\rho L}{A}
-    % \end{equation*}
 \end{theorem}
 \begin{corollary}[Power dissipated by a resistor]
     \begin{equation*}
@@ -196,18 +155,18 @@
     \item There is no magnetic coupling between the components.
 \end{enumerate}
 \subsection{Kirchhoff's Laws}
-\begin{definition}[Kirchhoff's Current Law (KCL)]
+\begin{theorem}[Kirchhoff's Current Law (KCL)]
     The sum of all currents into a node equals zero.
     \begin{equation*}
         \sum i_{\mathrm{node}} = 0
     \end{equation*}
-\end{definition}
-\begin{definition}[Kirchhoff's Voltage Law (KVL)]
+\end{theorem}
+\begin{theorem}[Kirchhoff's Voltage Law (KVL)]
     The sum of all voltages around a loop equals zero.
     \begin{equation*}
         \sum v_{\mathrm{loop}} = 0
     \end{equation*}
-\end{definition}
+\end{theorem}
 \subsection{Series and Parallel Circuits}
 \begin{definition}
     Elements connected end-to-end are in series. If both ends of an element are connected directly to another element, the two elements are in parallel.
@@ -216,42 +175,18 @@
     \centering
     \begin{tabular}{c | c c}
         \toprule
-        \textbf{Element} & \textbf{Series}                                                & \textbf{Parallel}                                              \\
+        \textbf{Element} & \textbf{Series}                                                         & \textbf{Parallel}                                                       \\
         \midrule
-        Current Source   & $\displaystyle i_{eq} = i_{k\geq1}$                            & $i_{eq} = \displaystyle \sum_{k\geq1} i_k$                     \\
-        Voltage Source   & $\displaystyle v_{eq} = \sum_{k\geq1} v_k$                     & $\displaystyle v_{eq} = v_{k\geq1}$                            \\
-        Resistor         & $\displaystyle R_{eq} = \sum_{k\geq1} R_k$                     & $\displaystyle \frac{1}{R_{eq}} = \sum_{k\geq1} \frac{1}{R_k}$ \\
-        Inductor         & $\displaystyle L_{eq} = \sum_{k\geq1} L_k$                     & $\displaystyle \frac{1}{L_{eq}} = \sum_{k\geq1} \frac{1}{L_k}$ \\
-        Capacitor        & $\displaystyle \frac{1}{C_{eq}} = \sum_{k\geq1} \frac{1}{C_k}$ & $\displaystyle C_{eq} = \sum_{k\geq1} C_k$                     \\
+        Current Source   & $\displaystyle i_{\mathrm{eq}} = i_{k\geq1}$                            & $i_{\mathrm{eq}} = \displaystyle \sum_{k\geq1} i_k$                     \\
+        Voltage Source   & $\displaystyle v_{\mathrm{eq}} = \sum_{k\geq1} v_k$                     & $\displaystyle v_{\mathrm{eq}} = v_{k\geq1}$                            \\
+        Resistor         & $\displaystyle R_{\mathrm{eq}} = \sum_{k\geq1} R_k$                     & $\displaystyle \frac{1}{R_{\mathrm{eq}}} = \sum_{k\geq1} \frac{1}{R_k}$ \\
+        Inductor         & $\displaystyle L_{\mathrm{eq}} = \sum_{k\geq1} L_k$                     & $\displaystyle \frac{1}{L_{\mathrm{eq}}} = \sum_{k\geq1} \frac{1}{L_k}$ \\
+        Capacitor        & $\displaystyle \frac{1}{C_{\mathrm{eq}}} = \sum_{k\geq1} \frac{1}{C_k}$ & $\displaystyle C_{\mathrm{eq}} = \sum_{k\geq1} C_k$                     \\
         \bottomrule
     \end{tabular}
     \caption{Equivalent values for various components connected in series and parallel.}
-    % \label{}
 \end{table}
 These equations can be used to simplify a complex circuit.
-% \begin{proof}
-%     Using KVL for voltage sources connected in series
-%     \begin{align*}
-%         v_1 + v_2 + \cdots + v_n - iR &= 0 \\
-%         v_1 + v_2 + \cdots + v_n &= iR
-%     \end{align*}
-%     Let $v_{eq}$ be the voltage across the resistor so that
-%     \begin{equation*}
-%         v_{eq} = iR
-%     \end{equation*}
-%     Therefore
-%     \begin{equation*}
-%         v_{eq} = v_1 + v_2 + \cdots + v_n
-%     \end{equation*}
-
-%     As the current through resistors in series remains the same, using KVL we have
-%     \begin{align*}
-%         v - iR_1 - iR_2 - \cdots - iR_n &= 0 \\
-%         v &= i\left(R_1 + R_2 + \cdots + R_n\right) \\
-%         v &= iR_{eq}
-%     \end{align*}
-%     Hence the resistance across multiple resistors in series is equivalent to the sum of the resistances.
-% \end{proof}
 \subsection{Voltage and Current Dividers}
 \begin{definition}[Voltage Divider]
     A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
@@ -259,23 +194,22 @@ These equations can be used to simplify a complex circuit.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{voltage_divider}
-    \caption{Resistors connected in series to a voltage source.}
-    % \label{}
+    \caption{Voltage divider circuit.}
 \end{figure}
 \begin{theorem}
     \begin{equation*}
-        v_k = v \frac{R_k}{R_{eq}}
+        v_k = v \frac{R_k}{R_{\mathrm{eq}}}
     \end{equation*}
 \end{theorem}
 \begin{proof}
     The current through any resistor is
     \begin{equation*}
-        i = \frac{v}{R_{eq}}
+        i = \frac{v}{R_{\mathrm{eq}}}
     \end{equation*}
     Therefore the voltage drop in any resistor is
     \begin{align*}
-        v_k & = i R_k                \\
-        v_k & = \frac{v}{R_{eq}} R_k
+        v_k & = i R_k                         \\
+        v_k & = \frac{v}{R_{\mathrm{eq}}} R_k
     \end{align*}
 \end{proof}
 \begin{definition}[Current Divider]
@@ -284,12 +218,11 @@ These equations can be used to simplify a complex circuit.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 3cm, keepaspectratio = true]{current_divider}
-    \caption{Resistors connected in parallel to a current source.}
-    % \label{}
+    \caption{Current divider circuit.}
 \end{figure}
 \begin{theorem}
     \begin{equation*}
-        i_k = i \frac{R_{eq}}{R_k}
+        i_k = i \frac{R_{\mathrm{eq}}}{R_k}
     \end{equation*}
 \end{theorem}
 \begin{proof}
@@ -297,15 +230,15 @@ These equations can be used to simplify a complex circuit.
     \begin{align*}
         i & = \sum_{k\geq1} i_k           \\
         i & = \sum_{k\geq1} \frac{v}{R_k} \\
-        i & = \frac{v}{R_{eq}}
+        i & = \frac{v}{R_{\mathrm{eq}}}
     \end{align*}
     Solving for $v$ gives
     \begin{align*}
-        v & = i R_{eq}
+        v & = i R_{\mathrm{eq}}
     \end{align*}
     Hence the current through any resistor in parallel is given by
     \begin{align*}
-        i_k = \frac{v}{R_k} = \frac{iR_{eq}}{R_k}
+        i_k = \frac{v}{R_k} = \frac{iR_{\mathrm{eq}}}{R_k}
     \end{align*}
 \end{proof}
 \newpage
@@ -316,8 +249,7 @@ These equations can be used to simplify a complex circuit.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 3cm, keepaspectratio = true]{diode}
-    \caption{Diode Circuit Symbol}
-    % \label{}
+    \caption{Diode circuit symbol.}
 \end{figure}
 \subsection{V-I Characteristic}
 The Voltage-Current characteristic of linear circuit elements can be plotted as shown below.
@@ -325,19 +257,16 @@ The Voltage-Current characteristic of linear circuit elements can be plotted as 
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_voltage_source}
     \caption{V-I characteristic for a voltage source.}
-    % \label{}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_current_source}
     \caption{V-I characteristic for a current source.}
-    % \label{}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_resistor}
     \caption{V-I characteristic for a resistor.}
-    % \label{}
 \end{figure}
 \subsection{V-I Characteristic for Diodes}
 A diode has a non-linear characteristic curve, hence it is often simplified.
@@ -345,7 +274,6 @@ A diode has a non-linear characteristic curve, hence it is often simplified.
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_diode}
     \caption{V-I characteristic for a diode.}
-    % \label{}
 \end{figure}
 \begin{theorem}[Shockley's Diode Equation]
     A diode can be better modelled using Shockley's equation.
@@ -369,25 +297,22 @@ Given the following circuit with a non-linear component
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{non_linear_component}
     \caption{Circuit with non-linear element.}
-    % \label{}
 \end{figure}
 the load line is given by the equation
 \begin{equation*}
     i(v) = -\frac{i_{sc}}{v_{oc}} + i_{sc}
 \end{equation*}
-where the short-circuit current is the current through the non-linear component, and the open circuit voltage is the voltage across the
+where the short circuit current is the current through the non-linear component, and the open circuit voltage is the voltage across the
 open circuit nodes of the component.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{non_linear_short_circuit_current}
-    \caption{Circuit for Short Circuit Current.}
-    % \label{}
+    \caption{Circuit for short circuit current.}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{non_linear_open_circuit_voltage}
-    \caption{Circuit for Open Circuit Voltage.}
-    % \label{}
+    \caption{Circuit for open circuit voltage.}
 \end{figure}
 \newpage
 \section{Mesh Analysis}
@@ -418,10 +343,10 @@ If the current source is between two meshes, then we must use a supermesh.
     A supermesh is a special mesh that surrounds the current source.
 \end{definition}
 \begin{enumerate}
-    \item Label meshes and identify supermesh.
-    \item Write KCL equation for current source.
-    \item Write supermesh equation.
-    \item Use KVL around supermesh.
+    \item Label meshes and identify the supermesh.
+    \item Write KCL equation for the current source.
+    \item Write the supermesh equation.
+    \item Use KVL around the supermesh.
 \end{enumerate}
 \newpage
 \section{Source Transformations}
@@ -434,7 +359,7 @@ resistance associated with the source.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{thevenin_equivalent}
-        \caption{Thévenin Equivalent Circuit.}
+        \caption{Thévenin equivalent circuit.}
         % \label{}
     \end{figure}
     This circuit has the following properties:
@@ -450,7 +375,7 @@ resistance associated with the source.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{norton_equivalent}
-        \caption{Norton Equivalent Circuit.}
+        \caption{Norton equivalent circuit.}
         % \label{}
     \end{figure}
     This circuit has the following properties:
@@ -476,6 +401,21 @@ Theorem.
 \begin{theorem}[Norton's Theorem]
     Any linear circuit can be replaced by a current source and a resistance in parallel.
 \end{theorem}
+\begin{definition}[Turning Sources ``off'']
+    Turning a source ``off'' means to set its value to 0.
+    \begin{description}
+        \item[For a voltage source:] $v = \SI{0}{\volt}$, hence we can treat it as a short circuit.
+        \item[For a current source:] $i = \SI{0}{\ampere}$, hence we can treat it as an open circuit.
+    \end{description}
+\end{definition}
+\subsubsection{Equivalent Sources}
+To determine the equivalent voltage or current source between two nodes, we must
+turn on each source in the circuit one by one, and calculate the voltage or current
+between those nodes.
+The equivalent voltage or current is equal to the sum of contributions from each source.
+\subsubsection{Equivalent Resistance}
+The equivalent resistance is determined by turning off all sources and calculating the
+equivalent resistance between the two nodes.
 \subsection{Maximum Power Transfer}
 In the circuit shown below, the maximum power transfer to the load is given by
 \begin{equation*}
@@ -485,8 +425,7 @@ where $R_L = R_{Th}$.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{max_power_transfer}
-    \caption{Power Transfer in a Thévenin Model.}
-    % \label{}
+    \caption{Power transfer in a Thévenin model.}
 \end{figure}
 \newpage
 \section{Inductors and Capacitors}
@@ -558,7 +497,7 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rc_natural}
-        \caption{RC Circuit.}
+        \caption{RC circuit.}
         % \label{}
     \end{figure}
     By solving this differential equation, we can determine the natural response of a
@@ -569,7 +508,7 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rc_natural_plot}
-        \caption{Natural Response of a RC Circuit.}
+        \caption{Natural response of a RC circuit.}
         % \label{}
     \end{figure}
 \end{definition}
@@ -591,7 +530,7 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rl_natural}
-        \caption{RL Circuit.}
+        \caption{RL circuit.}
         % \label{}
     \end{figure}
     By solving this differential equation, we can determine the natural response of a
@@ -602,7 +541,7 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rl_natural_plot}
-        \caption{Natural Response of a RL Circuit.}
+        \caption{Natural response of a RL circuit.}
         % \label{}
     \end{figure}
 \end{definition}
@@ -625,7 +564,7 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rc_step}
-        \caption{RC Circuit.}
+        \caption{RC circuit.}
         % \label{}
     \end{figure}
     By solving this differential equation, we can determine the step response of a
@@ -636,10 +575,10 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rc_step_plot}
-        \caption{Step Response of a RC Circuit.}
+        \caption{Step response of a RC circuit.}
         % \label{}
     \end{figure}
-    The voltage at $t=\tau$ is equal to
+    The voltage at $t = \tau$ is equal to
     \begin{align*}
         v(\tau) & = \left(1 - \e^{-1}\right)I_sR + V_0 \\
                 & \approx 0.632I_sR + V_0
@@ -653,7 +592,7 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rl_step}
-        \caption{RL Circuit.}
+        \caption{RL circuit.}
         % \label{}
     \end{figure}
     By solving this differential equation, we can determine the step response of a
@@ -664,10 +603,10 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rl_step_plot}
-        \caption{Step Response of a RL Circuit.}
+        \caption{Step response of a RL circuit.}
         % \label{}
     \end{figure}
-    The current at $t=\tau$ is equal to
+    The current at $t = \tau$ is equal to
     \begin{align*}
         i(\tau) & = \left( 1 - \e^{-1} \right)\frac{V_s}{R} + I_0 \\
                 & \approx 0.632\frac{V_s}{R} + I_0
@@ -702,14 +641,14 @@ where $R_L = R_{Th}$.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{operational_amplifier}
-        \caption{Operational Amplifier Circuit Symbol.}
+        \caption{Operational amplifier circuit symbol.}
         % \label{}
     \end{figure}
     \begin{description}
-        \item[$v_p$] non-inverting input
-        \item[$v_n$] inverting input
-        \item[$V_{CC}$] positive power supply
-        \item[$V_{EE}$] negative power supply
+        \item[$v_p$.] non-inverting input
+        \item[$v_n$.] inverting input
+        \item[$V_{CC}$.] positive power supply
+        \item[$V_{EE}$.] negative power supply
     \end{description}
 \end{definition}
 \subsection{Golden Rules for Op Amps}
@@ -727,8 +666,7 @@ Using the golden rules above, the following circuits can be constructed.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{inverting_amplifier}
-    \caption{Inverting Amplifier.}
-    % \label{}
+    \caption{Inverting amplifier.}
 \end{figure}
 \subsubsection{Non-Inverting Amplifier}
 \begin{equation*}
@@ -737,8 +675,7 @@ Using the golden rules above, the following circuits can be constructed.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{non_inverting_amplifier}
-    \caption{Non-Inverting Amplifier.}
-    % \label{}
+    \caption{Non-inverting amplifier.}
 \end{figure}
 \subsubsection{Voltage Follower}
 \begin{equation*}
@@ -747,8 +684,7 @@ Using the golden rules above, the following circuits can be constructed.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{voltage_follower}
-    \caption{Voltage Follower.}
-    % \label{}
+    \caption{Voltage follower.}
 \end{figure}
 \subsubsection{Inverting Summing Amplifier}
 \begin{equation*}
@@ -758,8 +694,7 @@ where $R_f$ is the feedback resistor.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{inverting_summing_amplifier}
-    \caption{Inverting Summing Amplifier.}
-    % \label{}
+    \caption{Inverting summing amplifier.}
 \end{figure}
 \subsubsection{Difference Amplifier}
 \begin{equation*}
@@ -769,8 +704,7 @@ where the ratio of $\displaystyle \frac{R_2}{R_1}$ must be equal on both legs.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{difference_amplifier}
-    \caption{Difference Amplifier.}
-    % \label{}
+    \caption{Difference amplifier.}
 \end{figure}
 \subsection{Designing Op Amps}
 When designed op amps, it is important to choose resistors in the $\qtyrange{1}{100}{\kilo\ohm}$
@@ -783,8 +717,7 @@ range, to prevent damage to the internal resistance of an op amp, and to avoid e
 \begin{figure}[H]
     \centering
     \includegraphics[height = 6cm, keepaspectratio = true]{sinusoidal_signal}
-    \caption{Sinusoidal Signals.}
-    % \label{}
+    \caption{Sinusoidal signals.}
 \end{figure}
 \subsection{Properties of Sinusoidal Signals}
 These signals are described using cosine functions in the following form.
@@ -853,7 +786,7 @@ The following equations relate the angular frequency, period and frequency toget
     \begin{equation*}
         \e^{jt} = \cos{\left( t \right)} + j \sin{\left( t \right)}
     \end{equation*}
-    where $j^2=-1$ and $t$ is the angle in radians.
+    where $j^2 = -1$ and $t$ is the angle in radians.
 \end{theorem}
 \subsection{Phasors}
 \begin{definition}
@@ -1028,31 +961,106 @@ Frequency response is a measure of the magnitude and phase of a system as a func
     The phase of the transfer function $\arg{\left( \symbf{H} \right)}$ measures the phase shift of a system.
 \end{definition}
 \subsection{Bode Plots}
-A Bode plot is a graph of the frequency response of a system. 
-In this plot, the frequency (in \si{\hertz}), is plotted on the horizontal axis using a logarithmic scale.
+A Bode plot is a graph of the frequency response of a system.
+In this plot, the frequency (in \si{\hertz}) is plotted on the horizontal axis using a logarithmic scale.
 \begin{definition}[\SI{3}{\decibel} Point]
-    The frequency (in \si{\hertz}) at which the transfer function equals
+    The frequency $f$ at which the transfer function equals
     \begin{equation*}
         \symbf{H}(2\pi f) = \frac{1}{\sqrt{2}}\phase{\SI{-45}{\degree}}
     \end{equation*}
     is known as the break frequency, corner frequency,
-    \SI{3}{\decibel} frequency, or half power point. 
+    \SI{3}{\decibel} frequency, or half power point.
 
-    This is because the gain at this point is equal to $\SI{0.707} \approx \SI{-3.01}{\decibel}$, 
+    This is because the gain at this point is equal to $\SI{0.707} \approx \SI{-3.01}{\decibel}$,
     and the angle \SI{-45}{\degree} is the halfway point between \SI{0}{\degree} and \SI{-90}{\degree}.
 \end{definition}
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 12cm, keepaspectratio = true]{bode_plot}
+    \includegraphics[width = \linewidth, keepaspectratio = true]{bode_plot}
     \caption{Bode plot of gain and phase shift.}
-    % \label{}
 \end{figure}
 \newpage
 \section{Filters and Rectifiers}
 \begin{definition}[Filters]
-    A filter is designed to allow certain ranges of frequencies to pass, 
+    A filter is designed to allow certain ranges of frequencies to pass,
     while other ranges of frequencies are stopped.
 \end{definition}
+\begin{definition}[Cut-off Frequncy]
+    The cut-off (angular) frequency $\omega_c$ for a low pass or high pass filter is given by
+    \begin{equation*}
+        \omega_c = \frac{1}{RC}.
+    \end{equation*}
+\end{definition}
+\subsection{Common Filters}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 8cm, keepaspectratio = true]{filters}
+    \caption{Different types of filters.}
+\end{figure}
+\subsection{Passive Filters}
+Passive filters are circuits containing only passive elements
+(such as resistors, capacitors and inductors),
+which filter unwanted parts of a signal.
+Passive filters are affected by loading, such that a varied load will
+affect the cut-off frequency.
+\subsubsection{Low Pass Filter}
+The following low pass filter has the following transfer function.
+\begin{equation*}
+    \symbf{H}(\omega) = \frac{\omega_c}{j\omega + \omega_c}
+\end{equation*}
+where $\omega_c = \frac{1}{RC}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{passive_low_pass_filter}
+    \caption{Passive low pass filter.}
+    % \label{}
+\end{figure}
+\subsubsection{High Pass Filter}
+The following high pass filter has the following transfer function.
+\begin{equation*}
+    \symbf{H}(\omega) = \frac{j\omega}{j\omega + \omega_c}
+\end{equation*}
+where $\omega_c = \frac{1}{RC}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{passive_high_pass_filter}
+    \caption{Passive high pass filter}
+    % \label{}
+\end{figure}
+\subsection{Active Filters}
+Active filters are circuits containing active elements (such as op amps),
+which filter unwanted parts of a signal.
+Active filters are not affected by loading, such that a varied load will
+not affect the cut-off frequency.
+
+For the following active filters, the gain component is given by
+\begin{equation*}
+    -\frac{R_2}{R_1}
+\end{equation*}
+\subsubsection{Low Pass Filter}
+The following low pass filter has the following transfer function.
+\begin{equation*}
+    \symbf{H}(\omega) = -\frac{R_2}{R_1}\frac{\omega_c}{j\omega + \omega_c}
+\end{equation*}
+where $\omega_c = \frac{1}{R_2C}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{passive_low_pass_filter}
+    \caption{Active low pass filter.}
+    % \label{}
+\end{figure}
+\subsubsection{High Pass Filter}
+The following high pass filter has the following transfer function.
+\begin{equation*}
+    \symbf{H}(\omega) = -\frac{R_2}{R_1}\frac{j\omega}{j\omega + \omega_c}
+\end{equation*}
+where $\omega_c = \frac{1}{R_1C}$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{passive_high_pass_filter}
+    \caption{Active high pass filter}
+    % \label{}
+\end{figure}
 \newpage
 \section{Zener Diodes and Voltage Regulators}
 \newpage

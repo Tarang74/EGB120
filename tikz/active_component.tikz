@@ -11,8 +11,8 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \draw (0, 0) to[short, *-] (1, 0) to[generic, name = component, i=$i$, v^<=$v$] (1, 3) to[short, -*] (0, 3);
-    % Power line
-    \draw[power line] (component.south) to[out = 0, in = 180] ++(0.6, 0.5) node[anchor = west] {$p=-vi$};
+    \draw (0, 0) to[generic, name = component, i<=$i$, v=$v$, o-o] (3, 0);
+    % Power snake line
+    \draw[power line] (component.north) to[out = 90, in = -90] ++(0.6, 0.5) node[anchor = south] {$p=-vi$};
 \end{circuitikz}
 \end{document}
