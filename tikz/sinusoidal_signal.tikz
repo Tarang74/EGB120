@@ -1,0 +1,57 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{colormaps}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        xtick = {0, pi/2, pi, 3*pi/2, 2*pi, 5*pi/2, 3*pi},
+		ytick = {-3, -1.5, 0, 1.5, 3},
+        %
+        axis lines = center,
+        xmin = 0, xmax = 3*pi,
+        ymin = -3.2, ymax = 3.2,
+        %
+        axis equal image,
+        %
+        xticklabels = {$0$, $ $, $ $, $ $, $ $},
+        yticklabels = {$ $, $ $, $0$, $ $, $ $},
+        %
+        ylabel near ticks,
+        %
+        xlabel = {$t$},
+        ylabel = {$v(t)$}
+    ]
+        %
+        \addplot+ [domain=0:3*pi, samples=300, mark=none] {3*cos(deg(x))};  
+        \addplot+ [domain=0:3*pi, samples=300, mark=none, color=red, dashed] {3*cos(deg(x - pi/2))};
+        % Period
+        \coordinate (leftperiod) at (0, 3) {};
+        \coordinate (rightperiod) at (2*pi, 3) {};
+        \path (leftperiod) to node (period) {$T$} (rightperiod);
+        \draw[<-] (leftperiod) -- (period);
+        \draw[->] (period) -- (rightperiod);
+        % Phase
+        \coordinate (leftphase) at (pi, -3) {};
+        \coordinate (rightphase) at (3*pi/2, -3) {};
+        \path (leftphase) to node (phase) {$\phi$} (rightphase);
+        \draw[<-] (leftphase) -- (phase);
+        \draw[->] (phase) -- (rightphase);
+        % Magnitude
+        \coordinate (bottommagnitude) at (2*pi, 0) {};
+        \coordinate (topmagnitude) at (2*pi, 3) {};
+        \path (bottommagnitude) to node (magnitude) {$V_{\mathrm{m}}$} (topmagnitude);
+        \draw[<-] (bottommagnitude) -- (magnitude);
+        \draw[->] (magnitude) -- (topmagnitude);
+    \end{axis}
+\end{tikzpicture}
+\end{document}

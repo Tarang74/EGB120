@@ -1,13 +1,1 @@
-*.aux
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
-*.lof
-*.log
-*.synctex(busy)
-*.synctex.gz
-*.toc
-*.vscode
-*.xdv
-*.zip
+C:/Users/tjana/.dotfiles/LaTeX/.gitignore

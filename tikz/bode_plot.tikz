@@ -1,0 +1,69 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{siunitx}
+
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta, matrix}
+\usepgfplotslibrary{colormaps}
+\usepgfplotslibrary{groupplots}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\def\axisdefaultwidth{8cm}
+\def\axisdefaultheight{4cm}
+\pgfplotsset{every axis/.style={scale only axis}}
+
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[
+        name = plot1,
+        xmode = log,
+        xticklabels = \empty,
+        ytick = {-20, -15, -10, -5, 0},
+        %
+        extra y tick style = {yticklabel = {$-3$}},
+        extra y ticks = {20*log10(1/sqrt(2))},
+        %
+        xmin = 100, xmax = 100000,
+        ymin = -20, ymax = 0,
+        %
+        % xlabel = {Frequency (\si{\hertz})},
+        ylabel = {Gain (\si{\decibel})},
+        %
+        grid = both,
+        grid style = {line width = .1pt, draw = gray!10},
+        major grid style = {line width = .2pt, draw = black!30},
+        minor tick num = 4
+    ]
+        \addplot+ [domain=100:100000, samples=300, mark=none] {20*log10(10000/(sqrt(10000^2 + x^2)))};
+        \coordinate (breakfreqtop) at (10000, {20*log10(1/sqrt(2))}) {};
+    \end{axis}
+    \begin{axis}[
+        name = plot2, 
+        at = {($(plot1.south)-(0, 1cm)$)},
+        anchor = north,
+        xmode = log,
+        xtick = {100, 1000, 10000, 100000},
+        ytick = {-90, -75, -60, -45, -30, -15, 0},
+        %
+        xmin = 100, xmax = 100000,
+        ymin = -90, ymax = 0,
+        %
+        xlabel = {Frequency (\si{\hertz})},
+        ylabel = {Phase Shift (\si{\degree})},
+        %
+        grid = both,
+        grid style = {line width = .1pt, draw = gray!10},
+        major grid style = {line width = .2pt, draw = black!30},
+        minor tick num = 4
+    ]
+        \addplot+ [domain=100:100000, samples=300, mark=none] {atan(-x/10000)};
+        \coordinate (breakfreqbottom) at (10000, {-45}) {};
+    \end{axis}
+    \draw[dashed, red] (breakfreqtop) -- (breakfreqbottom);
+\end{tikzpicture}
+\end{document}

@@ -62,26 +62,26 @@
     \centering
     \begin{tabular}{c | >{\centering}p{0.5\textwidth} | c c}
         \toprule
-        \textbf{Name} & \textbf{Definition} & \textbf{Symbol} & \textbf{Unit} \\
+        \textbf{Name} & \textbf{Definition}                                                                                                      & \textbf{Symbol}           & \textbf{Unit} \\
         \midrule
-        Charge & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
-        & $q$ & Coulomb (\unit{\coulomb}) \\
+        Charge        & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
+                      & $q$                                                                                                                      & Coulomb (\unit{\coulomb})                 \\
         \hline
-        Current & $i=\dv{q}{t}\iff\SI{1}{\ampere}=\SI{1}{\coulomb\per\s}$
-        & $i$ & Ampere (\unit{\ampere}) \\
+        Current       & $i=\dv{q}{t}\iff\SI{1}{\ampere}=\SI{1}{\coulomb\per\s}$
+                      & $i$                                                                                                                      & Ampere (\unit{\ampere})                   \\
         \hline
-        Voltage & $v=\dv{w}{q}\iff\SI{1}{\volt}=\SI{1}{\joule\per\coulomb}$
-        & $v$ & Volt (\unit{\volt}) \\
+        Voltage       & $v=\dv{w}{q}\iff\SI{1}{\volt}=\SI{1}{\joule\per\coulomb}$
+                      & $v$                                                                                                                      & Volt (\unit{\volt})                       \\
         \hline
-        Power & $p=\dv{w}{t}\iff\SI{1}{\watt}=\SI{1}{\joule\per\s}$
-        & $p$ & Watt (\unit{\watt}) \\
+        Power         & $p=\dv{w}{t}\iff\SI{1}{\watt}=\SI{1}{\joule\per\s}$
+                      & $p$                                                                                                                      & Watt (\unit{\watt})                       \\
         \bottomrule
     \end{tabular}
 \end{table}
 \endgroup
 \begin{description}
     \item[Charge in an electron.] $q=\SI{1.6022e-19}{\coulomb}$.
-    \item[Electric Power.] $p=\dv{w}{t}=vi$. 
+    \item[Electric Power.] $p=\dv{w}{t}=vi$.
 \end{description}
 \subsection{Passive Sign Convention}
 \begin{figure}[H]
@@ -111,10 +111,10 @@
 \end{theorem}
 \subsection{Circuits and Sources}
 \begin{definition}[Circuits]
-    A circuit is a mathematical model that approximates a real system. It is built from ideal circuit elements connected by ideal wires. 
+    A circuit is a mathematical model that approximates a real system. It is built from ideal circuit elements connected by ideal wires.
 \end{definition}
 \begin{definition}[Voltage Source]
-    Produces or dissipates power at a specified voltage with whatever current is required. 
+    Produces or dissipates power at a specified voltage with whatever current is required.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -122,7 +122,7 @@
     \caption{Voltage Source -- $v$ is specified, $i$ varies depending on circuit element $A$.}
 \end{figure}
 \begin{definition}[Current Source]
-    Produces or dissipates power at a specified current with whatever voltage is required. 
+    Produces or dissipates power at a specified current with whatever voltage is required.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -184,7 +184,7 @@
 \end{theorem}
 \begin{corollary}[Power dissipated by a resistor]
     \begin{equation*}
-	p = vi = i^2 R = \frac{v^2}{R}
+        p = vi = i^2 R = \frac{v^2}{R}
     \end{equation*}
 \end{corollary}
 \newpage
@@ -216,13 +216,13 @@
     \centering
     \begin{tabular}{c | c c}
         \toprule
-        \textbf{Element} &  \textbf{Series} & \textbf{Parallel} \\
+        \textbf{Element} & \textbf{Series}                                                & \textbf{Parallel}                                              \\
         \midrule
-        Current Source & $\displaystyle i_{eq} = i_{k\geq1}$             & $i_{eq} = \displaystyle \sum_{k\geq1} i_k$ \\
-        Voltage Source & $\displaystyle v_{eq} = \sum_{k\geq1} v_k$                     & $\displaystyle v_{eq} = v_{k\geq1}$ \\
-        Resistor       & $\displaystyle R_{eq} = \sum_{k\geq1} R_k$                     & $\displaystyle \frac{1}{R_{eq}} = \sum_{k\geq1} \frac{1}{R_k}$ \\
-        Inductor       & $\displaystyle L_{eq} = \sum_{k\geq1} L_k$                     & $\displaystyle \frac{1}{L_{eq}} = \sum_{k\geq1} \frac{1}{L_k}$ \\
-        Capacitor      & $\displaystyle \frac{1}{C_{eq}} = \sum_{k\geq1} \frac{1}{C_k}$ & $\displaystyle C_{eq} = \sum_{k\geq1} C_k$ \\
+        Current Source   & $\displaystyle i_{eq} = i_{k\geq1}$                            & $i_{eq} = \displaystyle \sum_{k\geq1} i_k$                     \\
+        Voltage Source   & $\displaystyle v_{eq} = \sum_{k\geq1} v_k$                     & $\displaystyle v_{eq} = v_{k\geq1}$                            \\
+        Resistor         & $\displaystyle R_{eq} = \sum_{k\geq1} R_k$                     & $\displaystyle \frac{1}{R_{eq}} = \sum_{k\geq1} \frac{1}{R_k}$ \\
+        Inductor         & $\displaystyle L_{eq} = \sum_{k\geq1} L_k$                     & $\displaystyle \frac{1}{L_{eq}} = \sum_{k\geq1} \frac{1}{L_k}$ \\
+        Capacitor        & $\displaystyle \frac{1}{C_{eq}} = \sum_{k\geq1} \frac{1}{C_k}$ & $\displaystyle C_{eq} = \sum_{k\geq1} C_k$                     \\
         \bottomrule
     \end{tabular}
     \caption{Equivalent values for various components connected in series and parallel.}
@@ -243,7 +243,7 @@ These equations can be used to simplify a complex circuit.
 %     \begin{equation*}
 %         v_{eq} = v_1 + v_2 + \cdots + v_n
 %     \end{equation*}
-    
+
 %     As the current through resistors in series remains the same, using KVL we have
 %     \begin{align*}
 %         v - iR_1 - iR_2 - \cdots - iR_n &= 0 \\
@@ -274,8 +274,8 @@ These equations can be used to simplify a complex circuit.
     \end{equation*}
     Therefore the voltage drop in any resistor is
     \begin{align*}
-        v_k &= i R_k \\
-        v_k &= \frac{v}{R_{eq}} R_k
+        v_k & = i R_k                \\
+        v_k & = \frac{v}{R_{eq}} R_k
     \end{align*}
 \end{proof}
 \begin{definition}[Current Divider]
@@ -295,20 +295,20 @@ These equations can be used to simplify a complex circuit.
 \begin{proof}
     Using KCL we have
     \begin{align*}
-        i &= \sum_{k\geq1} i_k \\
-        i &= \sum_{k\geq1} \frac{v}{R_k} \\
-        i &= \frac{v}{R_{eq}}
+        i & = \sum_{k\geq1} i_k           \\
+        i & = \sum_{k\geq1} \frac{v}{R_k} \\
+        i & = \frac{v}{R_{eq}}
     \end{align*}
     Solving for $v$ gives
     \begin{align*}
-        v &= i R_{eq} 
+        v & = i R_{eq}
     \end{align*}
     Hence the current through any resistor in parallel is given by
     \begin{align*}
         i_k = \frac{v}{R_k} = \frac{iR_{eq}}{R_k}
     \end{align*}
 \end{proof}
-\newpage 
+\newpage
 \section{Diodes}
 \begin{definition}[Diode]
     A diode is a semiconductor component in which current flows only in one direction. A diodes requires a voltage to start the flow of current in the forward direction.
@@ -352,11 +352,11 @@ A diode has a non-linear characteristic curve, hence it is often simplified.
     \begin{equation*}
         i_D = I_S \exp{\left( \frac{v_D}{0.026} \right)}
     \end{equation*}
-    where $I_S$ is the saturation current and $0.026$ is the thermal voltage. 
+    where $I_S$ is the saturation current and $0.026$ is the thermal voltage.
 \end{theorem}
 \subsection{Operating Points and Load Lines}
 \begin{definition}[Operating Point]
-    The operating point for two elements can be found by determining the intersection 
+    The operating point for two elements can be found by determining the intersection
     of the two V-I characteristic curves.
 \end{definition}
 \begin{definition}[Load Lines]
@@ -375,7 +375,7 @@ the load line is given by the equation
 \begin{equation*}
     i(v) = -\frac{i_{sc}}{v_{oc}} + i_{sc}
 \end{equation*}
-where the short-circuit current is the current through the non-linear component, and the open circuit voltage is the voltage across the 
+where the short-circuit current is the current through the non-linear component, and the open circuit voltage is the voltage across the
 open circuit nodes of the component.
 \begin{figure}[H]
     \centering
@@ -426,7 +426,7 @@ If the current source is between two meshes, then we must use a supermesh.
 \newpage
 \section{Source Transformations}
 Real sources often have many limitations in terms of voltage and current delivery.
-The most commonly modelled, and most useful for linear circuit theory, is some form of 
+The most commonly modelled, and most useful for linear circuit theory, is some form of
 resistance associated with the source.
 \subsection{Thévenin Equivalent Circuit}
 \begin{definition}
@@ -445,7 +445,7 @@ resistance associated with the source.
 \end{definition}
 \subsection{Norton Equivalent Circuit}
 \begin{definition}
-    Similar to the Thévenin equivalent model, we can use a current source with 
+    Similar to the Thévenin equivalent model, we can use a current source with
     a resistor in parallel to model the same circuit.
     \begin{figure}[H]
         \centering
@@ -456,12 +456,12 @@ resistance associated with the source.
     This circuit has the following properties:
     \begin{description}
         \item[Open circuit voltage.] $v_{oc} = i_{sc}R_{p}$
-        \item[Short circuit current.] $i_{sc} = i_{sc}$ 
+        \item[Short circuit current.] $i_{sc} = i_{sc}$
     \end{description}
 \end{definition}
 \subsection{Source Transformations}
-A source transformation is the process of simplifying a circuit by transforming 
-voltage sources into current sources, and vice versa, using Thévenin's Theorem and Norton's 
+A source transformation is the process of simplifying a circuit by transforming
+voltage sources into current sources, and vice versa, using Thévenin's Theorem and Norton's
 Theorem.
 \begin{theorem}
     Thévenin and Norton equivalent circuits have the following relationship
@@ -492,7 +492,7 @@ where $R_L = R_{Th}$.
 \section{Inductors and Capacitors}
 \subsection{Capacitors}
 \begin{definition}
-    Capacitors store electrical energy as a voltage. The ratio of voltage 
+    Capacitors store electrical energy as a voltage. The ratio of voltage
     to charge across a capacitor is its capacitance, measured in Farads (\si{\farad}).
     \begin{equation*}
         q = C v
@@ -516,7 +516,7 @@ where $R_L = R_{Th}$.
 \end{theorem}
 \subsection{Inductors}
 \begin{definition}
-    Inductors create voltage to oppose a change in current. The ratio of voltage 
+    Inductors create voltage to oppose a change in current. The ratio of voltage
     to the rate of change of current through an inductor is its inductance, measured in Henrys (\si{\henry}).
 \end{definition}
 \begin{definition}[VI Relationship]
@@ -539,14 +539,14 @@ where $R_L = R_{Th}$.
 \section{RC and RL Circuits}
 \subsection{Switches}
 \begin{definition}
-    A switch will engage part of a circuit at a specified point in time, as indicated 
+    A switch will engage part of a circuit at a specified point in time, as indicated
     on the circuit diagram.
 \end{definition}
 \begin{definition}[Poles]
     ``Pole'' refers to the number of circuits one switch can control.
 \end{definition}
 \begin{definition}[Throw]
-    ``Throw'' refers to the number of output connections each switch 
+    ``Throw'' refers to the number of output connections each switch
     pole can connect its input to.
 \end{definition}
 \subsection{Natural Response}
@@ -561,7 +561,7 @@ where $R_L = R_{Th}$.
         \caption{RC Circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the natural response of a 
+    By solving this differential equation, we can determine the natural response of a
     RC circuit.
     \begin{equation*}
         v(t) = v(0)\exp{\left( -\frac{t}{RC} \right)}
@@ -581,7 +581,7 @@ where $R_L = R_{Th}$.
     The voltage at this time is equal to
     \begin{equation*}
         \e^{-1}v(0) \approx 0.368v(0)
-    \end{equation*} 
+    \end{equation*}
 \end{definition}
 \begin{definition}[RL Circuit Natural Response]
     For the circuit shown below, using mesh analysis gives the following relationship
@@ -594,11 +594,11 @@ where $R_L = R_{Th}$.
         \caption{RL Circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the natural response of a 
+    By solving this differential equation, we can determine the natural response of a
     RL circuit.
     \begin{equation*}
         i(t) = i(0)\exp{\left( -\frac{t}{\frac{1}{R}L} \right)}
-    \end{equation*} 
+    \end{equation*}
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rl_natural_plot}
@@ -614,7 +614,7 @@ where $R_L = R_{Th}$.
     The current at this time is equal to
     \begin{equation*}
         \e^{-1}i(0) \approx 0.368i(0)
-    \end{equation*} 
+    \end{equation*}
 \end{definition}
 \subsection{Step Response}
 \begin{definition}[RC Circuit Step Response]
@@ -628,7 +628,7 @@ where $R_L = R_{Th}$.
         \caption{RC Circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the step response of a 
+    By solving this differential equation, we can determine the step response of a
     RC circuit.
     \begin{equation*}
         v(t) = I_sR + \left(V_0 - I_sR\right) \exp{\left( -\frac{t}{RC} \right)}
@@ -641,9 +641,9 @@ where $R_L = R_{Th}$.
     \end{figure}
     The voltage at $t=\tau$ is equal to
     \begin{align*}
-        v(\tau) &= \left(1 - \e^{-1}\right)I_sR + V_0 \\
-        &\approx 0.632I_sR + V_0
-    \end{align*} 
+        v(\tau) & = \left(1 - \e^{-1}\right)I_sR + V_0 \\
+                & \approx 0.632I_sR + V_0
+    \end{align*}
 \end{definition}
 \begin{definition}[RL Circuit Step Response]
     For the circuit shown below, using mesh analysis gives the following relationship
@@ -656,11 +656,11 @@ where $R_L = R_{Th}$.
         \caption{RL Circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the step response of a 
+    By solving this differential equation, we can determine the step response of a
     RL circuit.
     \begin{equation*}
         i(t) = \frac{V_s}{R} + \left(I_0 - \frac{V_s}{R}\right)\exp{\left( -\frac{t}{\frac{1}{R}L} \right)}
-    \end{equation*} 
+    \end{equation*}
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{rl_step_plot}
@@ -669,14 +669,14 @@ where $R_L = R_{Th}$.
     \end{figure}
     The current at $t=\tau$ is equal to
     \begin{align*}
-        i(\tau) &= \left( 1 - \e^{-1} \right)\frac{V_s}{R} + I_0 \\
-        &\approx 0.632\frac{V_s}{R} + I_0
-    \end{align*} 
+        i(\tau) & = \left( 1 - \e^{-1} \right)\frac{V_s}{R} + I_0 \\
+                & \approx 0.632\frac{V_s}{R} + I_0
+    \end{align*}
 \end{definition}
 \newpage
 \section{Operational Amplifiers}
 \begin{definition}[Amplifier]
-    An amplifier is a device for increasing the power of a signal through an external energy source. 
+    An amplifier is a device for increasing the power of a signal through an external energy source.
     In an electronic amplifier, the ``signal'' is usually a voltage or current.
 \end{definition}
 \begin{definition}[Gain]
@@ -686,7 +686,7 @@ where $R_L = R_{Th}$.
     \end{equation*}
 \end{definition}
 \begin{definition}[Operational Amplifier]
-    An operational amplifier (op amp) amplifies the voltage difference between its input terminals. 
+    An operational amplifier (op amp) amplifies the voltage difference between its input terminals.
     Operational amplifiers require a power supply to amplify voltage.
     In an operational amplifier:
     \begin{enumerate}
@@ -695,9 +695,9 @@ where $R_L = R_{Th}$.
     \end{enumerate}
     The output voltage has the following possibilities:
     \begin{enumerate}
-        \item If $v_p - v_n > 0$, $v_{out} = V_{CC}$. 
-        \item If $v_p - v_n < 0$, $v_{out} = V_{EE}$. 
-        \item If $v_p - v_n = 0$, $v_{out} = 0$. 
+        \item If $v_p - v_n > 0$, $v_{out} = V_{CC}$.
+        \item If $v_p - v_n < 0$, $v_{out} = V_{EE}$.
+        \item If $v_p - v_n = 0$, $v_{out} = 0$.
     \end{enumerate}
     \begin{figure}[H]
         \centering
@@ -719,7 +719,7 @@ where $R_L = R_{Th}$.
 \end{enumerate}
 Note the second rule only applies when the op amp has external negative feedback.
 \subsection{Op Amp Analysis}
-Using the golden rules above, the following circuits can be constructed. 
+Using the golden rules above, the following circuits can be constructed.
 \subsubsection{Inverting Amplifier}
 \begin{equation*}
     v_{out} = -\frac{R_2}{R_1}v_{in}
@@ -773,22 +773,28 @@ where the ratio of $\displaystyle \frac{R_2}{R_1}$ must be equal on both legs.
     % \label{}
 \end{figure}
 \subsection{Designing Op Amps}
-% When designed op amps, it is important to choose resistors in the $\qtyrange{1}{100}{\kilo\ohm}$ 
-range, to prevent a large output current.
+When designed op amps, it is important to choose resistors in the $\qtyrange{1}{100}{\kilo\ohm}$
+range, to prevent damage to the internal resistance of an op amp, and to avoid excessive output currents.
 \newpage
 \section{Sinusoidal Signals}
 \begin{definition}
-    A sinusoidal signal is commonly referred to as Alternating Current or AC. 
+    A sinusoidal signal is commonly referred to as Alternating Current or AC.
 \end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 6cm, keepaspectratio = true]{sinusoidal_signal}
+    \caption{Sinusoidal Signals.}
+    % \label{}
+\end{figure}
 \subsection{Properties of Sinusoidal Signals}
 These signals are described using cosine functions in the following form.
 \begin{equation*}
-    v = V_{\mathrm{m}} \cos{\left( \omega t + \phi\si{\degree} \right)}
+    v(t) = V_{\mathrm{m}} \cos{\left( \omega t + \phi\si{\degree} \right)}
 \end{equation*}
 \subsubsection{Magnitude}
 \begin{definition}
-    The magnitude of a signal is the greatest distance from the line of oscillation, commonly zero, 
-    to the peak of the signal. 
+    The magnitude of a signal is the greatest distance from the line of oscillation, commonly zero,
+    to the peak of the signal.
 \end{definition}
 \subsubsection{Angular Frequency}
 \begin{definition}
@@ -800,16 +806,16 @@ These signals are described using cosine functions in the following form.
     The period of a signal $T$ is its cycle time in seconds (\si{\second}).
 \end{definition}
 \begin{definition}[Frequency]
-    The frequency of a signal $f$ is the number of cycles per second, or 
+    The frequency of a signal $f$ is the number of cycles per second, or
     the inverse of the period. The frequency is measured in Hertz (\si{\hertz}).
 \end{definition}
 The following equations relate the angular frequency, period and frequency together.
 \begin{align*}
-    f = \frac{1}{T} & & T = \frac{2\pi}{\omega} & & \omega = 2 \pi f
+    f = \frac{1}{T} &  & T = \frac{2\pi}{\omega} &  & \omega = 2 \pi f
 \end{align*}
 \subsubsection{Phase}
 \begin{definition}
-    The phase $\phi$ of a signal is the position of a signal relative to a zero phase signal, 
+    The phase $\phi$ of a signal is the position of a signal relative to a zero phase signal,
     measured in degrees (\si{\degree}). A \textbf{positive} phase corresponds to a ``leading''
     signal, and a \textbf{negative} phase corresponds to a ``lagging'' signal.
     The phase can be determined by calculating the difference in time $\tau$ between two signals.
@@ -819,10 +825,10 @@ The following equations relate the angular frequency, period and frequency toget
 \end{definition}
 \subsection{Root Mean Square}
 \begin{definition}
-    Root mean square (rms) is a method of obtaining a useful average of a signal that is symmetric about 
-    the horizontal axis. It is defined as the square \textbf{root} of the \textbf{mean} value of the 
+    Root mean square (rms) is a method of obtaining a useful average of a signal that is symmetric about
+    the horizontal axis. It is defined as the square \textbf{root} of the \textbf{mean} value of the
     function \textbf{squared}.
-    For a sine wave  
+    For a sine wave
     \begin{equation*}
         V_{\mathrm{rms}} = \frac{V_{\mathrm{m}}}{\sqrt{2}}
     \end{equation*}
@@ -832,10 +838,10 @@ The following equations relate the angular frequency, period and frequency toget
 \begin{definition}
     In a resistive load, the power can be determined using the rms current and rms voltage.
     \begin{align*}
-        p &= vi \\
-        p &= \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
-        p &= 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)} \\
-        p &= V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
+        p & = vi                                                                                                                       \\
+        p & = \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
+        p & = 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)}                                                  \\
+        p & = V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
     \end{align*}
     The average power is given by
     \begin{equation*}
@@ -852,18 +858,18 @@ The following equations relate the angular frequency, period and frequency toget
 \subsection{Phasors}
 \begin{definition}
     To assist in AC analysis, we can express the magnitude and phase of a sinusoidal signal
-    as a phasor. 
+    as a phasor.
 \end{definition}
 \subsection{Phasor Transforms}
 \begin{definition}
     A sinusoidal signal can be converted to a phasor using the Phasor Transform
     \begin{align*}
-        \symbf{V} &= \mathscr{P}\left\{ v(t) \right\} \\
-        &= \mathscr{P}\bigl\{ V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \bigr\} \\
-        &= V_{\mathrm{m}} \e^{j\phi}
+        \symbf{V} & = \mathscr{P}\left\{ v(t) \right\}                                              \\
+                  & = \mathscr{P}\bigl\{ V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \bigr\} \\
+                  & = V_{\mathrm{m}} \e^{j\phi}
     \end{align*}
     Here $\symbf{V}$ is the phase-domain representation of the
-    time-domain signal $v(t)$. 
+    time-domain signal $v(t)$.
     The magnitude and phase of a phasor can be used to represent a phasor in polar form
     \begin{equation*}
         \symbf{V} = V_{\mathrm{m}} \phase{\phi}
@@ -873,41 +879,39 @@ The following equations relate the angular frequency, period and frequency toget
 \begin{definition}
     A phasor can be converted back to a sinusoidal signal using the Inverse Phasor Transform
     \begin{align*}
-        v(t) &= \mathscr{P}^{-1}\left\{ \symbf{V} \right\} \\
-        &= \Re\left\{ \symbf{V} \e^{j\omega t} \right\} \\
-        &= \Re\left\{ V_{\mathrm{m}} \e^{j\phi} \e^{j\omega t} \right\} \\
-        &= V_{\mathrm{m}}\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
-        &= V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \\
+        v(t) & = \mathscr{P}^{-1}\left\{ \symbf{V} \right\}                             \\
+             & = \Re\left\{ \symbf{V} \e^{j\omega t} \right\}                           \\
+             & = \Re\left\{ V_{\mathrm{m}} \e^{j\phi} \e^{j\omega t} \right\}           \\
+             & = V_{\mathrm{m}}\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
+             & = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}                     \\
     \end{align*}
 \end{definition}
 \subsection{Phasor Calculations}
-As phasors are quantities with a magnitude and angle, they can be represented as complex numbers. 
+As phasors are quantities with a magnitude and angle, they can be represented as complex numbers.
 Using \hyperref[theorem:eulers_formula]{Theorem \ref{theorem:eulers_formula}}, we can represent a phasor in rectangular form
 \begin{equation*}
     \symbf{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
 \end{equation*}
 in polar form, the magnitude is given by
-\begin{align*}
-    \norm{\symbf{V}} &= \sqrt{\Re\left\{ \symbf{V} \right\}^2 + \Im\left\{ \symbf{V} \right\}^2} \\
-    &= V_{\mathrm{m}}
-\end{align*}
+\begin{equation*}
+    \norm{\symbf{V}} = V_{\mathrm{m}} = \sqrt{\Re\left\{ \symbf{V} \right\}^2 + \Im\left\{ \symbf{V} \right\}^2}
+\end{equation*}
 and the angle
-\begin{align*}
-    \arg{\left( \symbf{V} \right)} &= \arctan{\left( \frac{\Im\left\{ \symbf{V} \right\}}{\Re\left\{ \symbf{V} \right\}} \right)} \\
-    &= \phi 
-\end{align*}
+\begin{equation*}
+    \arg{\left( \symbf{V} \right)} = \phi = \arctan{\left( \frac{\Im\left\{ \symbf{V} \right\}}{\Re\left\{ \symbf{V} \right\}} \right)}
+\end{equation*}
 where $-\pi < \phi \leq \pi$.
 \subsubsection{Addition with Phasors}
 Phasors in rectangular form can be added using their real and imaginary parts.
 \begin{align*}
-    \symbf{A} + \symbf{B} &= \Re\left\{ \symbf{A} + \symbf{B} \right\} + \Im\left\{ \symbf{A} + \symbf{B} \right\} \\
-    &= \bigl( A_{\mathrm{m}}\cos{\left( \phi_1 \right)} + B_{\mathrm{m}}\cos{\left( \phi_2 \right)} \bigr) + j\bigl( A_{\mathrm{m}}\sin{\left( \phi_1 \right)} + B_{\mathrm{m}}\sin{\left( \phi_2 \right)} \bigr)
+    \symbf{A} + \symbf{B} & = \Re\left\{ \symbf{A} + \symbf{B} \right\} + \Im\left\{ \symbf{A} + \symbf{B} \right\}                                                                                                                      \\
+                          & = \bigl( A_{\mathrm{m}}\cos{\left( \phi_1 \right)} + B_{\mathrm{m}}\cos{\left( \phi_2 \right)} \bigr) + j\bigl( A_{\mathrm{m}}\sin{\left( \phi_1 \right)} + B_{\mathrm{m}}\sin{\left( \phi_2 \right)} \bigr)
 \end{align*}
 \subsubsection{Multiplication with Phasors}
 Phasors in polar form can be multiplied using their magnitudes and phases.
 \begin{align*}
-    \symbf{A} \symbf{B} &= \norm{\symbf{A}} \norm{\symbf{B}} \phase{\arg{\left( \symbf{A} \right)} + \arg{\left( \symbf{B} \right)}} \\
-    &= A_{\mathrm{m}} B_{\mathrm{m}} \phase{\phi_1 + \phi_2}
+    \symbf{A} \symbf{B} & = \norm{\symbf{A}} \norm{\symbf{B}} \phase{\arg{\left( \symbf{A} \right)} + \arg{\left( \symbf{B} \right)}} \\
+                        & = A_{\mathrm{m}} B_{\mathrm{m}} \phase{\phi_1 + \phi_2}
 \end{align*}
 \subsection{Circuit Analysis}
 \subsubsection{Phasor Relationship for Resistors}
@@ -917,14 +921,14 @@ Using a sinusoidal voltage
 \end{equation*}
 Ohm's Law gives:
 \begin{align*}
-    i &= \frac{v}{R} \\
-    &= \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)}
+    i & = \frac{v}{R}                                                   \\
+      & = \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)}
 \end{align*}
 Taking the Phasor Transform gives
 \begin{align*}
-    \mathscr{P}\left\{ v \right\} &= \mathscr{P}\left\{ iR \right\} \\
-    \mathscr{P}\left\{ V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \right\} &= \mathscr{P}\left\{ \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)} \right\} R \\
-    \symbf{V} &= \symbf{I} R
+    \mathscr{P}\left\{ v \right\}                                                  & = \mathscr{P}\left\{ iR \right\}                                                              \\
+    \mathscr{P}\left\{ V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \right\} & = \mathscr{P}\left\{ \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)} \right\} R \\
+    \symbf{V}                                                                      & = \symbf{I} R
 \end{align*}
 \subsubsection{Phasor Relationship for Inductors}
 Using a sinusoidal current
@@ -933,18 +937,18 @@ Using a sinusoidal current
 \end{equation*}
 the voltage drop across an inductor is given by:
 \begin{align*}
-    v &= L \dv{i}{t} \\
-    &= -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)} \\
-    &= -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
-\end{align*} 
+    v & = L \dv{i}{t}                                                                      \\
+      & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
+      & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+\end{align*}
 taking the Phasor Transform gives
 \begin{align*}
-    \mathscr{P}\left\{ v \right\} &= \mathscr{P}\left\{ L \dv{i}{t} \right\} \\
-    \symbf{V} &= \mathscr{P}\left\{ -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
-    \symbf{V} &= -\omega L I_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)} \\
-    \symbf{V} &= -\omega L I_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}} \\
-    \symbf{V} &= j\omega L I_{\mathrm{m}} \e^{j \phi} \\
-    \symbf{V} &= j\omega L \symbf{I} 
+    \mathscr{P}\left\{ v \right\} & = \mathscr{P}\left\{ L \dv{i}{t} \right\}                                                                      \\
+    \symbf{V}                     & = \mathscr{P}\left\{ -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
+    \symbf{V}                     & = -\omega L I_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
+    \symbf{V}                     & = -\omega L I_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}}                                                 \\
+    \symbf{V}                     & = j\omega L I_{\mathrm{m}} \e^{j \phi}                                                                         \\
+    \symbf{V}                     & = j\omega L \symbf{I}
 \end{align*}
 \subsubsection{Phasor Relationship for Capacitors}
 Using a sinusoidal voltage
@@ -953,19 +957,19 @@ Using a sinusoidal voltage
 \end{equation*}
 the voltage-current relationship across a capacitor is given by:
 \begin{align*}
-    i &= C \dv{v}{t} \\
-    &= -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)} \\
-    &= -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
-\end{align*} 
+    i & = C \dv{v}{t}                                                                      \\
+      & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
+      & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+\end{align*}
 taking the Phasor Transform gives
 \begin{align*}
-    \mathscr{P}\left\{ i \right\} &= \mathscr{P}\left\{ C \dv{v}{t} \right\} \\
-    \symbf{I} &= \mathscr{P}\left\{ -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
-    \symbf{I} &= -\omega C V_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)} \\
-    \symbf{I} &= -\omega C V_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}} \\
-    \symbf{I} &= j\omega C V_{\mathrm{m}} \e^{j \phi} \\
-    \symbf{I} &= j\omega C \symbf{V} \\
-    \symbf{V} &= \frac{1}{j\omega C} \symbf{I} 
+    \mathscr{P}\left\{ i \right\} & = \mathscr{P}\left\{ C \dv{v}{t} \right\}                                                                      \\
+    \symbf{I}                     & = \mathscr{P}\left\{ -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
+    \symbf{I}                     & = -\omega C V_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
+    \symbf{I}                     & = -\omega C V_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}}                                                 \\
+    \symbf{I}                     & = j\omega C V_{\mathrm{m}} \e^{j \phi}                                                                         \\
+    \symbf{I}                     & = j\omega C \symbf{V}                                                                                          \\
+    \symbf{V}                     & = \frac{1}{j\omega C} \symbf{I}
 \end{align*}
 \subsection{Impedance}
 \begin{definition}
@@ -993,14 +997,14 @@ taking the Phasor Transform gives
 \end{theorem}
 \subsection{Impedances in Circuits}
 \begin{theorem}
-    Impedances behave similar to resistances in series and parallel.
+    Impedances behave similarly to resistances in series and parallel.
 \end{theorem}
 \newpage
 \section{Frequency Response}
-Frequency response is the measure of the magnitude and phase of a system as a function of (angular) frequency $\omega$.
+Frequency response is a measure of the magnitude and phase of a system as a function of (angular) frequency $\omega$.
 \subsection{Circuit Analysis with AC Circuits}
 \begin{theorem}
-    Any DC analysis technique can be used with AC circuits, as long as 
+    Any DC analysis technique can be used with AC circuits, as long as
     resistive elements are represented using complex impedances.
 \end{theorem}
 \subsection{Transfer Function}
@@ -1009,25 +1013,46 @@ Frequency response is the measure of the magnitude and phase of a system as a fu
     \begin{equation*}
         \symbf{H}(\omega) = \frac{\symbf{Y}(\omega)}{\symbf{X}(\omega)}
     \end{equation*}
-    where $\symbf{Y}$ is the output and $\symbf{X}$ is the input of the system.
+    where $\symbf{Y}$ is the output and $\symbf{X}$ is the input of a system.
 \end{definition}
-\begin{definition}[Gain]
-    The magnitude of the transfer function
+\begin{definition}[Linear Gain]
+    The magnitude of the transfer function $\norm{\symbf{H}}$ measures the linear gain of a system.
+\end{definition}
+\begin{definition}[Gain in \si{\decibel}]
+    The gain of a system is often represented in \si{\decibel} using the following formula
     \begin{equation*}
-        \norm{\symbf{H}}
+        \mathrm{gain} = 20 \log_{10}{\norm{\symbf{H}}}
     \end{equation*}
-    measures the gain of the system.
 \end{definition}
 \begin{definition}[Phase Shift]
-    The phase of the transfer function
-    \begin{equation*}
-        \arg{\left( \symbf{H} \right)}
-    \end{equation*}
-    measures the phase shift of the system.
+    The phase of the transfer function $\arg{\left( \symbf{H} \right)}$ measures the phase shift of a system.
 \end{definition}
 \subsection{Bode Plots}
+A Bode plot is a graph of the frequency response of a system. 
+In this plot, the frequency (in \si{\hertz}), is plotted on the horizontal axis using a logarithmic scale.
+\begin{definition}[\SI{3}{\decibel} Point]
+    The frequency (in \si{\hertz}) at which the transfer function equals
+    \begin{equation*}
+        \symbf{H}(2\pi f) = \frac{1}{\sqrt{2}}\phase{\SI{-45}{\degree}}
+    \end{equation*}
+    is known as the break frequency, corner frequency,
+    \SI{3}{\decibel} frequency, or half power point. 
+
+    This is because the gain at this point is equal to $\SI{0.707} \approx \SI{-3.01}{\decibel}$, 
+    and the angle \SI{-45}{\degree} is the halfway point between \SI{0}{\degree} and \SI{-90}{\degree}.
+\end{definition}
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 12cm, keepaspectratio = true]{bode_plot}
+    \caption{Bode plot of gain and phase shift.}
+    % \label{}
+\end{figure}
 \newpage
 \section{Filters and Rectifiers}
+\begin{definition}[Filters]
+    A filter is designed to allow certain ranges of frequencies to pass, 
+    while other ranges of frequencies are stopped.
+\end{definition}
 \newpage
 \section{Zener Diodes and Voltage Regulators}
 \newpage
