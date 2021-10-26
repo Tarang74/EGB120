@@ -5,13 +5,14 @@
 \setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
 
 \usepackage{circuitikz}
+\usepackage{siunitx}
 
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (0, 0) node[anchor=east] {$\begin{array}{c}\text{Anode} \\ A\end{array}$} 
-    to[D, name = component, i=$i$, v=$v$, o-o] (3, 0) 
-    node[anchor=west] {$\begin{array}{c}\text{Cathode} \\ K\end{array}$};
+    \draw[line cap=rect] (0, 3) to[V=$v_s$, i=$i_s$] (0, 0);
+    \draw (0, 3) to[R=$R_s$] ++ (3, 0) to[short, -o] ++ (1.5, 0) to[short, i=$i_L$] ++ (1.5, 0) to[R=$R_L$] ++ (0, -3) to[short, -o] ++ (-1.5, 0) to[short] ++ (-4.5, 0);
+    \draw (3, 0) to[zzD=$v_Z$, i=$i_Z$, *-*] ++ (0, 3);
 \end{circuitikz}
 \end{document}

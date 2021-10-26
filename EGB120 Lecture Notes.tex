@@ -196,7 +196,7 @@ These equations can be used to simplify a complex circuit.
     \includegraphics[height = 4cm, keepaspectratio = true]{voltage_divider}
     \caption{Voltage divider circuit.}
 \end{figure}
-\begin{theorem}
+\begin{theorem}[Voltage Divider]
     \begin{equation*}
         v_k = v \frac{R_k}{R_{\mathrm{eq}}}
     \end{equation*}
@@ -204,12 +204,12 @@ These equations can be used to simplify a complex circuit.
 \begin{proof}
     The current through any resistor is
     \begin{equation*}
-        i = \frac{v}{R_{\mathrm{eq}}}
+        i = \frac{v}{R_{\mathrm{eq}}}.
     \end{equation*}
     Therefore the voltage drop in any resistor is
     \begin{align*}
         v_k & = i R_k                         \\
-        v_k & = \frac{v}{R_{\mathrm{eq}}} R_k
+        v_k & = \frac{v}{R_{\mathrm{eq}}} R_k.
     \end{align*}
 \end{proof}
 \begin{definition}[Current Divider]
@@ -220,7 +220,7 @@ These equations can be used to simplify a complex circuit.
     \includegraphics[height = 3cm, keepaspectratio = true]{current_divider}
     \caption{Current divider circuit.}
 \end{figure}
-\begin{theorem}
+\begin{theorem}[Current Divider]
     \begin{equation*}
         i_k = i \frac{R_{\mathrm{eq}}}{R_k}
     \end{equation*}
@@ -230,15 +230,15 @@ These equations can be used to simplify a complex circuit.
     \begin{align*}
         i & = \sum_{k\geq1} i_k           \\
         i & = \sum_{k\geq1} \frac{v}{R_k} \\
-        i & = \frac{v}{R_{\mathrm{eq}}}
+        i & = \frac{v}{R_{\mathrm{eq}}}.
     \end{align*}
     Solving for $v$ gives
     \begin{align*}
-        v & = i R_{\mathrm{eq}}
+        v & = i R_{\mathrm{eq}}.
     \end{align*}
     Hence the current through any resistor in parallel is given by
     \begin{align*}
-        i_k = \frac{v}{R_k} = \frac{iR_{\mathrm{eq}}}{R_k}
+        i_k = \frac{v}{R_k} = \frac{iR_{\mathrm{eq}}}{R_k}.
     \end{align*}
 \end{proof}
 \newpage
@@ -251,44 +251,44 @@ These equations can be used to simplify a complex circuit.
     \includegraphics[height = 3cm, keepaspectratio = true]{diode}
     \caption{Diode circuit symbol.}
 \end{figure}
-\subsection{V-I Characteristic}
+\subsection{VI Characteristic}
 The Voltage-Current characteristic of linear circuit elements can be plotted as shown below.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_voltage_source}
-    \caption{V-I characteristic for a voltage source.}
+    \caption{VI characteristic for a voltage source.}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_current_source}
-    \caption{V-I characteristic for a current source.}
+    \caption{VI characteristic for a current source.}
 \end{figure}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_resistor}
-    \caption{V-I characteristic for a resistor.}
+    \caption{VI characteristic for a resistor.}
 \end{figure}
-\subsection{V-I Characteristic for Diodes}
+\subsection{VI Characteristic for Diodes}
 A diode has a non-linear characteristic curve, hence it is often simplified.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_diode}
-    \caption{V-I characteristic for a diode.}
+    \caption{VI characteristic for a diode.}
 \end{figure}
 \begin{theorem}[Shockley's Diode Equation]
     A diode can be better modelled using Shockley's equation.
     \begin{equation*}
-        i_D = I_S \exp{\left( \frac{v_D}{0.026} \right)}
+        i = I_S \exp{\left( \frac{v}{0.026} \right)}
     \end{equation*}
     where $I_S$ is the saturation current and $0.026$ is the thermal voltage.
 \end{theorem}
 \subsection{Operating Points and Load Lines}
 \begin{definition}[Operating Point]
     The operating point for two elements can be found by determining the intersection
-    of the two V-I characteristic curves.
+    of the two VI characteristic curves.
 \end{definition}
 \begin{definition}[Load Lines]
-    If a circuit contains three or more elements including a diode, the V-I characteristic curve
+    If a circuit contains three or more elements including a diode, the VI characteristic curve
     is found around the diode. This curve is called a load line.
 \end{definition}
 \subsection{Operating Point of Non-Linear Component}
@@ -391,7 +391,7 @@ Theorem.
 \begin{theorem}
     Thévenin and Norton equivalent circuits have the following relationship
     \begin{equation*}
-        R_{Th} = R_{p}
+        R_{Th} = R_{p}.
     \end{equation*}
 \end{theorem}
 \subsection{Superposition}
@@ -419,7 +419,7 @@ equivalent resistance between the two nodes.
 \subsection{Maximum Power Transfer}
 In the circuit shown below, the maximum power transfer to the load is given by
 \begin{equation*}
-    P_L = \frac{v_{Th}^2}{4R_L}.
+    P_L = \frac{v_{Th}^2}{4R_L}
 \end{equation*}
 where $R_L = R_{Th}$.
 \begin{figure}[H]
@@ -548,11 +548,11 @@ where $R_L = R_{Th}$.
 \begin{definition}[Time Constant]
     The time constant $\tau$ is a parameter for switching circuits. The time constant for a RL circuit is given by
     \begin{equation*}
-        \tau = \frac{1}{R}L
+        \tau = \frac{1}{R}L.
     \end{equation*}
     The current at this time is equal to
     \begin{equation*}
-        \e^{-1}i(0) \approx 0.368i(0)
+        \e^{-1}i(0) \approx 0.368i(0).
     \end{equation*}
 \end{definition}
 \subsection{Step Response}
@@ -581,7 +581,7 @@ where $R_L = R_{Th}$.
     The voltage at $t = \tau$ is equal to
     \begin{align*}
         v(\tau) & = \left(1 - \e^{-1}\right)I_sR + V_0 \\
-                & \approx 0.632I_sR + V_0
+                & \approx 0.632I_sR + V_0.
     \end{align*}
 \end{definition}
 \begin{definition}[RL Circuit Step Response]
@@ -609,7 +609,7 @@ where $R_L = R_{Th}$.
     The current at $t = \tau$ is equal to
     \begin{align*}
         i(\tau) & = \left( 1 - \e^{-1} \right)\frac{V_s}{R} + I_0 \\
-                & \approx 0.632\frac{V_s}{R} + I_0
+                & \approx 0.632\frac{V_s}{R} + I_0.
     \end{align*}
 \end{definition}
 \newpage
@@ -645,18 +645,18 @@ where $R_L = R_{Th}$.
         % \label{}
     \end{figure}
     \begin{description}
-        \item[$v_p$.] non-inverting input
-        \item[$v_n$.] inverting input
-        \item[$V_{CC}$.] positive power supply
-        \item[$V_{EE}$.] negative power supply
+        \item[$v_p$:] non-inverting input
+        \item[$v_n$:] inverting input
+        \item[$V_{CC}$:] positive power supply
+        \item[$V_{EE}$:] negative power supply
     \end{description}
 \end{definition}
 \subsection{Golden Rules for Op Amps}
 \begin{enumerate}
-    \item Infinite input impedance, and so zero input current.
+    \item Infinite input impedance, therefore, zero input current.
     \item In a closed loop, the output drives the voltage difference at the inputs to zero.
 \end{enumerate}
-Note the second rule only applies when the op amp has external negative feedback.
+Note that the second rule only applies when the op amp has external negative feedback.
 \subsection{Op Amp Analysis}
 Using the golden rules above, the following circuits can be constructed.
 \subsubsection{Inverting Amplifier}
@@ -708,7 +708,7 @@ where the ratio of $\displaystyle \frac{R_2}{R_1}$ must be equal on both legs.
 \end{figure}
 \subsection{Designing Op Amps}
 When designed op amps, it is important to choose resistors in the $\qtyrange{1}{100}{\kilo\ohm}$
-range, to prevent damage to the internal resistance of an op amp, and to avoid excessive output currents.
+range, to prevent damaging the op amp, and to avoid excessive output currents.
 \newpage
 \section{Sinusoidal Signals}
 \begin{definition}
@@ -772,8 +772,8 @@ The following equations relate the angular frequency, period and frequency toget
     In a resistive load, the power can be determined using the rms current and rms voltage.
     \begin{align*}
         p & = vi                                                                                                                       \\
-        p & = \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
-        p & = 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)}                                                  \\
+        % p & = \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
+        % p & = 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)}                                                  \\
         p & = V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
     \end{align*}
     The average power is given by
@@ -784,9 +784,9 @@ The following equations relate the angular frequency, period and frequency toget
 \subsection{Euler's Formula}
 \begin{theorem}\label{theorem:eulers_formula}
     \begin{equation*}
-        \e^{jt} = \cos{\left( t \right)} + j \sin{\left( t \right)}
+        \e^{j\phi} = \cos{\left( \phi \right)} + j \sin{\left( \phi \right)}
     \end{equation*}
-    where $j^2 = -1$ and $t$ is the angle in radians.
+    where $j^2 = -1$ and $\phi$ is measured in radians.
 \end{theorem}
 \subsection{Phasors}
 \begin{definition}
@@ -814,12 +814,12 @@ The following equations relate the angular frequency, period and frequency toget
     \begin{align*}
         v(t) & = \mathscr{P}^{-1}\left\{ \symbf{V} \right\}                             \\
              & = \Re\left\{ \symbf{V} \e^{j\omega t} \right\}                           \\
-             & = \Re\left\{ V_{\mathrm{m}} \e^{j\phi} \e^{j\omega t} \right\}           \\
-             & = V_{\mathrm{m}}\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
-             & = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}                     \\
+            %  & = \Re\left\{ V_{\mathrm{m}} \e^{j\phi} \e^{j\omega t} \right\}           \\
+            %  & = V_{\mathrm{m}}\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
+             & = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}                     
     \end{align*}
 \end{definition}
-\subsection{Phasor Calculations}
+\subsection{Phasor Operations}
 As phasors are quantities with a magnitude and angle, they can be represented as complex numbers.
 Using \hyperref[theorem:eulers_formula]{Theorem \ref{theorem:eulers_formula}}, we can represent a phasor in rectangular form
 \begin{equation*}
@@ -847,63 +847,81 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
                         & = A_{\mathrm{m}} B_{\mathrm{m}} \phase{\phi_1 + \phi_2}
 \end{align*}
 \subsection{Circuit Analysis}
-\subsubsection{Phasor Relationship for Resistors}
-Using a sinusoidal voltage
-\begin{equation*}
-    v = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
-\end{equation*}
-Ohm's Law gives:
-\begin{align*}
-    i & = \frac{v}{R}                                                   \\
-      & = \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)}
-\end{align*}
-Taking the Phasor Transform gives
-\begin{align*}
-    \mathscr{P}\left\{ v \right\}                                                  & = \mathscr{P}\left\{ iR \right\}                                                              \\
-    \mathscr{P}\left\{ V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \right\} & = \mathscr{P}\left\{ \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)} \right\} R \\
-    \symbf{V}                                                                      & = \symbf{I} R
-\end{align*}
-\subsubsection{Phasor Relationship for Inductors}
-Using a sinusoidal current
-\begin{equation*}
-    i = I_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
-\end{equation*}
-the voltage drop across an inductor is given by:
-\begin{align*}
-    v & = L \dv{i}{t}                                                                      \\
-      & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
-      & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
-\end{align*}
-taking the Phasor Transform gives
-\begin{align*}
-    \mathscr{P}\left\{ v \right\} & = \mathscr{P}\left\{ L \dv{i}{t} \right\}                                                                      \\
-    \symbf{V}                     & = \mathscr{P}\left\{ -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
-    \symbf{V}                     & = -\omega L I_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
-    \symbf{V}                     & = -\omega L I_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}}                                                 \\
-    \symbf{V}                     & = j\omega L I_{\mathrm{m}} \e^{j \phi}                                                                         \\
-    \symbf{V}                     & = j\omega L \symbf{I}
-\end{align*}
-\subsubsection{Phasor Relationship for Capacitors}
-Using a sinusoidal voltage
-\begin{equation*}
-    v = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
-\end{equation*}
-the voltage-current relationship across a capacitor is given by:
-\begin{align*}
-    i & = C \dv{v}{t}                                                                      \\
-      & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
-      & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
-\end{align*}
-taking the Phasor Transform gives
-\begin{align*}
-    \mathscr{P}\left\{ i \right\} & = \mathscr{P}\left\{ C \dv{v}{t} \right\}                                                                      \\
-    \symbf{I}                     & = \mathscr{P}\left\{ -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
-    \symbf{I}                     & = -\omega C V_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
-    \symbf{I}                     & = -\omega C V_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}}                                                 \\
-    \symbf{I}                     & = j\omega C V_{\mathrm{m}} \e^{j \phi}                                                                         \\
-    \symbf{I}                     & = j\omega C \symbf{V}                                                                                          \\
-    \symbf{V}                     & = \frac{1}{j\omega C} \symbf{I}
-\end{align*}
+\begin{theorem}[Phasor Relationship for Resistors]
+    \begin{equation*}
+        \symbf{V} = \symbf{I} R
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    Using a sinusoidal voltage
+    \begin{equation*}
+        v = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
+    \end{equation*}
+    Ohm's Law gives:
+    \begin{align*}
+        i & = \frac{v}{R}                                                   \\
+        & = \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)}
+    \end{align*}
+    Taking the Phasor Transform gives
+    \begin{align*}
+        \mathscr{P}\left\{ v \right\}                                                  & = \mathscr{P}\left\{ iR \right\}                                                              \\
+        \mathscr{P}\left\{ V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)} \right\} & = \mathscr{P}\left\{ \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)} \right\} R \\
+        \symbf{V}                                                                      & = \symbf{I} R
+    \end{align*}
+\end{proof}
+\begin{theorem}[Phasor Relationship for Inductors]
+    \begin{equation*}
+        \symbf{V} = j\omega L\symbf{I}
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    Using a sinusoidal current
+    \begin{equation*}
+        i = I_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
+    \end{equation*}
+    the voltage drop across an inductor is given by:
+    \begin{align*}
+        v & = L \dv{i}{t}                                                                      \\
+        & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
+        & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+    \end{align*}
+    taking the Phasor Transform gives
+    \begin{align*}
+        \mathscr{P}\left\{ v \right\} & = \mathscr{P}\left\{ L \dv{i}{t} \right\}                                                                      \\
+        \symbf{V}                     & = \mathscr{P}\left\{ -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
+        \symbf{V}                     & = -\omega L I_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
+        \symbf{V}                     & = -\omega L I_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}}                                                 \\
+        \symbf{V}                     & = j\omega L I_{\mathrm{m}} \e^{j \phi}                                                                         \\
+        \symbf{V}                     & = j\omega L \symbf{I}
+    \end{align*}
+\end{proof}
+\begin{theorem}[Phasor Relationship for Capacitors]
+    \begin{equation*}
+        \symbf{V} = \frac{1}{j\omega C}\symbf{I}
+    \end{equation*}
+\end{theorem}
+\begin{proof}
+    Using a sinusoidal voltage
+    \begin{equation*}
+        v = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
+    \end{equation*}
+    the voltage-current relationship across a capacitor is given by:
+    \begin{align*}
+        i & = C \dv{v}{t}                                                                      \\
+        & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
+        & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+    \end{align*}
+    taking the Phasor Transform gives
+    \begin{align*}
+        \mathscr{P}\left\{ i \right\} & = \mathscr{P}\left\{ C \dv{v}{t} \right\}                                                                      \\
+        \symbf{I}                     & = \mathscr{P}\left\{ -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
+        \symbf{I}                     & = -\omega C V_{\mathrm{m}} \e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
+        \symbf{I}                     & = -\omega C V_{\mathrm{m}} \e^{j \phi} \e^{-j\SI{90}{\degree}}                                                 \\
+        \symbf{I}                     & = j\omega C V_{\mathrm{m}} \e^{j \phi}                                                                         \\
+        \symbf{I}                     & = j\omega C \symbf{V}                                                                                          \\
+        \symbf{V}                     & = \frac{1}{j\omega C} \symbf{I}
+    \end{align*}
+\end{proof}
 \subsection{Impedance}
 \begin{definition}
     The impedance $\symbf{Z}$ of an element, measured in Ohms (\si{\ohm}), is its opposition to alternating current.
@@ -988,7 +1006,7 @@ In this plot, the frequency (in \si{\hertz}) is plotted on the horizontal axis u
 \begin{definition}[Cut-off Frequncy]
     The cut-off (angular) frequency $\omega_c$ for a low pass or high pass filter is given by
     \begin{equation*}
-        \omega_c = \frac{1}{RC}.
+        \omega_c = \frac{1}{RC}
     \end{equation*}
 \end{definition}
 \subsection{Common Filters}
@@ -1013,7 +1031,6 @@ where $\omega_c = \frac{1}{RC}$.
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{passive_low_pass_filter}
     \caption{Passive low pass filter.}
-    % \label{}
 \end{figure}
 \subsubsection{High Pass Filter}
 The following high pass filter has the following transfer function.
@@ -1024,8 +1041,7 @@ where $\omega_c = \frac{1}{RC}$.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{passive_high_pass_filter}
-    \caption{Passive high pass filter}
-    % \label{}
+    \caption{Passive high pass filter.}
 \end{figure}
 \subsection{Active Filters}
 Active filters are circuits containing active elements (such as op amps),
@@ -1035,7 +1051,7 @@ not affect the cut-off frequency.
 
 For the following active filters, the gain component is given by
 \begin{equation*}
-    -\frac{R_2}{R_1}
+    \mathrm{gain} = -\frac{R_2}{R_1}
 \end{equation*}
 \subsubsection{Low Pass Filter}
 The following low pass filter has the following transfer function.
@@ -1045,9 +1061,8 @@ The following low pass filter has the following transfer function.
 where $\omega_c = \frac{1}{R_2C}$.
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{passive_low_pass_filter}
+    \includegraphics[height = 4cm, keepaspectratio = true]{active_low_pass_filter}
     \caption{Active low pass filter.}
-    % \label{}
 \end{figure}
 \subsubsection{High Pass Filter}
 The following high pass filter has the following transfer function.
@@ -1057,11 +1072,69 @@ The following high pass filter has the following transfer function.
 where $\omega_c = \frac{1}{R_1C}$.
 \begin{figure}[H]
     \centering
-    \includegraphics[height = 4cm, keepaspectratio = true]{passive_high_pass_filter}
-    \caption{Active high pass filter}
-    % \label{}
+    \includegraphics[height = 4cm, keepaspectratio = true]{active_high_pass_filter}
+    \caption{Active high pass filter.}
 \end{figure}
+\subsection{Rectifiers}
 \newpage
 \section{Zener Diodes and Voltage Regulators}
+\subsection{Zener Diodes}
+A Zener diode is similar to a regular diode, but it has a specific
+reverse breakdown voltage.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 3cm, keepaspectratio = true]{zener_diode}
+    \caption{Zener diode circuit diagram.}
+\end{figure}
+The ideal VI characteristic for a Zener diode is shown below.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_zener_diode}
+    \caption{VI characteristic for a Zener diode.}
+\end{figure}
+\subsection{Shunt Regulators}
+A Zener diode can be used as a voltage regulator, to maintain a constant output voltage,
+given a varying voltage source and varying output current.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{zener_regulator}
+    \caption{Zener diode regulator.}
+\end{figure}
+\begin{theorem}[Maximum Load Current.]
+    Given a source voltage range $v_s$ and source resistance $R_s$, the maximum current an ideal
+    Zener diode can regulate is given by
+    \begin{equation*}
+        i_L < \frac{v_s - v_Z}{R_s}
+    \end{equation*}
+    where the largest value in $v_s$ is chosen.
+\end{theorem}
+\begin{theorem}[Maximum Source Resistance.]
+    Given a source voltage range $v_s$ and load current range $i_L$, the maximum source resistance required
+    to regulate the output voltage is given by
+    \begin{equation*}
+        R_s < \frac{v_s - v_Z}{i_L}
+    \end{equation*}
+    where the smallest value in $v_s$ is chosen, and the largest value in $i_L$ is chosen.
+\end{theorem}
+\begin{proof}
+    Using KCL gives
+    \begin{align*}
+        i_s - i_Z & = i_L       \\
+        i_Z       & = i_s - i_L.
+    \end{align*}
+    For a Zener diode to operate at its reverse breakdown voltage, the Zener current 
+    must be nonzero. This gives
+    \begin{equation*}
+        0 < \frac{v_s - v_Z}{R_s} - i_L
+    \end{equation*}
+    We must now consider the worst case scenario, namely, when
+    $\frac{v_s - v_Z}{R_s}$ is minimised, and when $i_L$ is maximised. 
+    
+    Hence the maximum load current is when $v_s$ is maximal. 
+
+    And the maximum source resistance is when $v_s$ is minimal, and $i_L$ is maximal.
+\end{proof}
+In a Zener regulator, the power dissipation 
+\subsection{Series Regulators}
 \newpage
 \end{document}

@@ -16,6 +16,7 @@
     (opamp.-) node[circ] {} to[R, l_=$R_1$] ++ (-2, 0) node[ocirc, label={180:$v_{in}$}] {}
     (opamp.+) node[sground] {}
     (opamp.out) node[circ] {} to[short] ++ (1, 0) node[ocirc, label={0:$v_{out}$}] {}
-    (opamp.-) to[short] ++ (0, 1) to[R=$R_2$] ([yshift=1cm]opamp.- -| opamp.out) to[short] (opamp.out);
+    (opamp.-) to[short] ++ (0, 1) to[R=$R_2$, *-*] ([yshift=1cm]opamp.- -| opamp.out) to[short] (opamp.out);
+    \draw ([yshift=1cm]opamp.-) to[short] ++ (0, 1.25) to[C=$C$] ([yshift=2.25cm]opamp.- -| opamp.out) to[short] ([yshift=1cm]opamp.- -| opamp.out);
 \end{circuitikz}
 \end{document}
