@@ -12,7 +12,7 @@
     \ctikzset{voltage=raised}
     \ctikzset{voltage/american minus=$\vphantom{+}-$}
     \draw (0, 0) node[cute spdt up arrow, rotate=90] (Sw) {};
-    \draw[line cap=rect] (Sw.in) to[C=$C$, v=$v$, -*] ++ (0, -3) node (base) {} to[short] ++ (3, 0) ++ (-3, 0) to[short] ++ (-3, 0);
+    \draw[line cap=rect] (Sw.in) to[C=$C$, -*] ++ (0, -3) node (base) {} to[short] ++ (3, 0) ++ (-3, 0) to[short] ++ (-3, 0);
     \coordinate ([xshift=-3cm]base |- Sw.out 1) {};
     \draw[line cap=rect] ([xshift=-3cm]base |- Sw.out 1) to[V] ([xshift=-3cm]base); 
     \draw ([xshift=-3cm]base |- Sw.out 1) to[R] (Sw.out 1);

@@ -27,7 +27,7 @@
         yticklabels = {$ $, $ $, $0$, $ $, $ $},
         extra x tick style = {xticklabel = {$v_s$}},
         extra x ticks = {3},
-        extra y tick style = {xticklabel = {$i_s$}},
+        extra y tick style = {yticklabel = {$i_s$}},
         extra y ticks = {3},
 		%
         xtickmin = -10,
