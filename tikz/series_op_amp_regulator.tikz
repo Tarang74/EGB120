@@ -1,0 +1,30 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usetikzlibrary{intersections}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \ctikzset{voltage=raised}
+    \ctikzset{voltage/american minus=$\vphantom{+}-$}
+    \ctikzset{amplifiers/minus={$\vphantom{+}-$}}
+    \draw[line cap=rect] (0, 6) to[V=$v_{in}$, -*] ++ (0, -6);
+    \draw (0, 6) to[short, -o] ++ (1.5, 0) to[short] ++ (1.5, 0) coordinate (Rtop) to[R=$R_s$, i=$i_s$, *-*] ++ (0, -3) coordinate (vpleft) ++ (0, -3) coordinate (diodebottom) to[zzD=$v_Z$, i=$i_Z$,*-] ++ (0, 3) ++ (0, -3) to[short, -o] ++ (-1.5, 0) to[short] ++ (-1.5, 0);
+    \draw (vpleft) to[short] ++ (1.5, 0) coordinate (vp);
+    \node[op amp, noinv input up, anchor=+] (opamp) at (vp) {};
+    \draw (opamp.up) to[short] ++ (0, 0.25) node[vcc] (vcc) {};
+    \draw (opamp.down) to[short] ++ (0, -0.25) node[vee] (vee) {};
+    \draw (Rtop) -| (vcc);
+    \node[jump crossing] (X) at ([yshift=-1cm]opamp.- -| opamp.down) {};
+    \draw (opamp.-) to[short] ++ (0, -1) to[short] (X.west) (X.east) -| (opamp.out) node[circ] {};
+    \draw (vee) to[short] (X.north) (X.south) |- (diodebottom);
+    \draw (opamp.out) to[short, -o] ++ (1.5, 0) coordinate (iLtop) to[short, i=$i_L$] ++ (1.5, 0) coordinate (RLtop);
+    \draw (diodebottom -| X.south) node[circ] {} to[short, -o] (diodebottom -| iLtop) to[short] ++ (1.5, 0) coordinate (RLbottom);
+    \draw (RLtop) to[R=$R_L$] (RLbottom);
+    \node[sground] at (0, 0) {}; 
+\end{circuitikz}
+\end{document}

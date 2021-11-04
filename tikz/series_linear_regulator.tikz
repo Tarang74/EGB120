@@ -1,0 +1,26 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usepackage{siunitx}
+
+\newcommand*{\equal}{=}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \ctikzset{voltage=raised}
+    \ctikzset{voltage/american minus=$\vphantom{+}-$}
+    \draw (0, 3) to[short] ++ (3, 0) coordinate (cap1) to[generic, name=lmic, /tikz/circuitikz/bipoles/length=2.5cm] ++ (4, 0) coordinate (cap2) to[short] ++ (3, 0)
+    to[open, v=$v_{out}\equal\SI{5}{\volt}$, o-o] ++ (0, -3) to[short] ++ (-3, 0) 
+    to[short, -*] ++ (-2, 0) coordinate (g) to[short] ++ (-2, 0) to[short] ++ (-3, 0); 
+    \draw[line cap=rect] (0, 3) to[open, v=$v_{in}\equal\qtyrange{7}{35}{\volt}$, o-o] (0, 0);
+    \draw (cap1) to[C=\SI{0.33}{\micro\farad}, *-*] ++ (0, -3);
+    \draw (cap2) to[C=\SI{0.1}{\micro\farad}, *-*] ++ (0, -3);
+    \draw (lmic.south) to[short] (g);
+    \draw (g) node[sground] {};
+    \draw (lmic) node {LM7805};
+\end{circuitikz}
+\end{document}

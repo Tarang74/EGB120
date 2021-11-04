@@ -642,7 +642,7 @@ where $R_L = R_{Th}$.
     \end{enumerate}
     \begin{figure}[H]
         \centering
-        \includegraphics[height = 4cm, keepaspectratio = true]{operational_amplifier}
+        \includegraphics[height = 6cm, keepaspectratio = true]{operational_amplifier}
         \caption{Operational amplifier circuit symbol.}
         % \label{}
     \end{figure}
@@ -1078,11 +1078,11 @@ where $\displaystyle \omega_c = \frac{1}{R_1C}$.
     \caption{Active high pass filter.}
 \end{figure}
 \subsection{Rectifiers}
-\begin{definition}[Rectifier]
-    A rectifier is designed to convert AC signals to DC.
-\end{definition}
 \begin{definition}[Plugpack]
     An AC plugpack steps the mains AC voltage (\SI{240}{\volt} RMS) down to a safe AC voltage level.
+\end{definition}
+\begin{definition}[Rectifier]
+    A rectifier is designed to convert AC signals to DC.
 \end{definition}
 By using a diode, a rectifier only allows current to pass when an AC
 voltage is positive.
@@ -1096,9 +1096,11 @@ voltage is positive.
     \includegraphics[width = 8cm, keepaspectratio = true]{half_wave_rectifier_without_capacitor_plot}
     \caption{Half-wave rectified signal.}
 \end{figure}
-In this circuit, a capacitors can be utilised to smooth ripples.
 \begin{definition}[Ripple]
-    The ripple in a rectifier can be calculated using the following assumptions:
+    Ripple is the residual variation of the DC voltage after rectification.
+    In the circuit shown above, a capacitor can be used to smooth ripples.
+    
+    Ripple can be calculated using the following assumptions:
     \begin{enumerate}
         \item The capacitor instantly charges when the diode is forward biased.
         \item The capacitor discharges with a constant current.
@@ -1183,9 +1185,23 @@ The ideal VI characteristic for a Zener diode is shown below.
     \includegraphics[height = 5cm, keepaspectratio = true]{vi_characteristic_zener_diode}
     \caption{VI characteristic for an ideal Zener diode.}
 \end{figure}
+\subsection{Voltage Regulators}
+Most circuits require a clean DC power supply to operate. 
+A voltage regulator ensures that a DC power supply behaves like an ideal voltage source.
 \subsection{Shunt Regulators}
-A Zener diode can be used as a voltage regulator, to maintain a constant output voltage,
-given a varying voltage source and varying output current.
+\begin{definition}[Shunt Regulator]
+    A shunt regulator regulates the output voltage by shunting excess current away from the load.
+\end{definition}
+A Zener diode can be used as a shunt regulator to drop voltages to the reverse bias voltage of the diode.
+\begin{remark}
+    When designing a Zener voltage regulator, the following should be taken into account:
+    \begin{itemize}
+        \item Power dissipation particularly when dropping large voltages.
+        \item Large series resistances reduces power dissipation but also reduces the regulated current. 
+        \item A Zener voltage regulator always draws power from the source, regardless of the load.
+        \item The load has an effect on the regulator.
+    \end{itemize}
+\end{remark}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{zener_regulator}
@@ -1225,17 +1241,53 @@ given a varying voltage source and varying output current.
 
     And the maximum source resistance is when $v_s$ is minimal, and $i_L$ is maximal.
 \end{proof}
-\begin{remark}
-    When designing a Zener voltage regulator, the following should be taken into account:
-    \begin{itemize}
-        \item Be careful of power dissipation, particularly when dropping large voltages.
-        \item Increasing the series resistance reduces power dissipation but also reduces the regulated current. 
-        \item A Zener voltage regulator always draws power from the source, regardless of the load.
-        \item The load has an effect on the regulator.
-    \end{itemize}
-\end{remark}
-
 \subsection{Series Regulators}
+\begin{definition}[Series Regulator]
+    Series regulators regulate the output voltage by limiting the load current by varying the series element.
+\end{definition}
+\subsubsection{Series Linear Regulators}
+LM-series integrated circuits (IC) are a three-terminal linear regulator that regulate fixed voltages of \SI{0.5}{\volt} to \SI{24}{\volt}.
+They require an input voltage at least \SI{2}{\volt} greater than the regulated output voltage. 
+An LM-series regulator circuit is shown below.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{series_linear_regulator}
+    \caption{Series Linear Regulator using an LM-series IC.}
+\end{figure}
+\emph{Note that the capacitors remain the same for any output voltage.}
 
-\newpage
+The naming convention is as follows,
+\begin{enumerate}
+    \item LM78XX regulates a positive voltage XX\si{\volt}.
+    \item LM79XX regulates a negative voltage -XX\si{\volt}.
+\end{enumerate}
+The power dissipation can be calculated by assuming 0 ground current.
+\subsubsection{Power Supply Design}
+A rectifier and regulator circuit can be combined to create a power supply from an AC voltage plugpack.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{power_supply}
+    \caption{AC to DC power supply circuit.}
+\end{figure}
+The maximum ripple for this circuit is shown below.
+\begin{align*}
+    \max{\Delta v} & = \max{v_{in}} - v_f - \left( 2 + v_{out} \right) \\
+    \therefore\: \Delta v & > \frac{i}{fC} \\
+    \max{v_{in}} - v_f - \left( 2 + v_{out} \right) & > \frac{i}{fC}
+\end{align*}
+\subsubsection{Series Op Amp Regulators}
+Op amps can be utilised stabilise the output from a regulator.
+The op amp is powered by the source voltage and the series resistance is chosen to minimise the current to the Zener diode.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 8cm, keepaspectratio = true]{series_op_amp_regulator}
+    \caption{Series op amp regulator circuit.}
+\end{figure}
+In the circuit above, $i_Z + i_S = 0$.
+
+The power dissipated by the circuit can be determined by finding the power produced at the voltage source
+which is given by
+\begin{equation*}
+    p_v = v_{in} \left( i_L - i_Z \right).
+\end{equation*}
 \end{document}
