@@ -3,6 +3,7 @@
 
 \usepackage{chngcntr} % Reset counter within sections
 \usepackage{circuitikz}
+\DeclareSIUnit{\nothing}{\relax}
 
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
@@ -56,6 +57,46 @@
 \newpage
 
 \section{Electrical Circuits}
+\subsection{SI Prefixes}
+\begin{table}[H]
+    \centering
+    \begin{minipage}[H]{0.48\linewidth}
+        \centering
+        \begin{tabular}{c c c}
+            \toprule
+                \textbf{Factor} & \textbf{Name} & \textbf{Symbol} \\
+            \midrule
+                $10^{24}$ & yotta & \unit{\yotta\nothing} \\
+                $10^{21}$ & zetta & \unit{\zetta\nothing} \\
+                $10^{18}$ & exa & \unit{\exa\nothing} \\
+                $10^{15}$ & peta & \unit{\peta\nothing} \\
+                $10^{12}$ & tera & \unit{\tera\nothing} \\
+                $10^{9}$ & giga & \unit{\giga\nothing} \\
+                $10^{6}$ & mega & \unit{\mega\nothing} \\
+                $10^{3}$ & kilo & \unit{\kilo\nothing} \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \begin{minipage}[H]{0.48\linewidth}
+        \centering
+        \begin{tabular}{c c c}
+            \toprule
+                \textbf{Factor} & \textbf{Name} & \textbf{Symbol} \\
+            \midrule
+                $10^{-3}$ & milli & \unit{\milli\nothing} \\
+                $10^{-6}$ & micro & \unit{\micro\nothing} \\
+                $10^{-9}$ & nano & \unit{\nano\nothing} \\
+                $10^{-12}$ & pico & \unit{\pico\nothing} \\
+                $10^{-15}$ & femto & \unit{\femto\nothing} \\
+                $10^{-18}$ & atto & \unit{\atto\nothing} \\
+                $10^{-21}$ & zepto & \unit{\zepto\nothing} \\
+                $10^{-24}$ & yocto & \unit{\yocto\nothing} \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \caption{SI prefixes.}
+    % \label{}
+\end{table}
 \subsection{Fundamental Quantities}
 \begingroup
 \renewcommand{\arraystretch}{1.5}
@@ -245,7 +286,7 @@ These equations can be used to simplify a complex circuit.
 \newpage
 \section{Diodes}
 \begin{definition}[Diode]
-    A diode is a semiconductor component in which current flows only in one direction. A diodes requires a voltage to start the flow of current in the forward direction.
+    A diode is a semiconductor component in which current flows only in one direction. A diode requires a voltage to start the flow of current in the forward direction.
     The forward voltage is commonly \SI{0.7}{\volt}.
 \end{definition}
 \begin{figure}[H]
@@ -353,7 +394,7 @@ If the current source is between two meshes, then we must use a supermesh.
 \newpage
 \section{Source Transformations}
 Real sources often have many limitations in terms of voltage and current delivery.
-The most commonly modelled, and most useful for linear circuit theory, is some form of
+The most commonly modelled and most useful for linear circuit theory is some form of
 resistance associated with the source.
 \subsection{Thévenin Equivalent Circuit}
 \begin{definition}
@@ -709,7 +750,7 @@ where the ratio of $\displaystyle \frac{R_2}{R_1}$ must be equal on both legs.
     \caption{Difference amplifier.}
 \end{figure}
 \subsection{Designing Op Amps}
-When designed op amps, it is important to choose resistors in the $\qtyrange{1}{100}{\kilo\ohm}$
+When designing op amps, it is important to choose resistors in the $\qtyrange{1}{100}{\kilo\ohm}$
 range, to prevent damaging the op amp, and to avoid excessive output currents.
 \newpage
 \section{Sinusoidal Signals}
@@ -1288,6 +1329,6 @@ In the circuit above, $i_Z + i_S = 0$.
 The power dissipated by the circuit can be determined by finding the power produced at the voltage source
 which is given by
 \begin{equation*}
-    p_v = v_{in} \left( i_L - i_Z \right).
+    p = v_{in} \left( i_L - i_Z \right).
 \end{equation*}
 \end{document}
