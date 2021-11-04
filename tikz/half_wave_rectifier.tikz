@@ -1,0 +1,18 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usepackage{siunitx}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \ctikzset{voltage=raised}
+    \ctikzset{voltage/american minus=$\vphantom{+}-$}
+    \draw[line cap=rect] (0, 3) to[V=$\symbf{V}$] (0, 0);
+    \draw (0, 3) to[D=$v_f$] ++ (3, 0) to[C=$C$, *-*] ++ (0, -3) to[short] ++ (-3, 0);
+    \draw (3, 3) to[short, -o] ++ (3, 0) to[R=$R_L$, i=$i$] ++ (0, -3) to[short, o-] ++ (-3, 0);
+\end{circuitikz}
+\end{document}

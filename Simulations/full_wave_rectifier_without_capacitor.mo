@@ -1,0 +1,34 @@
+model full_wave_rectifier_without_capacitor
+  Modelica.Electrical.Analog.Sources.CosineVoltage cosineVoltage1(V = 12 * sqrt(2), freqHz = 50, phase = 0) annotation(Placement(visible = true, transformation(origin = {-90, 0}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Electrical.Analog.Ideal.IdealDiode diode(Vknee = 0.7, Goff = 1e-15) annotation(Placement(visible = true, transformation(origin = {-50, 50}, extent = {{-10, -10}, {10, 10}}, rotation = 44.286)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin1 annotation(Placement(visible = true, transformation(origin = {20, 20}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-38.667, 23.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin2 annotation(Placement(visible = true, transformation(origin = {60, 20}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-30.667, 15.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Basic.Resistor resistor1(R = 100) annotation(Placement(visible = true, transformation(origin = {60, 40}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin3 annotation(Placement(visible = true, transformation(origin = {20, 60}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-22.667, 7.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Basic.Ground ground1 annotation(Placement(visible = true, transformation(origin = {60, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Ideal.IdealDiode diode1(Vknee = 0.7, Goff = 1e-15) annotation(Placement(visible = true, transformation(origin = {-30, 50}, extent = {{-10, -10}, {10, 10}}, rotation = -224.994)));
+  Modelica.Electrical.Analog.Ideal.IdealDiode diode2(Vknee = 0.7, Goff = 1e-15) annotation(Placement(visible = true, transformation(origin = {-50, 30}, extent = {{-10, -10}, {10, 10}}, rotation = -224.475)));
+  Modelica.Electrical.Analog.Ideal.IdealDiode diode3(Vknee = 0.7, Goff = 1e-15) annotation(Placement(visible = true, transformation(origin = {-30, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 44.058)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin4 annotation(Placement(visible = true, transformation(origin = {-20, 40}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-14.667, -0.334}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin5 annotation(Placement(visible = true, transformation(origin = {-40, 60}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-6.667, -8.334}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin6 annotation(Placement(visible = true, transformation(origin = {-60, 40}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {1.333, -16.334}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin7 annotation(Placement(visible = true, transformation(origin = {-40, 20}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {9.333, -24.334}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+equation
+  connect(resistor1.n, pin2) annotation(Line(visible = true, origin = {60, 25}, points = {{0, 5}, {0, -5}}, color = {10, 90, 224}));
+  connect(resistor1.p, pin3) annotation(Line(visible = true, origin = {46.667, 56.667}, points = {{13.333, -6.667}, {13.333, 3.333}, {-26.667, 3.333}}, color = {10, 90, 224}));
+  connect(pin1, pin2) annotation(Line(visible = true, origin = {40, 20}, points = {{-20, 0}, {20, 0}}, color = {10, 90, 224}));
+  connect(ground1.p, pin2) annotation(Line(visible = true, origin = {60, 10}, points = {{-0, -10}, {0, 10}}, color = {10, 90, 224}));
+  connect(diode2.p, pin7) annotation(Line(visible = true, origin = {-36.546, 21.497}, points = {{-6.318, 1.497}, {-6.544, 1.497}, {-6.544, -1.497}, {-3.454, -1.497}}, color = {10, 90, 224}));
+  connect(diode3.p, pin7) annotation(Line(visible = true, origin = {-43.49, 21.523}, points = {{6.303, 1.523}, {6.303, -1.523}, {3.49, -1.523}}, color = {10, 90, 224}));
+  connect(diode1.p, pin4) annotation(Line(visible = true, origin = {-21.464, 36.656}, points = {{-1.464, 6.274}, {-1.464, 6.33}, {1.464, 6.33}, {1.464, 3.344}}, color = {10, 90, 224}));
+  connect(pin4, diode3.n) annotation(Line(visible = true, origin = {-16.576, 38.477}, points = {{-3.424, 1.523}, {-3.424, -1.523}, {-6.238, -1.523}}, color = {10, 90, 224}));
+  connect(diode1.n, pin5) annotation(Line(visible = true, origin = {-38.536, 54.697}, points = {{1.464, 2.374}, {1.464, 5.303}, {-1.464, 5.303}, {-1.464, 5.303}}, color = {10, 90, 224}));
+  connect(pin5, diode.n) annotation(Line(visible = true, origin = {-45.281, 58.491}, points = {{5.281, 1.509}, {1.79, 1.509}, {1.79, -1.509}, {2.439, -1.509}}, color = {10, 90, 224}));
+  connect(pin6, diode.p) annotation(Line(visible = true, origin = {-54.719, 41.509}, points = {{-5.281, -1.509}, {-5.281, -1.509}, {-5.281, 1.509}, {-2.439, 1.509}}, color = {10, 90, 224}));
+  connect(diode2.n, pin6) annotation(Line(visible = true, origin = {-54.713, 38.503}, points = {{-2.422, -1.497}, {-5.287, -1.497}, {-5.287, 1.497}, {-5.287, 1.497}}, color = {10, 90, 224}));
+  connect(pin6, cosineVoltage1.p) annotation(Line(visible = true, origin = {-80, 30}, points = {{20, 10}, {-10, 10}, {-10, -20}}, color = {10, 90, 224}));
+  connect(pin7, pin1) annotation(Line(visible = true, origin = {-20, 19.414}, points = {{-20, 0.586}, {-20, -9.414}, {40, -9.414}, {40, 0.586}}, color = {10, 90, 224}));
+  connect(pin3, pin5) annotation(Line(visible = true, origin = {0, 87.537}, points = {{20, -27.537}, {20, -17.537}, {-40, -17.537}, {-40, -27.537}}, color = {10, 90, 224}));
+  connect(pin4, cosineVoltage1.n) annotation(Line(visible = true, origin = {-54.536, 0}, points = {{34.536, 40}, {44.536, 40}, {44.536, -40}, {-35.464, -40}, {-35.464, -10}}, color = {10, 90, 224}));
+  annotation(experiment(StopTime = 0.05, __Wolfram_NumberOfIntervals = -1, __Wolfram_Algorithm = "dassl", Tolerance = 1e-10), Diagram(coordinateSystem(extent = {{-150, -90}, {150, 90}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})));
+end full_wave_rectifier_without_capacitor;

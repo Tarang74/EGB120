@@ -1,0 +1,33 @@
+model dual_half_wave_rectifier
+  Modelica.Electrical.Analog.Sources.CosineVoltage cosineVoltage1(V = 12 * sqrt(2), freqHz = 50, phase = 0) annotation(Placement(visible = true, transformation(origin = {-90, -0}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Electrical.Analog.Ideal.IdealDiode diode(Vknee = 0.7, Goff = 1e-15) annotation(Placement(visible = true, transformation(origin = {-30, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin annotation(Placement(visible = true, transformation(origin = {-60, 30}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-46.667, 31.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Ideal.IdealDiode diode1(Vknee = 0.7, Goff = 1e-15) annotation(Placement(visible = true, transformation(origin = {-30, -30}, extent = {{-10, -10}, {10, 10}}, rotation = -180)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin1 annotation(Placement(visible = true, transformation(origin = {0, 0}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-38.667, 23.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin2 annotation(Placement(visible = true, transformation(origin = {40, 0}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-30.667, 15.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Basic.Capacitor capacitor1(C = 3 * sqrt(2) / 625) annotation(Placement(visible = true, transformation(origin = {0, 15}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Electrical.Analog.Basic.Capacitor capacitor2(C = 3 * sqrt(2) / 625) annotation(Placement(visible = true, transformation(origin = {0, -15}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Electrical.Analog.Basic.Resistor resistor1(R = 100) annotation(Placement(visible = true, transformation(origin = {40, 15}, extent = {{-10, -10}, {10, 10}}, rotation = -90)));
+  Modelica.Electrical.Analog.Basic.Resistor resistor2(R = 100) annotation(Placement(visible = true, transformation(origin = {40, -15}, extent = {{-10, 10}, {10, -10}}, rotation = 90)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin3 annotation(Placement(visible = true, transformation(origin = {0, 30}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-22.667, 7.666}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Interfaces.Pin pin4 annotation(Placement(visible = true, transformation(origin = {-0, -30}, extent = {{-2.5, -2.5}, {2.5, 2.5}}, rotation = 0), iconTransformation(origin = {-14.667, -0.334}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Modelica.Electrical.Analog.Basic.Ground ground1 annotation(Placement(visible = true, transformation(origin = {70, -10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+equation
+  connect(cosineVoltage1.p, pin) annotation(Line(visible = true, origin = {-80, 23.333}, points = {{-10, -13.333}, {-10, 6.667}, {20, 6.667}}, color = {10, 90, 224}));
+  connect(pin, diode.p) annotation(Line(visible = true, origin = {-50, 30}, points = {{-10, 0}, {10, 0}}, color = {10, 90, 224}));
+  connect(pin, diode1.n) annotation(Line(visible = true, origin = {-53.333, -10}, points = {{-6.667, 40}, {-6.667, -20}, {13.333, -20}}, color = {10, 90, 224}));
+  connect(cosineVoltage1.n, pin1) annotation(Line(visible = true, origin = {-45.445, -2.295}, points = {{-44.555, -7.705}, {-44.555, -17.705}, {-2.944, -17.705}, {-2.944, 2.295}, {45.445, 2.295}}, color = {10, 90, 224}));
+  connect(capacitor2.p, pin1) annotation(Line(visible = true, origin = {0, -2.5}, points = {{0, -2.5}, {-0, 2.5}}, color = {10, 90, 224}));
+  connect(capacitor1.n, pin1) annotation(Line(visible = true, origin = {0, 2.5}, points = {{-0, 2.5}, {0, -2.5}}, color = {10, 90, 224}));
+  connect(capacitor2.n, pin4) annotation(Line(visible = true, origin = {0, -27.5}, points = {{0, 2.5}, {-0, -2.5}}, color = {10, 90, 224}));
+  connect(pin4, diode1.p) annotation(Line(visible = true, origin = {-8.906, -30}, points = {{8.906, 0}, {-11.094, 0}}, color = {10, 90, 224}));
+  connect(resistor1.n, pin2) annotation(Line(visible = true, origin = {40, 2.5}, points = {{0, 2.5}, {0, -2.5}}, color = {10, 90, 224}));
+  connect(resistor1.p, pin3) annotation(Line(visible = true, origin = {26.667, 28.333}, points = {{13.333, -3.333}, {13.333, 1.667}, {-26.667, 1.667}}, color = {10, 90, 224}));
+  connect(diode.n, pin3) annotation(Line(visible = true, origin = {-10, 30}, points = {{-10, 0}, {10, 0}}, color = {10, 90, 224}));
+  connect(capacitor1.p, pin3) annotation(Line(visible = true, origin = {0, 27.5}, points = {{-0, -2.5}, {0, 2.5}}, color = {10, 90, 224}));
+  connect(pin1, pin2) annotation(Line(visible = true, origin = {20, 0}, points = {{-20, -0}, {20, 0}}, color = {10, 90, 224}));
+  connect(ground1.p, pin2) annotation(Line(visible = true, origin = {55, 2.5}, points = {{15, -2.5}, {15, 2.5}, {-15, 2.5}, {-15, -2.5}}, color = {10, 90, 224}));
+  connect(resistor2.n, pin2) annotation(Line(visible = true, origin = {40, -2.5}, points = {{0, -2.5}, {0, 2.5}}, color = {10, 90, 224}));
+  connect(resistor2.p, pin4) annotation(Line(visible = true, origin = {26.667, -28.333}, points = {{13.333, 3.333}, {13.333, -1.667}, {-26.667, -1.667}}, color = {10, 90, 224}));
+  annotation(experiment(StopTime = 0.05, __Wolfram_NumberOfIntervals = -1, Tolerance = 1e-10), Diagram(coordinateSystem(extent = {{-150, -90}, {150, 90}}, preserveAspectRatio = true, initialScale = 0.1, grid = {5, 5})));
+end dual_half_wave_rectifier;

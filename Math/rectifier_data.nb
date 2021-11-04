@@ -1,0 +1,1320 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     61852,       1312]
+NotebookOptionsPosition[     58907,       1253]
+NotebookOutlinePosition[     59307,       1269]
+CellTagsIndexPosition[     59264,       1266]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetDirectory", "[", 
+   RowBox[{"ParentDirectory", "[", 
+    RowBox[{"NotebookDirectory", "[", "]"}], "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.8450196605006514`*^9, 3.8450196855058966`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"e1ee69ca-dd4b-4f7f-b3c2-67d5a408948b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"halfWaveRectifierWithoutCapacitor", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{
+   "\"\<Simulations\\\\half_wave_rectifier_without_capacitor.sme\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<SME\>\"", ",", "\"\<SystemModelSimulationData\>\""}], 
+     "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8450037267387466`*^9, 3.845003744465973*^9}, 
+   3.845004614906187*^9, 3.845019648411046*^9, {3.845019689689728*^9, 
+   3.84501977057667*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"626b0e23-362f-4ec1-a7ea-28af5101c3f6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SystemModelSimulationData",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              GrayLevel[0.5], 
+              LineBox[CompressedData["
+1:eJxVUX0s1HEcPiYru7CmZoVIOFlrJr0pT6hdVjimUpOWUmpK2CSx1hJxGZfI
+S8jESlhM6JbXOC+XW2fmHJdL5zXuvN15u5x+v9/unz7bd989n7c9n+exCg73
+C9Gl0WhOxCP//2MOj0wqmSOx7yC23Z76uWlWi2twPc//YL9GgXqLZ9O+9Y0o
+uNKoutYg19bbwL7rJwxQTyM3h4wu2PONO7j1U9p+AR5Gr/YnqcYx40tmhIgN
+p+s0V8m08324FJaRwhuUwkBUfP+EgQhWmcFMGUuk3SdGVjU9opzNh31gWquK
+IUELTzW79v0DjAOO1nRGD6PvgXW2UUU1WKmv7217+gvurpPi8jUesgnU3D2C
+xPRFDbyFkPqQDTJ45zPbN8z7Yee4udzs8ihiTs81Zc6IEU62F41hU7JcocOV
+oHZxvS9mahyqW/A7lTgMDYFsHSdx5vfYVKCvFG/aLD9Fhk7h5cSaq9leKWQl
+eUTmD/a8KOQ1rP6EQ9IOsWB5GhOyQZajYAhRoRx5HOQ43sRwe1w0AK4nXdch
+SQGlMz+kOKoPutTALMzTE+JdkgWw0X+S6cGeg+n0rmwJoxVd0Y2FOw/Mo0yz
+nMVwLMA3FYNQZB7CBIna4PlH3KRiAdZnxwOGzzdp9VzEod2ixJQIHki1TSoX
+8dZn1LPXmQ8/yiCllmcPrIhrOHIlUt3sEgy5ArST53FUOLwuTjPh9ICi77yE
+0llnvY6QbtApwksYMnUZsTnSDmo8bhlK1lCir/FX+FOCrECxZDTAvlgM72DS
+sRVkqFt/pDnkYqHXi8is4jknnMY8V40sD3bYhHoVdULasO4WLkh3GwvXYGk7
+4m7R0gDSrRsualyNVUcJ0xtAQaka+iKJcCPyi9b/v5hgbq1LZVVBSdpnuw6v
+nJO1wpJXUBDsg7jr2GfiRL9dkAnqnCANbPiejHir92SRcGQDxcfMO2PvVEDv
+guH+6vwNlBYVDbpoyvAP+ESevA==
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.5]], Axes -> False, PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"half_wave_rectifier_without_capacitor\"", 
+                  "SummaryItem"]}]}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              GrayLevel[0.5], 
+              LineBox[CompressedData["
+1:eJxVUX0s1HEcPiYru7CmZoVIOFlrJr0pT6hdVjimUpOWUmpK2CSx1hJxGZfI
+S8jESlhM6JbXOC+XW2fmHJdL5zXuvN15u5x+v9/unz7bd989n7c9n+exCg73
+C9Gl0WhOxCP//2MOj0wqmSOx7yC23Z76uWlWi2twPc//YL9GgXqLZ9O+9Y0o
+uNKoutYg19bbwL7rJwxQTyM3h4wu2PONO7j1U9p+AR5Gr/YnqcYx40tmhIgN
+p+s0V8m08324FJaRwhuUwkBUfP+EgQhWmcFMGUuk3SdGVjU9opzNh31gWquK
+IUELTzW79v0DjAOO1nRGD6PvgXW2UUU1WKmv7217+gvurpPi8jUesgnU3D2C
+xPRFDbyFkPqQDTJ45zPbN8z7Yee4udzs8ihiTs81Zc6IEU62F41hU7JcocOV
+oHZxvS9mahyqW/A7lTgMDYFsHSdx5vfYVKCvFG/aLD9Fhk7h5cSaq9leKWQl
+eUTmD/a8KOQ1rP6EQ9IOsWB5GhOyQZajYAhRoRx5HOQ43sRwe1w0AK4nXdch
+SQGlMz+kOKoPutTALMzTE+JdkgWw0X+S6cGeg+n0rmwJoxVd0Y2FOw/Mo0yz
+nMVwLMA3FYNQZB7CBIna4PlH3KRiAdZnxwOGzzdp9VzEod2ixJQIHki1TSoX
+8dZn1LPXmQ8/yiCllmcPrIhrOHIlUt3sEgy5ArST53FUOLwuTjPh9ICi77yE
+0llnvY6QbtApwksYMnUZsTnSDmo8bhlK1lCir/FX+FOCrECxZDTAvlgM72DS
+sRVkqFt/pDnkYqHXi8is4jknnMY8V40sD3bYhHoVdULasO4WLkh3GwvXYGk7
+4m7R0gDSrRsualyNVUcJ0xtAQaka+iKJcCPyi9b/v5hgbq1LZVVBSdpnuw6v
+nJO1wpJXUBDsg7jr2GfiRL9dkAnqnCANbPiejHir92SRcGQDxcfMO2PvVEDv
+guH+6vwNlBYVDbpoyvAP+ESevA==
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.5]], Axes -> False, PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"half_wave_rectifier_without_capacitor\"", 
+                  "SummaryItem"]}], ""}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"], ""}, {
+               RowBox[{
+                 TagBox["\"Variables: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["27", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Parameters: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["18", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"States: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["0", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Events: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["6", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SystemModelSimulationData[
+  "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\exp_\
+5228210313_3845055772\\half_wave_rectifier_without_capacitor.mat", 
+   "half_wave_rectifier_without_capacitor", 27, {0., 0.05}, 
+   "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\\
+exp_5228210313_3845055772\\half_wave_rectifier_without_capacitor.sim", 1, {
+   "cosineVoltage1.freqHz", "cosineVoltage1.offset", "cosineVoltage1.phase", 
+    "cosineVoltage1.signalSource.amplitude", 
+    "cosineVoltage1.signalSource.freqHz", 
+    "cosineVoltage1.signalSource.offset", "cosineVoltage1.signalSource.phase",
+     "cosineVoltage1.signalSource.startTime", "cosineVoltage1.startTime", 
+    "cosineVoltage1.V", "diode.Goff", "diode.Ron", "diode.T", "diode.Vknee", 
+    "resistor1.alpha", "resistor1.R", "resistor1.T", "resistor1.T_ref"}, {}, 
+   None, {"diode.off"}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.8450037675777225`*^9, 3.8450046165953536`*^9, 
+  3.8450190223176413`*^9, 3.845019249514005*^9, 3.8450197737290297`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"0977ef4c-9977-48bb-9ee3-a3071b2d3ca3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"halfWaveRectifier", "=", 
+   RowBox[{"Import", "[", 
+    RowBox[{"\"\<Simulations\\\\half_wave_rectifier.sme\>\"", ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<SME\>\"", ",", "\"\<SystemModelSimulationData\>\""}], 
+      "}"}]}], "]"}]}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.845003749374776*^9, 3.845003764487718*^9}, {
+   3.845003814886431*^9, 3.8450038239643674`*^9}, 3.8450045660270243`*^9, {
+   3.8450197779771967`*^9, 3.845019780603198*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"fb7d9ae9-9b54-4a83-9ff6-53a207630311"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SystemModelSimulationData",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              LineBox[CompressedData["
+1:eJwBQQO+/CFib1JlAgAAADMAAAACAAAAAAAAAAAAAAAAAAAAAAAAACrwIMyq
+KCI+pGxgdWt9/j+3Ags4RVJOPmMbiqtCYSJAQ80QPZ0uYz4TDprk3pMsQGsL
+2v5Twm4+38h0s8RtL0D8oJ8BQAp4Pqea+d/9LzBAFsj51Xp9gT40dWI+VkMw
+QJFg6I22M4w+hliSBD9FMECu8+faqGe5PhNg315DRTBA+n5qvHSTSD+DOHeV
+mDMwQAkbnl4py2A/S2FNC/ITMEBTliGOdXFrP9peuasS6S9Az4jS3uALcz/f
+1rX4u6ovQHRGlPYGX3g/hqzTDd9sL0AZBFYOLbJ9PxO4Kv16Ly9A3+ALk6mC
+gT8ElaPajvIuQLK/7J48LIQ/Uhb0uxm2LkCEns2qz9WGP1/Bm7gaei5AV32u
+tmJ/iT/eT+DpkD4uQClcj8L1KIw/djjKansDLkD8OnDOiNKOPzQ+IVjZyC1A
+54wo7Q2+kD/BBmnQqY4tQFH8GHPXEpI/ULfd8+tULUClw2E5AgSTP+Pq9QtU
+LC1AciMUVXAEkz82q6OCQi4tQMw+w3moApQ/xglfNj8YMECMUnVSbPGUP93b
+XGfhOjBAAMJl2DVGlj+RvC2iLBswQHQxVl7/mpc/mD0Jm2v3L0DooEbkyO+Y
+P2vmweD4uC9AXBA3apJEmj+PK10lAHsvQNB/J/BbmZs/zu2HeoA9L0BE7xd2
+Je6cP0GiwPN4AC9AuF4I/O5Cnj/SxFOm6MMuQCzO+IG4l58/nFFYqc6HLkDQ
+nvQDQXagPz1FrBUqTC5AitbsxqUgoT/zI/EF+hAuQEQO5YkKy6E/ioeIlj3W
+LUD+Rd1Mb3WiP++zkOXzmy1AuH3VD9Qfoz+gMuESHGItQG/1mI9xv6M/Izv8
+mVMsLUA6DQBCeL+jP+RjxKqLLC1AbqMBvAUSpD8vGGOCiXkvQK5p3nGKjqQ/
+gmj0M0lCMEBiodY07zilP+qmOPeFIjBAF9nO91PjpT8oWEjHAAMwQMsQx7q4
+jaY/k6bSVXLHL0CASL99HTinPy1UoVNdiS9ANYC3QILipz+b2zyZwUsvQOm3
+rwPnjKg/F8i3OZ4OL0Ce76fGSzepP4B+80ny0S5AuCVt9A==
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], Axes -> False, 
+             PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"half_wave_rectifier\"", "SummaryItem"]}]}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              LineBox[CompressedData["
+1:eJwBQQO+/CFib1JlAgAAADMAAAACAAAAAAAAAAAAAAAAAAAAAAAAACrwIMyq
+KCI+pGxgdWt9/j+3Ags4RVJOPmMbiqtCYSJAQ80QPZ0uYz4TDprk3pMsQGsL
+2v5Twm4+38h0s8RtL0D8oJ8BQAp4Pqea+d/9LzBAFsj51Xp9gT40dWI+VkMw
+QJFg6I22M4w+hliSBD9FMECu8+faqGe5PhNg315DRTBA+n5qvHSTSD+DOHeV
+mDMwQAkbnl4py2A/S2FNC/ITMEBTliGOdXFrP9peuasS6S9Az4jS3uALcz/f
+1rX4u6ovQHRGlPYGX3g/hqzTDd9sL0AZBFYOLbJ9PxO4Kv16Ly9A3+ALk6mC
+gT8ElaPajvIuQLK/7J48LIQ/Uhb0uxm2LkCEns2qz9WGP1/Bm7gaei5AV32u
+tmJ/iT/eT+DpkD4uQClcj8L1KIw/djjKansDLkD8OnDOiNKOPzQ+IVjZyC1A
+54wo7Q2+kD/BBmnQqY4tQFH8GHPXEpI/ULfd8+tULUClw2E5AgSTP+Pq9QtU
+LC1AciMUVXAEkz82q6OCQi4tQMw+w3moApQ/xglfNj8YMECMUnVSbPGUP93b
+XGfhOjBAAMJl2DVGlj+RvC2iLBswQHQxVl7/mpc/mD0Jm2v3L0DooEbkyO+Y
+P2vmweD4uC9AXBA3apJEmj+PK10lAHsvQNB/J/BbmZs/zu2HeoA9L0BE7xd2
+Je6cP0GiwPN4AC9AuF4I/O5Cnj/SxFOm6MMuQCzO+IG4l58/nFFYqc6HLkDQ
+nvQDQXagPz1FrBUqTC5AitbsxqUgoT/zI/EF+hAuQEQO5YkKy6E/ioeIlj3W
+LUD+Rd1Mb3WiP++zkOXzmy1AuH3VD9Qfoz+gMuESHGItQG/1mI9xv6M/Izv8
+mVMsLUA6DQBCeL+jP+RjxKqLLC1AbqMBvAUSpD8vGGOCiXkvQK5p3nGKjqQ/
+gmj0M0lCMEBiodY07zilP+qmOPeFIjBAF9nO91PjpT8oWEjHAAMwQMsQx7q4
+jaY/k6bSVXLHL0CASL99HTinPy1UoVNdiS9ANYC3QILipz+b2zyZwUsvQOm3
+rwPnjKg/F8i3OZ4OL0Ce76fGSzepP4B+80ny0S5AuCVt9A==
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], Axes -> False, 
+             PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"half_wave_rectifier\"", "SummaryItem"]}], ""}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"], ""}, {
+               RowBox[{
+                 TagBox["\"Variables: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["40", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Parameters: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["19", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"States: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Events: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["6", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SystemModelSimulationData[
+  "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\exp_\
+5228210313_3845059457\\half_wave_rectifier.mat", "half_wave_rectifier", 40, {
+   0., 0.05}, 
+   "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\\
+exp_5228210313_3845059457\\half_wave_rectifier.sim", 1, {
+   "capacitor1.C", "cosineVoltage1.freqHz", "cosineVoltage1.offset", 
+    "cosineVoltage1.phase", "cosineVoltage1.signalSource.amplitude", 
+    "cosineVoltage1.signalSource.freqHz", 
+    "cosineVoltage1.signalSource.offset", "cosineVoltage1.signalSource.phase",
+     "cosineVoltage1.signalSource.startTime", "cosineVoltage1.startTime", 
+    "cosineVoltage1.V", "diode.Goff", "diode.Ron", "diode.T", "diode.Vknee", 
+    "resistor1.alpha", "resistor1.R", "resistor1.T", "resistor1.T_ref"}, {
+   "capacitor1.v"}, None, {"diode.off"}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.845003774091807*^9, 3.8450038263427095`*^9, 
+  3.845004567076115*^9, 3.845019787127206*^9, 3.8450198565343704`*^9, 
+  3.8450234579683557`*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"1a77e017-daf2-412e-b55f-3ce139c7ebeb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fullWaveRectifierWithoutCapacitor", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{
+   "\"\<Simulations\\\\full_wave_rectifier_without_capacitor.sme\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<SME\>\"", ",", "\"\<SystemModelSimulationData\>\""}], 
+     "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.845003788695464*^9, 3.8450038000334196`*^9}, 
+   3.8450038477849245`*^9, 3.845004544239175*^9, {3.845019873760839*^9, 
+   3.8450198767443457`*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"ddfe6dda-4e0c-4827-a44a-d4847c4f8953"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SystemModelSimulationData",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              GrayLevel[0.5], 
+              LineBox[CompressedData["
+1:eJxVUX0s1HEcPiYru7CmZoVIOFlrJr0pT6hdVjimUpOWUmpK2CSx1hJxGZfI
+S8jESlhM6JbXOC+XW2fmHJdL5zXuvN15u5x+v9/unz7bd989n7c9n+exCg73
+C9Gl0WhOxCP//2MOj0wqmSOx7yC23Z76uWlWi2twPc//YL9GgXqLZ9O+9Y0o
+uNKoutYg19bbwL7rJwxQTyM3h4wu2PONO7j1U9p+AR5Gr/YnqcYx40tmhIgN
+p+s0V8m08324FJaRwhuUwkBUfP+EgQhWmcFMGUuk3SdGVjU9opzNh31gWquK
+IUELTzW79v0DjAOO1nRGD6PvgXW2UUU1WKmv7217+gvurpPi8jUesgnU3D2C
+xPRFDbyFkPqQDTJ45zPbN8z7Yee4udzs8ihiTs81Zc6IEU62F41hU7JcocOV
+oHZxvS9mahyqW/A7lTgMDYFsHSdx5vfYVKCvFG/aLD9Fhk7h5cSaq9leKWQl
+eUTmD/a8KOQ1rP6EQ9IOsWB5GhOyQZajYAhRoRx5HOQ43sRwe1w0AK4nXdch
+SQGlMz+kOKoPutTALMzTE+JdkgWw0X+S6cGeg+n0rmwJoxVd0Y2FOw/Mo0yz
+nMVwLMA3FYNQZB7CBIna4PlH3KRiAdZnxwOGzzdp9VzEod2ixJQIHki1TSoX
+8dZn1LPXmQ8/yiCllmcPrIhrOHIlUt3sEgy5ArST53FUOLwuTjPh9ICi77yE
+0llnvY6QbtApwksYMnUZsTnSDmo8bhlK1lCir/FX+FOCrECxZDTAvlgM72DS
+sRVkqFt/pDnkYqHXi8is4jknnMY8V40sD3bYhHoVdULasO4WLkh3GwvXYGk7
+4m7R0gDSrRsualyNVUcJ0xtAQaka+iKJcCPyi9b/v5hgbq1LZVVBSdpnuw6v
+nJO1wpJXUBDsg7jr2GfiRL9dkAnqnCANbPiejHir92SRcGQDxcfMO2PvVEDv
+guH+6vwNlBYVDbpoyvAP+ESevA==
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.5]], Axes -> False, PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"full_wave_rectifier_without_capacitor\"", 
+                  "SummaryItem"]}]}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              GrayLevel[0.5], 
+              LineBox[CompressedData["
+1:eJxVUX0s1HEcPiYru7CmZoVIOFlrJr0pT6hdVjimUpOWUmpK2CSx1hJxGZfI
+S8jESlhM6JbXOC+XW2fmHJdL5zXuvN15u5x+v9/unz7bd989n7c9n+exCg73
+C9Gl0WhOxCP//2MOj0wqmSOx7yC23Z76uWlWi2twPc//YL9GgXqLZ9O+9Y0o
+uNKoutYg19bbwL7rJwxQTyM3h4wu2PONO7j1U9p+AR5Gr/YnqcYx40tmhIgN
+p+s0V8m08324FJaRwhuUwkBUfP+EgQhWmcFMGUuk3SdGVjU9opzNh31gWquK
+IUELTzW79v0DjAOO1nRGD6PvgXW2UUU1WKmv7217+gvurpPi8jUesgnU3D2C
+xPRFDbyFkPqQDTJ45zPbN8z7Yee4udzs8ihiTs81Zc6IEU62F41hU7JcocOV
+oHZxvS9mahyqW/A7lTgMDYFsHSdx5vfYVKCvFG/aLD9Fhk7h5cSaq9leKWQl
+eUTmD/a8KOQ1rP6EQ9IOsWB5GhOyQZajYAhRoRx5HOQ43sRwe1w0AK4nXdch
+SQGlMz+kOKoPutTALMzTE+JdkgWw0X+S6cGeg+n0rmwJoxVd0Y2FOw/Mo0yz
+nMVwLMA3FYNQZB7CBIna4PlH3KRiAdZnxwOGzzdp9VzEod2ixJQIHki1TSoX
+8dZn1LPXmQ8/yiCllmcPrIhrOHIlUt3sEgy5ArST53FUOLwuTjPh9ICi77yE
+0llnvY6QbtApwksYMnUZsTnSDmo8bhlK1lCir/FX+FOCrECxZDTAvlgM72DS
+sRVkqFt/pDnkYqHXi8is4jknnMY8V40sD3bYhHoVdULasO4WLkh3GwvXYGk7
+4m7R0gDSrRsualyNVUcJ0xtAQaka+iKJcCPyi9b/v5hgbq1LZVVBSdpnuw6v
+nJO1wpJXUBDsg7jr2GfiRL9dkAnqnCANbPiejHir92SRcGQDxcfMO2PvVEDv
+guH+6vwNlBYVDbpoyvAP+ESevA==
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               GrayLevel[0.5]], Axes -> False, PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                 "\"full_wave_rectifier_without_capacitor\"", 
+                  "SummaryItem"]}], ""}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"], ""}, {
+               RowBox[{
+                 TagBox["\"Variables: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["68", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Parameters: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["30", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"States: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["0", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Events: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["11", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SystemModelSimulationData[
+  "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\exp_\
+5228210313_3845055877\\full_wave_rectifier_without_capacitor.mat", 
+   "full_wave_rectifier_without_capacitor", 68, {0., 0.05}, 
+   "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\\
+exp_5228210313_3845055877\\full_wave_rectifier_without_capacitor.sim", 1, {
+   "cosineVoltage1.freqHz", "cosineVoltage1.offset", "cosineVoltage1.phase", 
+    "cosineVoltage1.signalSource.amplitude", 
+    "cosineVoltage1.signalSource.freqHz", 
+    "cosineVoltage1.signalSource.offset", "cosineVoltage1.signalSource.phase",
+     "cosineVoltage1.signalSource.startTime", "cosineVoltage1.startTime", 
+    "cosineVoltage1.V", "diode1.Goff", "diode1.Ron", "diode1.T", 
+    "diode1.Vknee", "diode2.Goff", "diode2.Ron", "diode2.T", "diode2.Vknee", 
+    "diode3.Goff", "diode3.Ron", "diode3.T", "diode3.Vknee", "diode.Goff", 
+    "diode.Ron", "diode.T", "diode.Vknee", "resistor1.alpha", "resistor1.R", 
+    "resistor1.T", "resistor1.T_ref"}, {}, None, {
+   "diode1.off", "diode2.off", "diode3.off", "diode.off"}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.8450038010642366`*^9, 3.845003848367925*^9, 
+  3.845004547555255*^9, 3.845019877639616*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"6594a97d-70de-4a2f-9d2b-3633dcaac574"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fullWaveRectifier", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{"\"\<Simulations\\\\full_wave_rectifier.sme\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<SME\>\"", ",", "\"\<SystemModelSimulationData\>\""}], 
+     "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8450037771834497`*^9, 3.845003782819482*^9}, 
+   3.845003837983531*^9, 3.845004516916341*^9, {3.8450198591527743`*^9, 
+   3.8450198711529517`*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"f525a360-7f31-40c8-88dd-5e93f197c5b8"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SystemModelSimulationData",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              LineBox[CompressedData["
+1:eJxdUmlQzHEY3ljTSo51lKHU5hrM/7dFWDrelxKlVoeltrZLm6NEahwz0TEU
+tcOmtlaSlna3wi5bGVcmm8qxhNCuillHB8o5OtDITL54Z555vj3zHC8rcoe/
+cASNRls0hL/8/9WbqT84WK8DTqwFr7uPoGT/QfKwJwzkUa0VgnsE316TVqTO
+3QJCj3Tm5EKCB072zn24YCfM2PGCPiGOYJbBbneLWyL8jHGZ7YcEpZbc253B
+e4FmfsmseSLBEt6+iT8SkuBYQpOP7B2Fek//iyYeKRDj8DJDfYXCV52bNzL8
+02A8T+5vIqKG9Q7Cofy8G9E2bFx6ry1XtTgdvG3EfU9/E3Td+s2pasVh0Nhe
+7XVpJOjOGP3muk8mjLncQusuJuilnJGpDRIBI+dCuXEXQV8PR4e7wqPAqEwT
+TV9F8NzXWR87OGKw3untWmBJkK1VwwfXbEgWSQMF7ynUZC/P6XE/DoF+4sSo
+agoXR9S1f/HKgXHFvQvU4n/+cmFjpIXCmclGo1/KqDpnCcRbGSOrR7AxijUm
+6M7KPNjmtNLE5inBjs+S8/fX5IM3v7KyXk4wpsaW1siVgkdK66TKPQR7jp0L
+eLL+BDhZDFa1exKMD1uifMYvAE1f/8JQK4Lfya0BffhJYGX5zJz2icI9g2u5
+rdGFcETHtJ2mpXDgwXPZq9hTULZ9QCuQUMN5i2D8YwNT0U9QeTO7RhN6GpI/
+zstVmLJxyupxZsELi6HWXPqIZiD4XNVUEVJVDGK+PSUrH9rP4oQglCODLioD
+M5II8g+EmoZfl0FBUKNMwyU4vX3mpQjXM0B3MXTasQi2+XTxN906A47NTFXz
+NwqLqlR0oftZSGtJzXxUT2G4daIquuEsxDToLMcW/OuvBBLmUOIyPcHLkscu
+vjUlwJmaKRKbs3Hv77wOPzc5TO0xCN+0EVwmDMkOqJcDwxi3LUlN8KeO5cTz
+VMCKfJ19cCrBG44dbzfoFKD3muKbHDD0n4XnjwauU0JcCyO8czZBoO/i8J8o
+wco4sl/SR6FJ7NLXwbxSeF0zWJFxn8Lapl9ZAn0p7NOK5lcXUcN7lAF9Ux3X
+V0XwD2JKaPY=
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], Axes -> False, 
+             PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"full_wave_rectifier\"", "SummaryItem"]}]}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              LineBox[CompressedData["
+1:eJxdUmlQzHEY3ljTSo51lKHU5hrM/7dFWDrelxKlVoeltrZLm6NEahwz0TEU
+tcOmtlaSlna3wi5bGVcmm8qxhNCuillHB8o5OtDITL54Z555vj3zHC8rcoe/
+cASNRls0hL/8/9WbqT84WK8DTqwFr7uPoGT/QfKwJwzkUa0VgnsE316TVqTO
+3QJCj3Tm5EKCB072zn24YCfM2PGCPiGOYJbBbneLWyL8jHGZ7YcEpZbc253B
+e4FmfsmseSLBEt6+iT8SkuBYQpOP7B2Fek//iyYeKRDj8DJDfYXCV52bNzL8
+02A8T+5vIqKG9Q7Cofy8G9E2bFx6ry1XtTgdvG3EfU9/E3Td+s2pasVh0Nhe
+7XVpJOjOGP3muk8mjLncQusuJuilnJGpDRIBI+dCuXEXQV8PR4e7wqPAqEwT
+TV9F8NzXWR87OGKw3untWmBJkK1VwwfXbEgWSQMF7ynUZC/P6XE/DoF+4sSo
+agoXR9S1f/HKgXHFvQvU4n/+cmFjpIXCmclGo1/KqDpnCcRbGSOrR7AxijUm
+6M7KPNjmtNLE5inBjs+S8/fX5IM3v7KyXk4wpsaW1siVgkdK66TKPQR7jp0L
+eLL+BDhZDFa1exKMD1uifMYvAE1f/8JQK4Lfya0BffhJYGX5zJz2icI9g2u5
+rdGFcETHtJ2mpXDgwXPZq9hTULZ9QCuQUMN5i2D8YwNT0U9QeTO7RhN6GpI/
+zstVmLJxyupxZsELi6HWXPqIZiD4XNVUEVJVDGK+PSUrH9rP4oQglCODLioD
+M5II8g+EmoZfl0FBUKNMwyU4vX3mpQjXM0B3MXTasQi2+XTxN906A47NTFXz
+NwqLqlR0oftZSGtJzXxUT2G4daIquuEsxDToLMcW/OuvBBLmUOIyPcHLkscu
+vjUlwJmaKRKbs3Hv77wOPzc5TO0xCN+0EVwmDMkOqJcDwxi3LUlN8KeO5cTz
+VMCKfJ19cCrBG44dbzfoFKD3muKbHDD0n4XnjwauU0JcCyO8czZBoO/i8J8o
+wco4sl/SR6FJ7NLXwbxSeF0zWJFxn8Lapl9ZAn0p7NOK5lcXUcN7lAF9Ux3X
+V0XwD2JKaPY=
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], Axes -> False, 
+             PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"full_wave_rectifier\"", "SummaryItem"]}], ""}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"], ""}, {
+               RowBox[{
+                 TagBox["\"Variables: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["82", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Parameters: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["32", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"States: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Events: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["11", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SystemModelSimulationData[
+  "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\exp_\
+5228210313_3845059948\\full_wave_rectifier.mat", "full_wave_rectifier", 82, {
+   0., 0.05}, 
+   "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\\
+exp_5228210313_3845059948\\full_wave_rectifier.sim", 1, {
+   "capacitor1.C", "capacitor2.C", "cosineVoltage1.freqHz", 
+    "cosineVoltage1.offset", "cosineVoltage1.phase", 
+    "cosineVoltage1.signalSource.amplitude", 
+    "cosineVoltage1.signalSource.freqHz", 
+    "cosineVoltage1.signalSource.offset", "cosineVoltage1.signalSource.phase",
+     "cosineVoltage1.signalSource.startTime", "cosineVoltage1.startTime", 
+    "cosineVoltage1.V", "diode1.Goff", "diode1.Ron", "diode1.T", 
+    "diode1.Vknee", "diode2.Goff", "diode2.Ron", "diode2.T", "diode2.Vknee", 
+    "diode3.Goff", "diode3.Ron", "diode3.T", "diode3.Vknee", "diode.Goff", 
+    "diode.Ron", "diode.T", "diode.Vknee", "resistor1.alpha", "resistor1.R", 
+    "resistor1.T", "resistor1.T_ref"}, {"capacitor1.v"}, None, {
+   "diode1.off", "diode2.off", "diode3.off", "diode.off"}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.845019865044654*^9, 3.845019872032506*^9}, 
+   3.845023464702321*^9, 3.8450239489171085`*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"1c0fb560-6852-40d4-a00b-ae7c511c04b1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dualHalfWaveRectifier", "=", 
+  RowBox[{"Import", "[", 
+   RowBox[{"\"\<Simulations\\\\dual_half_wave_rectifier.sme\>\"", ",", 
+    RowBox[{"{", 
+     RowBox[{"\"\<SME\>\"", ",", "\"\<SystemModelSimulationData\>\""}], 
+     "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8450038858946605`*^9, 3.8450038925115995`*^9}, 
+   3.84500441707926*^9, {3.845019879696224*^9, 3.8450198875113897`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"2670331e-2782-49ac-b366-746f2bdd8d2e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SystemModelSimulationData",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              LineBox[CompressedData["
+1:eJxdkn9MzHEYx285izTTLGejtnMh6vv5fnelTuX7POWiTi4yRYgulTCtrh+a
+o66jI8mt01Su3MklLspvJtVQDIdRt0TNlB8zWQ2dH3G+hn8827Nnrz+e9/Z+
+7y1UpMckO/F4PD9uf9//J2Lm6vtmeSArEzr8uh66oVt/0BCxrGZ3qUWF9nJv
+HOoqLN6bnsY2x1isbfsJNkd+ER0wZ7PXoudukwkZ7Eo8Xsxfr2blwtS7wQsZ
+JE0DL9QfStjAsdtZDGfwfvvCXM3BSSBWmtSbpQye6V6fE+0ZC/b5+pDPXgyG
+5S8YFmtTYMT2vpE3hsEpJbJ3fP8MaOw5Kw9ro1E3zRJUwc+GurUK9w49jdkJ
+x5QXON7F+lpvcfxHLwe6BaGq0SIaJaaWstKeHfAseOT2KSmNUYH7Qje8KoC8
+lbnr9DwatUeuPMy/qYGQt8kpa1vJ3/8iqIx7HR5QTDBWYItscd4HHg2qH98j
+CNaKro5qP+2HxnjbA6dxBEMV9KOR3lLoLkgy9N2m/urrYG6j97ZvWgpPx0ot
+gvgyCGie1vQmgkKe2rCEz9fDmeijl+N9Kazo1Wv3xOth83xXv869BPneru0m
+3SFYes5p+gcuvxJN3ccOezno5IuClDMYFEQsG52qPAwtMpJ48yeNnnOeBPS/
+rIDrXWENK67RWDaognkJVZCx8ZNhTQ6NTQ8ceQ7rERg4pN80wZ/GsfdWhGeG
+VkOUTSY2DhN0XByqLOD40TkXczXHedaEtvGSGogWiwpt7QTrw37mFyQdBUZw
+uHpUR9BTkipNSzdCjkTrKJET9MgqT5TPNkGqRSVtmEjwWfGPZPuACU43Uf1x
+Vgpfd/honhuOAVreqLSl//zWgoJ9bIyUU/iE7y3ObK2FDGHn8lgujx1xae6u
+tloIaVXKfQYp3O0/g31VeByeGnrEuVxfmKg6l0UzzXB+nMqJmsWgV3DfbJ9e
+M/iPtCSJ+AwO1oT4dlbVgWW31/YTN2gcPJAVeTXmBEiMKVmX8mk8Nfx4qWJS
+PWic19ghmMZLL1y2LL5TDxmTnVdt/UqwKBxo0lcPgewyYw2XR9tOD87xSRAO
+uGVGWQn+AiOzYPU=
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], Axes -> False, 
+             PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"dual_half_wave_rectifier\"", "SummaryItem"]}]}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              LineBox[CompressedData["
+1:eJxdkn9MzHEYx285izTTLGejtnMh6vv5fnelTuX7POWiTi4yRYgulTCtrh+a
+o66jI8mt01Su3MklLspvJtVQDIdRt0TNlB8zWQ2dH3G+hn8827Nnrz+e9/Z+
+7y1UpMckO/F4PD9uf9//J2Lm6vtmeSArEzr8uh66oVt/0BCxrGZ3qUWF9nJv
+HOoqLN6bnsY2x1isbfsJNkd+ER0wZ7PXoudukwkZ7Eo8Xsxfr2blwtS7wQsZ
+JE0DL9QfStjAsdtZDGfwfvvCXM3BSSBWmtSbpQye6V6fE+0ZC/b5+pDPXgyG
+5S8YFmtTYMT2vpE3hsEpJbJ3fP8MaOw5Kw9ro1E3zRJUwc+GurUK9w49jdkJ
+x5QXON7F+lpvcfxHLwe6BaGq0SIaJaaWstKeHfAseOT2KSmNUYH7Qje8KoC8
+lbnr9DwatUeuPMy/qYGQt8kpa1vJ3/8iqIx7HR5QTDBWYItscd4HHg2qH98j
+CNaKro5qP+2HxnjbA6dxBEMV9KOR3lLoLkgy9N2m/urrYG6j97ZvWgpPx0ot
+gvgyCGie1vQmgkKe2rCEz9fDmeijl+N9Kazo1Wv3xOth83xXv869BPneru0m
+3SFYes5p+gcuvxJN3ccOezno5IuClDMYFEQsG52qPAwtMpJ48yeNnnOeBPS/
+rIDrXWENK67RWDaognkJVZCx8ZNhTQ6NTQ8ceQ7rERg4pN80wZ/GsfdWhGeG
+VkOUTSY2DhN0XByqLOD40TkXczXHedaEtvGSGogWiwpt7QTrw37mFyQdBUZw
+uHpUR9BTkipNSzdCjkTrKJET9MgqT5TPNkGqRSVtmEjwWfGPZPuACU43Uf1x
+Vgpfd/honhuOAVreqLSl//zWgoJ9bIyUU/iE7y3ObK2FDGHn8lgujx1xae6u
+tloIaVXKfQYp3O0/g31VeByeGnrEuVxfmKg6l0UzzXB+nMqJmsWgV3DfbJ9e
+M/iPtCSJ+AwO1oT4dlbVgWW31/YTN2gcPJAVeTXmBEiMKVmX8mk8Nfx4qWJS
+PWic19ghmMZLL1y2LL5TDxmTnVdt/UqwKBxo0lcPgewyYw2XR9tOD87xSRAO
+uGVGWQn+AiOzYPU=
+               "]]}, ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, AspectRatio -> 1, 
+             PlotRange -> {Automatic, Automatic}, PlotRangeClipping -> True, 
+             Frame -> True, FrameTicks -> None, FrameStyle -> Directive[
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], Axes -> False, 
+             PlotRangePadding -> {
+               Scaled[0.02], 
+               Scaled[0.02]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Model: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"dual_half_wave_rectifier\"", "SummaryItem"]}], 
+               ""}, {
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.`", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["0.05`", "SummaryItem"]}]}, "RowDefault"], 
+                "SummaryItem"], ""}, {
+               RowBox[{
+                 TagBox["\"Variables: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["69", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Parameters: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["28", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"States: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["2", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Events: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["11", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SystemModelSimulationData[
+  "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\exp_\
+5228210313_3845059466\\dual_half_wave_rectifier.mat", 
+   "dual_half_wave_rectifier", 69, {0., 0.05}, 
+   "C:\\Users\\tjana\\AppData\\Local\\Temp\\WolframSystemModeler-12.3\\WL\\\
+exp_5228210313_3845059466\\dual_half_wave_rectifier.sim", 1, {
+   "capacitor1.C", "capacitor2.C", "cosineVoltage1.freqHz", 
+    "cosineVoltage1.offset", "cosineVoltage1.phase", 
+    "cosineVoltage1.signalSource.amplitude", 
+    "cosineVoltage1.signalSource.freqHz", 
+    "cosineVoltage1.signalSource.offset", "cosineVoltage1.signalSource.phase",
+     "cosineVoltage1.signalSource.startTime", "cosineVoltage1.startTime", 
+    "cosineVoltage1.V", "diode1.Goff", "diode1.Ron", "diode1.T", 
+    "diode1.Vknee", "diode.Goff", "diode.Ron", "diode.T", "diode.Vknee", 
+    "resistor1.alpha", "resistor1.R", "resistor1.T", "resistor1.T_ref", 
+    "resistor2.alpha", "resistor2.R", "resistor2.T", "resistor2.T_ref"}, {
+   "capacitor1.v", "capacitor2.v"}, None, {"diode1.off", "diode.off"}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.845003893286261*^9, 3.8450044387786093`*^9, 
+  3.8450198884243917`*^9, 3.84502346678426*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"f74fb28a-9fb6-48d5-a83f-b098e331b39a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Half wave rectifier without capacitor", "Subsection",
+ CellChangeTimes->{{3.8450039516573286`*^9, 3.845003954705839*^9}, {
+  3.8450042169433174`*^9, 
+  3.8450042207830133`*^9}},ExpressionUUID->"d6258928-e39c-4afc-852f-\
+6c6d1901330b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"half1R", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "halfWaveRectifierWithoutCapacitor", "[", "\"\<resistor1.v\>\"", "]"}], 
+      "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8450046620732017`*^9, 3.8450047183031054`*^9}, {
+  3.8450047588026075`*^9, 3.8450047906369877`*^9}, {3.845004821594558*^9, 
+  3.845004822714759*^9}, {3.8450049297867575`*^9, 3.8450049329563065`*^9}, {
+  3.84500761444232*^9, 3.8450076271932893`*^9}, {3.8450077704152374`*^9, 
+  3.845007772872406*^9}, {3.845007835032091*^9, 3.8450078501734085`*^9}, {
+  3.845017372088959*^9, 3.8450173744631777`*^9}, {3.84501922241479*^9, 
+  3.845019229142377*^9}, {3.8450199358504963`*^9, 3.845019969559078*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"e8b96631-1a15-4736-b0bf-d76f1fa63be4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Half wave rectifier", "Subsection",
+ CellChangeTimes->{{3.8450039516573286`*^9, 3.845003954705839*^9}, {
+  3.8450042169433174`*^9, 
+  3.845004231317964*^9}},ExpressionUUID->"3655ca92-f3dc-4f4b-bd85-\
+0e321738f493"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"half2R", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"halfWaveRectifier", "[", "\"\<resistor1.v\>\"", "]"}], "[", 
+      "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.845004954721195*^9, 3.845004963765876*^9}, {
+  3.845007762660184*^9, 3.8450077653901567`*^9}, {3.845007867925773*^9, 
+  3.845007871702532*^9}, {3.8450175751742277`*^9, 3.845017576365719*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"fd6b6fc8-6566-4f29-85c8-cda75d8ee0e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Full wave rectifier without capacitor", "Subsection",
+ CellChangeTimes->{{3.8450039516573286`*^9, 3.845003954705839*^9}, {
+  3.8450042169433174`*^9, 
+  3.845004235690841*^9}},ExpressionUUID->"aa74af6f-3907-4d1d-88f3-\
+7a0a96ea5a7a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"full1R", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "fullWaveRectifierWithoutCapacitor", "[", "\"\<resistor1.v\>\"", "]"}], 
+      "[", "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.845004999069023*^9, 3.8450050075150185`*^9}, {
+  3.845007754633192*^9, 3.845007757008193*^9}, {3.845007881216603*^9, 
+  3.8450078848616056`*^9}, {3.845017586951548*^9, 3.845017588094541*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"70498bf4-2baf-46e5-81fb-031a5ae41f05"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Full wave rectifier ", "Subsection",
+ CellChangeTimes->{{3.8450039516573286`*^9, 3.845003954705839*^9}, {
+  3.8450042169433174`*^9, 
+  3.845004247077776*^9}},ExpressionUUID->"ba9e482b-288a-4857-863c-\
+a5d12c8716d3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"full2R", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"fullWaveRectifier", "[", "\"\<resistor1.v\>\"", "]"}], "[", 
+      "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.845005026109293*^9, 3.845005032224262*^9}, {
+   3.8450077457361813`*^9, 3.8450077477830615`*^9}, {3.8450078976621685`*^9, 
+   3.84500790138896*^9}, {3.8450175939605465`*^9, 3.8450175962288837`*^9}, 
+   3.845018987625823*^9},
+ CellLabel->"In[34]:=",ExpressionUUID->"0f489184-1e9a-440f-81bb-d65cef3ea6f7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Dual half wave rectifier ", "Subsection",
+ CellChangeTimes->{{3.8450039516573286`*^9, 3.845003954705839*^9}, {
+  3.8450042169433174`*^9, 3.845004247077776*^9}, {3.8450043329571595`*^9, 
+  3.845004336264913*^9}},ExpressionUUID->"9c4eb8d1-0d32-46fa-8158-\
+ffd0cf08ccd7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dualR1", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"dualHalfWaveRectifier", "[", "\"\<resistor1.v\>\"", "]"}], "[",
+       "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.845005041127685*^9, 3.8450050766614995`*^9}, {
+  3.8450077167292085`*^9, 3.8450077238488636`*^9}, {3.845007909999135*^9, 
+  3.845007912653555*^9}, {3.8450176013417916`*^9, 3.845017602428831*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"e1390bdd-d618-4a72-b509-37faa32a9063"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dualR2", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"dualHalfWaveRectifier", "[", "\"\<resistor2.v\>\"", "]"}], "[",
+       "t", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}]}], "}"}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.845005061944234*^9, 3.845005082571674*^9}, {
+  3.845007953767356*^9, 3.845007959516774*^9}, {3.845017650286652*^9, 
+  3.845017651756652*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"306be38a-b795-4dbc-b901-645a1d069f17"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Export", "Subsection",
+ CellChangeTimes->{{3.845007637854639*^9, 
+  3.845007638772647*^9}},ExpressionUUID->"4967e1eb-5901-4fd3-bf1e-\
+309e5357b69c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Export", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ParentDirectory", "[", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "]"}], ",", 
+       "\"\<tikz/rectifierData.csv\>\""}], "}"}], "]"}], ",", 
+    RowBox[{"Transpose", "@", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", "0.04", ",", "500"}], "]"}], ",", "half1R", ",", 
+       "half2R", ",", "full1R", ",", "full2R", ",", "dualR1", ",", "dualR2"}],
+       "}"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.845016007323172*^9, 3.8450160278035583`*^9}, {
+   3.84501776569236*^9, 3.845017777747735*^9}, 3.8450178655567465`*^9, 
+   3.8450264719827085`*^9},
+ CellLabel->"In[36]:=",ExpressionUUID->"c8269e36-385e-4782-8c3f-ceb5f09d4fa3"]
+}, Open  ]]
+},
+WindowSize->{1050, 669},
+WindowMargins->{{Automatic, 313}, {Automatic, 109}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"68b7680a-0f33-4776-b791-e8c18cfe6c32"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 315, 6, 29, "Input",ExpressionUUID->"e1ee69ca-dd4b-4f7f-b3c2-67d5a408948b"],
+Cell[CellGroupData[{
+Cell[898, 30, 548, 11, 50, "Input",ExpressionUUID->"626b0e23-362f-4ec1-a7ea-28af5101c3f6"],
+Cell[1449, 43, 9404, 186, 64, "Output",ExpressionUUID->"0977ef4c-9977-48bb-9ee3-a3071b2d3ca3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10890, 234, 580, 11, 50, "Input",ExpressionUUID->"fb7d9ae9-9b54-4a83-9ff6-53a207630311"],
+Cell[11473, 247, 9701, 189, 64, "Output",ExpressionUUID->"1a77e017-daf2-412e-b55f-3ce139c7ebeb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21211, 441, 553, 11, 50, "Input",ExpressionUUID->"ddfe6dda-4e0c-4827-a44a-d4847c4f8953"],
+Cell[21767, 454, 9605, 189, 64, "Output",ExpressionUUID->"6594a97d-70de-4a2f-9d2b-3633dcaac574"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31409, 648, 515, 10, 29, "Input",ExpressionUUID->"f525a360-7f31-40c8-88dd-5e93f197c5b8"],
+Cell[31927, 660, 9831, 192, 64, "Output",ExpressionUUID->"1c0fb560-6852-40d4-a00b-ae7c511c04b1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41795, 857, 497, 9, 29, "Input",ExpressionUUID->"2670331e-2782-49ac-b366-746f2bdd8d2e"],
+Cell[42295, 868, 9815, 192, 64, "Output",ExpressionUUID->"f74fb28a-9fb6-48d5-a83f-b098e331b39a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52147, 1065, 240, 4, 54, "Subsection",ExpressionUUID->"d6258928-e39c-4afc-852f-6c6d1901330b"],
+Cell[52390, 1071, 995, 21, 29, "Input",ExpressionUUID->"e8b96631-1a15-4736-b0bf-d76f1fa63be4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53422, 1097, 220, 4, 54, "Subsection",ExpressionUUID->"3655ca92-f3dc-4f4b-bd85-0e321738f493"],
+Cell[53645, 1103, 668, 16, 29, "Input",ExpressionUUID->"fd6b6fc8-6566-4f29-85c8-cda75d8ee0e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54350, 1124, 238, 4, 54, "Subsection",ExpressionUUID->"aa74af6f-3907-4d1d-88f3-7a0a96ea5a7a"],
+Cell[54591, 1130, 691, 17, 29, "Input",ExpressionUUID->"70498bf4-2baf-46e5-81fb-031a5ae41f05"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[55319, 1152, 221, 4, 54, "Subsection",ExpressionUUID->"ba9e482b-288a-4857-863c-a5d12c8716d3"],
+Cell[55543, 1158, 701, 17, 29, "Input",ExpressionUUID->"0f489184-1e9a-440f-81bb-d65cef3ea6f7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[56281, 1180, 274, 4, 54, "Subsection",ExpressionUUID->"9c4eb8d1-0d32-46fa-8158-ffd0cf08ccd7"],
+Cell[56558, 1186, 676, 16, 29, "Input",ExpressionUUID->"e1390bdd-d618-4a72-b509-37faa32a9063"],
+Cell[57237, 1204, 622, 16, 29, "Input",ExpressionUUID->"306be38a-b795-4dbc-b901-645a1d069f17"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57896, 1225, 154, 3, 54, "Subsection",ExpressionUUID->"4967e1eb-5901-4fd3-bf1e-309e5357b69c"],
+Cell[58053, 1230, 838, 20, 105, "Input",ExpressionUUID->"c8269e36-385e-4782-8c3f-ceb5f09d4fa3"]
+}, Open  ]]
+}
+]
+*)
+

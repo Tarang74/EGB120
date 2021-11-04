@@ -6,6 +6,7 @@
 
 \counterwithin*{equation}{section}
 \counterwithin*{equation}{subsection}
+\counterwithin*{remark}{subsection}
 
 \pagestyle{fancy}
 \setlength\headheight{24pt}
@@ -245,6 +246,7 @@ These equations can be used to simplify a complex circuit.
 \section{Diodes}
 \begin{definition}[Diode]
     A diode is a semiconductor component in which current flows only in one direction. A diodes requires a voltage to start the flow of current in the forward direction.
+    The forward voltage is commonly \SI{0.7}{\volt}.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -1076,11 +1078,100 @@ where $\displaystyle \omega_c = \frac{1}{R_1C}$.
     \caption{Active high pass filter.}
 \end{figure}
 \subsection{Rectifiers}
+\begin{definition}[Rectifier]
+    A rectifier is designed to convert AC signals to DC.
+\end{definition}
+\begin{definition}[Plugpack]
+    An AC plugpack steps the mains AC voltage (\SI{240}{\volt} RMS) down to a safe AC voltage level.
+\end{definition}
+By using a diode, a rectifier only allows current to pass when an AC
+voltage is positive.
+\begin{figure}[H]
+    \centering
+    \includegraphics[height = 4cm, keepaspectratio = true]{half_wave_rectifier_without_capacitor}
+    \caption{Half-wave rectifier circuit without capacitor.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{half_wave_rectifier_without_capacitor_plot}
+    \caption{Half-wave rectified signal.}
+\end{figure}
+In this circuit, a capacitors can be utilised to smooth ripples.
+\begin{definition}[Ripple]
+    The ripple in a rectifier can be calculated using the following assumptions:
+    \begin{enumerate}
+        \item The capacitor instantly charges when the diode is forward biased.
+        \item The capacitor discharges with a constant current.
+    \end{enumerate}
+    The VI relationship for a capacitor gives the following formula for ripple
+    \begin{equation*}
+        \Delta v = \frac{i}{C} \Delta t
+    \end{equation*}
+    where $f$ is the frequency of the voltage source.
+\end{definition}
+\subsubsection{Half-wave Rectifier}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{half_wave_rectifier}
+    \caption{Half-wave rectifier circuit.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{half_wave_rectifier_plot}
+    \caption{Half-wave rectified signal.}
+\end{figure}
+\begin{itemize}
+    \item The diode conducts on the positive half cycle
+    \item The output loses the forward voltage of one diode
+\end{itemize}
+The ripple in a half-wave rectifier is calculated using
+\begin{equation*}
+    \Delta v = \frac{i}{fC}
+\end{equation*} 
+\subsubsection{Full-wave Rectifier}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{full_wave_rectifier}
+    \caption{Half-wave rectifier circuit.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{full_wave_rectifier_plot}
+    \caption{Full-wave rectified signal.}
+\end{figure}
+\begin{itemize}
+    \item Two diodes conduct every half cycle
+    \item The output loses the forward voltage of two diodes
+\end{itemize}
+The ripple in a full-wave rectifier is calculated using
+\begin{equation*}
+    \Delta v = \frac{i}{2fC}
+\end{equation*} 
+\subsubsection{Dual half-wave Rectifier}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{dual_half_wave_rectifier}
+    \caption{Dual half-wave rectifier circuit.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = 8cm, keepaspectratio = true]{dual_half_wave_rectifier_plot}
+    \caption{Dual half-wave rectified signal.}
+\end{figure}
+\begin{itemize}
+    \item The diodes conducts on both cycles 
+    \item The output loses the forward voltage of one diode
+    \item Useful for powering op amps
+\end{itemize}
+The ripple in a dual half-wave rectifier is calculated using
+\begin{equation*}
+    \Delta v = \frac{i}{fC}
+\end{equation*}
 \newpage
 \section{Zener Diodes and Voltage Regulators}
 \subsection{Zener Diodes}
 A Zener diode is similar to a regular diode, but it has a specific
-reverse breakdown voltage.
+reverse breakdown voltage. The reverse breakdown voltage is commonly \SI{5}{\volt}.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 3cm, keepaspectratio = true]{zener_diode}
@@ -1134,7 +1225,17 @@ given a varying voltage source and varying output current.
 
     And the maximum source resistance is when $v_s$ is minimal, and $i_L$ is maximal.
 \end{proof}
-In a Zener regulator, the power dissipation 
+\begin{remark}
+    When designing a Zener voltage regulator, the following should be taken into account:
+    \begin{itemize}
+        \item Be careful of power dissipation, particularly when dropping large voltages.
+        \item Increasing the series resistance reduces power dissipation but also reduces the regulated current. 
+        \item A Zener voltage regulator always draws power from the source, regardless of the load.
+        \item The load has an effect on the regulator.
+    \end{itemize}
+\end{remark}
+
 \subsection{Series Regulators}
+
 \newpage
 \end{document}

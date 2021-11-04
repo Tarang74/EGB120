@@ -1,0 +1,22 @@
+\documentclass{standalone}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usetikzlibrary{intersections}
+
+\begin{document}
+\begin{circuitikz}[american]
+    \ctikzset{voltage=raised}
+    \ctikzset{voltage/american minus=$\vphantom{+}-$}
+    \draw[line cap=rect] (0, 3) to[V=$\symbf{V}$] (0, 0);
+    \node[jump crossing] (X) at (3, 0) {};
+    \draw (0, 3) to[short, -*] ++ (3, 0) coordinate (crossing top) to[D, -*] ++ (3, 0) coordinate (capacitor top) to[short] ++ (3, 0) to[R=$R_L$, i=$i$, o-o] ++ (0, -3);
+    \draw (capacitor top) to[C=$C$] ++ (0, -3) to[C=$C$] ++ (0, -3);
+    \draw (0, 0) to[short] (X.west) (X.east) to[short, -*] (6, 0) to[short] ++ (3, 0) to[R=$R_L$, i=$i$,o-o]
+    ++ (0, -3) to[short, -*] ++ (-3, 0) to[D] ++ (-3, 0) to[short] (X.south) (X.north) to[short] (crossing top);
+\end{circuitikz}
+\end{document}

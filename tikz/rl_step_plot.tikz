@@ -41,8 +41,8 @@
 		xlabel = {$t$},
 		ylabel = {$i$}
 	]
-    \draw[smooth, samples=100, domain=0:3] plot(\x, {2*(1 - e^(-1*\x))});
-    \draw (1, 0) -- ++ (0, {2*(1 - e^(-1))}) -- ++ (-1, 0);
+    \draw[smooth, samples=100, domain=0:3, blue] plot(\x, {2*(1 - e^(-1*\x))});
+    \draw[dashed, red] (1, 0) -- ++ (0, {2*(1 - e^(-1))}) -- ++ (-1, 0);
     \end{axis}
 \end{tikzpicture}
 \end{document}

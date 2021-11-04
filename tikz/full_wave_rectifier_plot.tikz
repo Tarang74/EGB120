@@ -1,0 +1,42 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=newest}
+
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{colormaps}
+
+\usepackage{unicode-math}
+\setmathfont{Latin Modern Math}
+\setmathfont{TeX Gyre Pagella Math}[range={bb,bbit}, Scale=MatchUppercase]
+
+\usepackage{filecontents}
+
+\begin{document}
+\pgfplotsset{scaled x ticks=false}
+\pgfplotsset{scaled y ticks=false}
+\begin{tikzpicture}
+    \begin{axis}[
+        xtick distance = 0.005,
+		ytick distance = 2,
+        %
+        axis lines = center,
+        xmin = 0, xmax = 0.04,
+        ymin = -18, ymax = 18,
+        %
+        xticklabels = \empty,
+        yticklabels = \empty,
+        %
+        ylabel near ticks,
+        %
+        xlabel = {$t$},
+        ylabel = {$v(t)$}
+    ]
+        %
+        \addplot+[thick, dashed, black, domain=0:0.04, samples=300, mark=none] {12*sqrt(2)*cos(deg(100*pi*x))};
+        % \addplot[thick, blue] table[col sep=comma, x index=0, y index=3, mark=none] {./tikz/rectifierData.csv};
+        \addplot[thick, blue] table[col sep=comma, x index=0, y index=4, mark=none] {./tikz/rectifierData.csv};
+    \end{axis} 
+\end{tikzpicture}
+\end{document}
