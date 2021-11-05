@@ -119,6 +119,7 @@
                       & $p$                                                                                                                      & Watt (\unit{\watt})                       \\
         \bottomrule
     \end{tabular}
+    \caption{Fundamental quantities in electrical circuits.}
 \end{table}
 \endgroup
 \begin{description}
@@ -1310,7 +1311,13 @@ A rectifier and regulator circuit can be combined to create a power supply from 
     \includegraphics[height = 4cm, keepaspectratio = true]{power_supply}
     \caption{AC to DC power supply circuit.}
 \end{figure}
-The maximum ripple for this circuit is shown below.
+A dual half-wave rectifier can be used to supply positive and negative voltage.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width = \linewidth, keepaspectratio = true]{dual_power_supply}
+    \caption{AC to DC dual power supply circuit.}
+\end{figure}
+The maximum ripple for these circuits is shown below.
 \begin{align*}
     \max{\Delta v} & = \max{v_{in}} - v_f - \left( 2 + v_{out} \right) \\
     \therefore\: \Delta v & > \frac{i}{fC} \\
