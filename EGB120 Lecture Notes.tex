@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage{template}
+\usepackage{LaTeX-Submodule/template}
 
 \usepackage{chngcntr} % Reset counter within sections
 \usepackage{circuitikz}
@@ -64,16 +64,16 @@
         \centering
         \begin{tabular}{c c c}
             \toprule
-                \textbf{Factor} & \textbf{Name} & \textbf{Symbol} \\
+            \textbf{Factor} & \textbf{Name} & \textbf{Symbol}       \\
             \midrule
-                $10^{24}$ & yotta & \unit{\yotta\nothing} \\
-                $10^{21}$ & zetta & \unit{\zetta\nothing} \\
-                $10^{18}$ & exa & \unit{\exa\nothing} \\
-                $10^{15}$ & peta & \unit{\peta\nothing} \\
-                $10^{12}$ & tera & \unit{\tera\nothing} \\
-                $10^{9}$ & giga & \unit{\giga\nothing} \\
-                $10^{6}$ & mega & \unit{\mega\nothing} \\
-                $10^{3}$ & kilo & \unit{\kilo\nothing} \\
+            $10^{24}$       & yotta         & \unit{\yotta\nothing} \\
+            $10^{21}$       & zetta         & \unit{\zetta\nothing} \\
+            $10^{18}$       & exa           & \unit{\exa\nothing}   \\
+            $10^{15}$       & peta          & \unit{\peta\nothing}  \\
+            $10^{12}$       & tera          & \unit{\tera\nothing}  \\
+            $10^{9}$        & giga          & \unit{\giga\nothing}  \\
+            $10^{6}$        & mega          & \unit{\mega\nothing}  \\
+            $10^{3}$        & kilo          & \unit{\kilo\nothing}  \\
             \bottomrule
         \end{tabular}
     \end{minipage}
@@ -81,16 +81,16 @@
         \centering
         \begin{tabular}{c c c}
             \toprule
-                \textbf{Factor} & \textbf{Name} & \textbf{Symbol} \\
+            \textbf{Factor} & \textbf{Name} & \textbf{Symbol}       \\
             \midrule
-                $10^{-3}$ & milli & \unit{\milli\nothing} \\
-                $10^{-6}$ & micro & \unit{\micro\nothing} \\
-                $10^{-9}$ & nano & \unit{\nano\nothing} \\
-                $10^{-12}$ & pico & \unit{\pico\nothing} \\
-                $10^{-15}$ & femto & \unit{\femto\nothing} \\
-                $10^{-18}$ & atto & \unit{\atto\nothing} \\
-                $10^{-21}$ & zepto & \unit{\zepto\nothing} \\
-                $10^{-24}$ & yocto & \unit{\yocto\nothing} \\
+            $10^{-3}$       & milli         & \unit{\milli\nothing} \\
+            $10^{-6}$       & micro         & \unit{\micro\nothing} \\
+            $10^{-9}$       & nano          & \unit{\nano\nothing}  \\
+            $10^{-12}$      & pico          & \unit{\pico\nothing}  \\
+            $10^{-15}$      & femto         & \unit{\femto\nothing} \\
+            $10^{-18}$      & atto          & \unit{\atto\nothing}  \\
+            $10^{-21}$      & zepto         & \unit{\zepto\nothing} \\
+            $10^{-24}$      & yocto         & \unit{\yocto\nothing} \\
             \bottomrule
         \end{tabular}
     \end{minipage}
@@ -251,7 +251,7 @@ These equations can be used to simplify a complex circuit.
     \end{equation*}
     Therefore the voltage drop in any resistor is
     \begin{align*}
-        v_k & = i R_k                         \\
+        v_k & = i R_k                          \\
         v_k & = \frac{v}{R_{\mathrm{eq}}} R_k.
     \end{align*}
 \end{proof}
@@ -815,7 +815,7 @@ The following equations relate the angular frequency, period and frequency toget
 \begin{definition}
     In a resistive load, the power can be determined using the rms current and rms voltage.
     \begin{align*}
-        p & = vi                                                                                                                       \\
+        p & = vi                                                                                         \\
         % p & = \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
         % p & = 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)}                                                  \\
         p & = V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
@@ -856,11 +856,11 @@ The following equations relate the angular frequency, period and frequency toget
 \begin{definition}
     A phasor can be converted back to a sinusoidal signal using the Inverse Phasor Transform
     \begin{align*}
-        v(t) & = \mathscr{P}^{-1}\left\{ \symbf{V} \right\}                             \\
-             & = \Re\left\{ \symbf{V} \e^{j\omega t} \right\}                           \\
-            %  & = \Re\left\{ V_{\mathrm{m}} \e^{j\phi} \e^{j\omega t} \right\}           \\
-            %  & = V_{\mathrm{m}}\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
-             & = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}                     
+        v(t) & = \mathscr{P}^{-1}\left\{ \symbf{V} \right\}         \\
+             & = \Re\left\{ \symbf{V} \e^{j\omega t} \right\}       \\
+        %  & = \Re\left\{ V_{\mathrm{m}} \e^{j\phi} \e^{j\omega t} \right\}           \\
+        %  & = V_{\mathrm{m}}\Re\left\{ \e^{j\left( \omega t + \phi \right)} \right\} \\
+             & = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
     \end{align*}
 \end{definition}
 \subsection{Phasor Operations}
@@ -904,7 +904,7 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
     Ohm's Law gives:
     \begin{align*}
         i & = \frac{v}{R}                                                   \\
-        & = \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)}
+          & = \frac{V_{\mathrm{m}}}{R} \cos{\left( \omega t + \phi \right)}
     \end{align*}
     Taking the Phasor Transform gives
     \begin{align*}
@@ -926,8 +926,8 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
     the voltage drop across an inductor is given by:
     \begin{align*}
         v & = L \dv{i}{t}                                                                      \\
-        & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
-        & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+          & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
+          & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
     \end{align*}
     taking the Phasor Transform gives
     \begin{align*}
@@ -952,8 +952,8 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
     the voltage-current relationship across a capacitor is given by:
     \begin{align*}
         i & = C \dv{v}{t}                                                                      \\
-        & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
-        & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+          & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
+          & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
     \end{align*}
     taking the Phasor Transform gives
     \begin{align*}
@@ -1141,7 +1141,7 @@ voltage is positive.
 \begin{definition}[Ripple]
     Ripple is the residual variation of the DC voltage after rectification.
     In the circuit shown above, a capacitor can be used to smooth ripples.
-    
+
     Ripple can be calculated using the following assumptions:
     \begin{enumerate}
         \item The capacitor instantly charges when the diode is forward biased.
@@ -1171,7 +1171,7 @@ voltage is positive.
 The ripple in a half-wave rectifier is calculated using
 \begin{equation*}
     \Delta v = \frac{i}{fC}
-\end{equation*} 
+\end{equation*}
 \subsubsection{Full-wave Rectifier}
 \begin{figure}[H]
     \centering
@@ -1190,7 +1190,7 @@ The ripple in a half-wave rectifier is calculated using
 The ripple in a full-wave rectifier is calculated using
 \begin{equation*}
     \Delta v = \frac{i}{2fC}
-\end{equation*} 
+\end{equation*}
 \subsubsection{Dual half-wave Rectifier}
 \begin{figure}[H]
     \centering
@@ -1203,7 +1203,7 @@ The ripple in a full-wave rectifier is calculated using
     \caption{Dual half-wave rectified signal.}
 \end{figure}
 \begin{itemize}
-    \item The diodes conducts on both cycles 
+    \item The diodes conducts on both cycles
     \item The output loses the forward voltage of one diode
     \item Useful for powering op amps
 \end{itemize}
@@ -1228,7 +1228,7 @@ The ideal VI characteristic for a Zener diode is shown below.
     \caption{VI characteristic for an ideal Zener diode.}
 \end{figure}
 \subsection{Voltage Regulators}
-Most circuits require a clean DC power supply to operate. 
+Most circuits require a clean DC power supply to operate.
 A voltage regulator ensures that a DC power supply behaves like an ideal voltage source.
 \subsection{Shunt Regulators}
 \begin{definition}[Shunt Regulator]
@@ -1239,7 +1239,7 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
     When designing a Zener voltage regulator, the following should be taken into account:
     \begin{itemize}
         \item Power dissipation particularly when dropping large voltages.
-        \item Large series resistances reduces power dissipation but also reduces the regulated current. 
+        \item Large series resistances reduces power dissipation but also reduces the regulated current.
         \item A Zener voltage regulator always draws power from the source, regardless of the load.
         \item The load has an effect on the regulator.
     \end{itemize}
@@ -1268,18 +1268,18 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
 \begin{proof}
     Using KCL gives
     \begin{align*}
-        i_s - i_Z & = i_L       \\
+        i_s - i_Z & = i_L        \\
         i_Z       & = i_s - i_L.
     \end{align*}
-    For a Zener diode to operate at its reverse breakdown voltage, the Zener current 
+    For a Zener diode to operate at its reverse breakdown voltage, the Zener current
     must be nonzero. This gives
     \begin{equation*}
         0 < \frac{v_s - v_Z}{R_s} - i_L
     \end{equation*}
     We must now consider the worst case scenario, namely, when
-    $\displaystyle \frac{v_s - v_Z}{R_s}$ is minimised, and when $i_L$ is maximised. 
-    
-    Hence the maximum load current is when $v_s$ is maximal. 
+    $\displaystyle \frac{v_s - v_Z}{R_s}$ is minimised, and when $i_L$ is maximised.
+
+    Hence the maximum load current is when $v_s$ is maximal.
 
     And the maximum source resistance is when $v_s$ is minimal, and $i_L$ is maximal.
 \end{proof}
@@ -1289,7 +1289,7 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
 \end{definition}
 \subsubsection{Series Linear Regulators}
 LM-series integrated circuits (IC) are a three-terminal linear regulator that regulate fixed voltages of \SI{0.5}{\volt} to \SI{24}{\volt}.
-They require an input voltage at least \SI{2}{\volt} greater than the regulated output voltage. 
+They require an input voltage at least \SI{2}{\volt} greater than the regulated output voltage.
 An LM-series regulator circuit is shown below.
 \begin{figure}[H]
     \centering
@@ -1319,8 +1319,8 @@ A dual half-wave rectifier can be used to supply positive and negative voltage.
 \end{figure}
 The maximum ripple for these circuits is shown below.
 \begin{align*}
-    \max{\Delta v} & = \max{v_{in}} - v_f - \left( 2 + v_{out} \right) \\
-    \therefore\: \Delta v & > \frac{i}{fC} \\
+    \max{\Delta v}                                  & = \max{v_{in}} - v_f - \left( 2 + v_{out} \right) \\
+    \therefore\: \Delta v                           & > \frac{i}{fC}                                    \\
     \max{v_{in}} - v_f - \left( 2 + v_{out} \right) & > \frac{i}{fC}
 \end{align*}
 \subsubsection{Series Op Amp Regulators}
