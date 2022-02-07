@@ -2,26 +2,23 @@
 \documentclass{article}
 \usepackage{LaTeX-Submodule/template}
 
-\usepackage{chngcntr} % Reset counter within sections
+% Additional packages & macros
 \usepackage{circuitikz}
 \DeclareSIUnit{\nothing}{\relax}
 
-\counterwithin*{equation}{section}
-\counterwithin*{equation}{subsection}
-\counterwithin*{remark}{subsection}
-
-\pagestyle{fancy}
-\setlength\headheight{24pt}
 \setlength\parindent{0pt}
 
-\lhead{\className}
-\rhead{\leftmark}
-\cfoot{\thepage}
-
+% Header and footer
 \newcommand{\className}{Foundations of Electrical Engineering}
 \newcommand{\classTime}{Semester 2, 2021}
 \newcommand{\classInstructorName}{Dr Jasmin Martin}
 
+\fancyhf{}
+\fancyhead[L]{\className}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% Copyright
 \usepackage[
     type={CC},
     modifier={by-nc-sa},
@@ -33,7 +30,7 @@
 \date{}
 
 \begin{document}
-
+%
 \begin{titlepage}
     \vspace*{\fill}
     \begin{center}
@@ -53,10 +50,10 @@
     \thispagestyle{empty}
 \end{titlepage}
 \newpage
-
+%
 \tableofcontents
 \newpage
-
+%
 \section{Electrical Circuits}
 \subsection{SI Prefixes}
 \begin{table}[H]
@@ -1325,8 +1322,8 @@ The maximum ripple for these circuits is shown below.
     \max{v_{in}} - v_f - \left( 2 + v_{out} \right) & > \frac{i}{fC}
 \end{align*}
 \subsubsection{Series Op Amp Regulators}
-Op amps can be utilised stabilise the output from a regulator.
-The op amp is powered by the source voltage and the series resistance is chosen to minimise the current to the Zener diode.
+Op amps can be utilised to stabilise the output from a regulator.
+The op amp is powered by the source voltage and the series resistance is chosen to minimise the current through the Zener diode.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 8cm, keepaspectratio = true]{series_op_amp_regulator}
@@ -1339,8 +1336,6 @@ which is given by
 \begin{equation*}
     p = v_{in} \left( i_L - i_Z \right).
 \end{equation*}
-
 \newpage
-
 \listoffigures
 \end{document}
