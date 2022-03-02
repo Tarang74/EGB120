@@ -12,11 +12,11 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw[line cap=rect] (-3, 3) to[V=$v_{in}$] (-3, 0);
-    \draw (-3, 3) to[D=$v_f$] ++ (3, 0) to[C=$C$, *-*] ++ (0, -3) to[short] ++ (-3, 0);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (-3, 3) to[V=\(v_{in}\)] (-3, 0);
+    \draw (-3, 3) to[D=\(v_f\)] ++ (3, 0) to[C=\(C\), *-*] ++ (0, -3) to[short] ++ (-3, 0);
     \draw (0, 3) to[short] ++ (3, 0) coordinate (cap1) to[generic, name=lmic, /tikz/circuitikz/bipoles/length=2.5cm] ++ (4, 0) coordinate (cap2) to[short] ++ (3, 0)
-    to[open, v=$v_{out}\equal \mathrm{XX}\si{\volt}$, o-o] ++ (0, -3) to[short] ++ (-3, 0) 
+    to[open, v=\(v_{out}\equal \mathrm{XX}\si{\volt}\), o-o] ++ (0, -3) to[short] ++ (-3, 0) 
     to[short, -*] ++ (-2, 0) coordinate (g) to[short] ++ (-2, 0) to[short] ++ (-3, 0); 
     \draw (cap1) to[C=\SI{0.33}{\micro\farad}, *-*] ++ (0, -3);
     \draw (cap2) to[C=\SI{0.1}{\micro\farad}, *-*] ++ (0, -3);

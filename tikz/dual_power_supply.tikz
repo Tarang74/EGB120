@@ -13,17 +13,17 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw[line cap=rect] (0, 3) to[V=$v_{in}$, -*] (0, 0) coordinate (g);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (0, 3) to[V=\(v_{in}\), -*] (0, 0) coordinate (g);
     \node[jump crossing] (X) at (3, 0) {};
-    \draw (0, 3) to[short, -*] ++ (3, 0) coordinate (crossing top) to[D=$v_f$, -*] ++ (3, 0) coordinate (capacitor top) to[short] ++ (3, 0) coordinate (lmplusleft) to[C=\SI{0.33}{\micro\farad}, *-*] ++ (0, -3);
-    \draw (capacitor top) to[C=$C$] ++ (0, -3) to[C=$C$] ++ (0, -3);
+    \draw (0, 3) to[short, -*] ++ (3, 0) coordinate (crossing top) to[D=\(v_f\), -*] ++ (3, 0) coordinate (capacitor top) to[short] ++ (3, 0) coordinate (lmplusleft) to[C=\SI{0.33}{\micro\farad}, *-*] ++ (0, -3);
+    \draw (capacitor top) to[C=\(C\)] ++ (0, -3) to[C=\(C\)] ++ (0, -3);
     \draw (0, 0) to[short] (X.west) (X.east) to[short, -*] (6, 0) to[short] ++ (3, 0) to[C=\SI{0.33}{\micro\farad}, *-*]
-    ++ (0, -3) coordinate (lmminusleft) to[short, -*] ++ (-3, 0) to[D=$v_f$] ++ (-3, 0) to[short] (X.south) (X.north) to[short] (crossing top);
+    ++ (0, -3) coordinate (lmminusleft) to[short, -*] ++ (-3, 0) to[D=\(v_f\)] ++ (-3, 0) to[short] (X.south) (X.north) to[short] (crossing top);
     \node[sground] at (g) {};
 
     \draw (lmplusleft) to[generic, name=lmplus, /tikz/circuitikz/bipoles/length=2.5cm] ++ (4, 0) coordinate (cap2) to[short] ++ (3, 0)
-    to[open, v=$v_{out}\equal \mathrm{XX}\si{\volt}$, o-o] ++ (0, -3) to[open, v=$v_{out}\equal \mathrm{XX}\si{\volt}$, o-o] ++ (0, -3);
+    to[open, v=\(v_{out}\equal \mathrm{XX}\si{\volt}\), o-o] ++ (0, -3) to[open, v=\(v_{out}\equal \mathrm{XX}\si{\volt}\), o-o] ++ (0, -3);
     \draw (cap2) to[C=\SI{0.1}{\micro\farad}, *-*] ++ (0, -3) coordinate (betweencap2) to[C=\SI{0.1}{\micro\farad}, *-*] ++ (0, -3);
     \draw (lmplus) node {LM78XX};
     \draw (lmminusleft) to[generic, name=lmminus, /tikz/circuitikz/bipoles/length=2.5cm] ++ (4, 0) to[short] ++ (3, 0);

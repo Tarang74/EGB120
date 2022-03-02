@@ -25,7 +25,7 @@
         xticklabels = \empty,
         ytick = {-20, -15, -10, -5, 0},
         %
-        extra y tick style = {yticklabel = {$-3$}},
+        extra y tick style = {yticklabel = {\(-3\)}},
         extra y ticks = {20*log10(1/sqrt(2))},
         %
         xmin = 100, xmax = 100000,
@@ -44,7 +44,7 @@
     \end{axis}
     \begin{axis}[
         name = plot2, 
-        at = {($(plot1.south)-(0, 1cm)$)},
+        at = {(\((plot1.south)-(0, 1cm)\))},
         anchor = north,
         xmode = log,
         xtick = {100, 1000, 10000, 100000},

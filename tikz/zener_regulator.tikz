@@ -10,9 +10,9 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw[line cap=rect] (0, 3) to[V=$v_s$, i=$i_s$] (0, 0);
-    \draw (0, 3) to[R=$R_s$] ++ (3, 0) to[short, -o] ++ (1.5, 0) to[short, i=$i_L$] ++ (1.5, 0) to[R=$R_L$] ++ (0, -3) to[short, -o] ++ (-1.5, 0) to[short] ++ (-4.5, 0);
-    \draw (3, 0) to[zzD=$v_Z$, i=$i_Z$, *-*] ++ (0, 3);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (0, 3) to[V=\(v_s\), i=\(i_s\)] (0, 0);
+    \draw (0, 3) to[R=\(R_s\)] ++ (3, 0) to[short, -o] ++ (1.5, 0) to[short, i=\(i_L\)] ++ (1.5, 0) to[R=\(R_L\)] ++ (0, -3) to[short, -o] ++ (-1.5, 0) to[short] ++ (-4.5, 0);
+    \draw (3, 0) to[zzD=\(v_Z\), i=\(i_Z\), *-*] ++ (0, 3);
 \end{circuitikz}
 \end{document}

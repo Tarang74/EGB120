@@ -30,8 +30,8 @@
         %
         ylabel near ticks,
         %
-        xlabel = {$t$},
-        ylabel = {$v(t)$}
+        xlabel = {\(t\)},
+        ylabel = {\(v(t)\)}
     ]
         %
         \addplot+[thick, dashed, black, domain=0:0.04, samples=300, mark=none] {12*sqrt(2)*cos(deg(100*pi*x))};

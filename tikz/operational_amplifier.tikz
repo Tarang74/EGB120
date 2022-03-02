@@ -10,13 +10,13 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \ctikzset{amplifiers/minus={$\vphantom{+}-$}}
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \ctikzset{amplifiers/minus={\(\vphantom{+}-\)}}
     \draw (0,0) node[op amp, noinv input up] (opamp) {}
-    (opamp.-) node[left] {$v_n$}
-    (opamp.+) node[left] {$v_p$}
-    (opamp.out) node[right] {$v_{out}$}
-    (opamp.up) to[short] ++ (0, 0.25) node[vcc] {$V_{CC}$}
-    (opamp.down) to[short] ++ (0, -0.25) node[vee] {$V_{EE}$};
+    (opamp.-) node[left] {\(v_n\)}
+    (opamp.+) node[left] {\(v_p\)}
+    (opamp.out) node[right] {\(v_{out}\)}
+    (opamp.up) to[short] ++ (0, 0.25) node[vcc] {\(V_{CC}\)}
+    (opamp.down) to[short] ++ (0, -0.25) node[vee] {\(V_{EE}\)};
 \end{circuitikz}
 \end{document}

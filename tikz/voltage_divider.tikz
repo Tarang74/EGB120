@@ -9,21 +9,21 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
     % R_1
-    \draw (0, 0) to[R=$R_1$, *-*, v=$v_1$] ++ (-2, 0)
+    \draw (0, 0) to[R=\(R_1\), *-*, v=\(v_1\)] ++ (-2, 0)
     % R_2
-    to [R=$R_2$, -*, v=$v_2$] ++ (-2, 0) coordinate (aux1)
+    to [R=\(R_2\), -*, v=\(v_2\)] ++ (-2, 0) coordinate (aux1)
     % R_k
-    (aux1) ++ (-2, 0) to[R=$R_k$, *-*, v=$v_k$] ++ (-2, 0) coordinate (aux2)
+    (aux1) ++ (-2, 0) to[R=\(R_k\), *-*, v=\(v_k\)] ++ (-2, 0) coordinate (aux2)
     % R_n
-    (aux2) ++ (-2, 0) to[R=$R_n$, *-*, v=$v_n$] ++ (-2, 0) coordinate (aux3);
+    (aux2) ++ (-2, 0) to[R=\(R_n\), *-*, v=\(v_n\)] ++ (-2, 0) coordinate (aux3);
     % Voltage source
-    \draw (0, 0) to[short] ++ (0, 3) to[short] ++ (-4.5, 0) to[V=$v$, i=$i$] ++ (-3, 0) to[short] ++ (-4.5, 0) to[short] ++ (0, -3);
+    \draw (0, 0) to[short] ++ (0, 3) to[short] ++ (-4.5, 0) to[V=\(v\), i=\(i\)] ++ (-3, 0) to[short] ++ (-4.5, 0) to[short] ++ (0, -3);
     % Dots
-    \path (aux1) -- node {\huge$\dots$} ++ (-2, 0)
-    (aux2) -- node {\huge$\dots$} ++ (-2, 0);
+    \path (aux1) -- node {\huge\(\dots\)} ++ (-2, 0)
+    (aux2) -- node {\huge\(\dots\)} ++ (-2, 0);
     % Voltage reading
-    \draw (aux2) to[short] ++ (0, -1.5) to[open, v<=$v_k$, o-o] ++ (2, 0) to[short] ++ (0, 1.5);
+    \draw (aux2) to[short] ++ (0, -1.5) to[open, v<=\(v_k\), o-o] ++ (2, 0) to[short] ++ (0, 1.5);
 \end{circuitikz}
 \end{document} 

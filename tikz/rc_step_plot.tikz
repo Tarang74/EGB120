@@ -24,11 +24,11 @@
 		% axis lines = middle,
         xtick = {0, 0.5, 1, 1.5, 2, 2.5, 3},
 		ytick = {0, 0.5, 1, 1.5, 2},
-        xticklabels = {$ $, $ $, $ $, $ $, $ $, $ $, $ $},
-        yticklabels = {$ $, $ $, $ $, $ $, $ $, $ $, $ $},
-        extra x tick style = {xticklabel = {$\tau$}},
+        xticklabels = {\( \), \( \), \( \), \( \), \( \), \( \), \( \)},
+        yticklabels = {\( \), \( \), \( \), \( \), \( \), \( \), \( \)},
+        extra x tick style = {xticklabel = {\(\tau\)}},
         extra x ticks = {1},
-        extra y tick style = {yticklabels = {$V_0$, $0.632I_sR + V_0$, $I_sR$}},
+        extra y tick style = {yticklabels = {\(V_0\), \(0.632I_sR + V_0\), \(I_sR\)}},
         extra y ticks = {0, {2*(1 - e^(-1))}, 2},
 		%
         xtickmin = 0,
@@ -38,8 +38,8 @@
         major grid style = {line width = .2pt, draw = black!30},
         minor tick num = 4,
 		%
-		xlabel = {$t$},
-		ylabel = {$v$}
+		xlabel = {\(t\)},
+		ylabel = {\(v\)}
 	]
     \draw[smooth, samples=100, domain=0:3, blue] plot(\x, {2*(1 - e^(-1*\x))});
     \draw[dashed, red] (1, 0) -- ++ (0, {2*(1 - e^(-1))}) -- ++ (-1, 0);

@@ -24,9 +24,9 @@
 		% axis lines = middle,
         xtick = {-10, -5, 0, 5, 10},
 		ytick = {-10, -5, 0, 5, 10},
-        xticklabels = {$ $, $ $, $0$, $ $, $ $},
-        yticklabels = {$ $, $ $, $0$, $ $, $ $},
-        extra y tick style = {yticklabel = {$i_s$}},
+        xticklabels = {\( \), \( \), \(0\), \( \), \( \)},
+        yticklabels = {\( \), \( \), \(0\), \( \), \( \)},
+        extra y tick style = {yticklabel = {\(i_s\)}},
         extra y ticks = {3},
 		%
         xtickmin = -10,
@@ -36,8 +36,8 @@
         major grid style = {line width = .2pt, draw = black!30},
         minor tick num = 4,
 		%
-		xlabel = {$v$},
-		ylabel = {$i$}
+		xlabel = {\(v\)},
+		ylabel = {\(i\)}
 	]
     \draw[<->] (-8, 3) -- (8, 3);
     \end{axis}

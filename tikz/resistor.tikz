@@ -9,7 +9,7 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw (0, 0) to[R=$R$, name = component, i=$i$, v=$v$, o-o] (3, 0);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw (0, 0) to[R=\(R\), name = component, i=\(i\), v=\(v\), o-o] (3, 0);
 \end{circuitikz}
 \end{document}

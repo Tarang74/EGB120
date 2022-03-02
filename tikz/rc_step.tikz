@@ -12,8 +12,8 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw[line cap=rect] (0, 0) to[I=$I_s$] (0, 3) to[short] (3, 3) to[cspst=$t\equal0$] (6, 3) to[C=$C$] (6, 0) to[short] (0, 0);
-    \draw (3, 3) to[R=$R$, *-*] ++ (0, -3);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (0, 0) to[I=\(I_s\)] (0, 3) to[short] (3, 3) to[cspst=\(t\equal0\)] (6, 3) to[C=\(C\)] (6, 0) to[short] (0, 0);
+    \draw (3, 3) to[R=\(R\), *-*] ++ (0, -3);
 \end{circuitikz}
 \end{document}

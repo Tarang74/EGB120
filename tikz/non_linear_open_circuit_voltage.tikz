@@ -9,9 +9,9 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw[line cap=rect] (0, 3) to[V=$v_{oc}$, i=$i$] (0, 0);
-    \draw (0, 3) to[R=$R$,-o] (3, 3);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (0, 3) to[V=\(v_{oc}\), i=\(i\)] (0, 0);
+    \draw (0, 3) to[R=\(R\),-o] (3, 3);
     \draw (3, 0) to[short, o-] (0, 0);
 \end{circuitikz}
 \end{document}

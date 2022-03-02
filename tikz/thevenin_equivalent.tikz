@@ -10,8 +10,8 @@
 \begin{document}
 \begin{circuitikz}[american]
     \ctikzset{voltage=raised}
-    \ctikzset{voltage/american minus=$\vphantom{+}-$}
-    \draw[line cap=rect] (0, 3) to[V=$v_{Th}$] (0, 0) to[short, -o] (3, 0);
-    \draw (0, 3) to[R=$R_{Th}$, -o] (3, 3);
+    \ctikzset{voltage/american minus=\(\vphantom{+}-\)}
+    \draw[line cap=rect] (0, 3) to[V=\(v_{Th}\)] (0, 0) to[short, -o] (3, 0);
+    \draw (0, 3) to[R=\(R_{Th}\), -o] (3, 3);
 \end{circuitikz}
 \end{document}

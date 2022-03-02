@@ -23,9 +23,9 @@
 		% axis lines = middle,
 		xtick = {-10, -5, 0, 5, 10},
 		ytick = {-10, -5, 0, 5, 10},
-        xticklabels = {$ $, $ $, $0$, $ $, $ $},
-        yticklabels = {$ $, $ $, $0$, $ $, $ $},
-        extra x tick style = {xticklabels = {$v_Z$, $v_f$}},
+        xticklabels = {\( \), \( \), \(0\), \( \), \( \)},
+        yticklabels = {\( \), \( \), \(0\), \( \), \( \)},
+        extra x tick style = {xticklabels = {\(v_Z\), \(v_f\)}},
         extra x ticks = {-5, 3},
 		%
         xtickmin = -10,
@@ -35,8 +35,8 @@
         major grid style = {line width = .2pt, draw = black!30},
         minor tick num = 4,
 		%
-		xlabel = {$v$},
-		ylabel = {$i$}
+		xlabel = {\(v\)},
+		ylabel = {\(i\)}
 	]
     \draw[<->] (-5, -6) -- (-5, 0) -- (3, 0) -- (3, 6);
     \end{axis}

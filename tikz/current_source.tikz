@@ -9,8 +9,8 @@
 
 \begin{document}
 \begin{circuitikz}[american]
-    \draw (0, 0) to[I=$i$] (0, 3);
+    \draw (0, 0) to[I=\(i\)] (0, 3);
     \draw[line cap=rect] (0, 3) to[short] (3, 3) to[generic, name = comp, /tikz/circuitikz/bipoles/length=2cm] (3, 0) to[short] (0, 0);
-    \draw (comp) node {$A$}; 
+    \draw (comp) node {\(A\)}; 
 \end{circuitikz}
 \end{document}

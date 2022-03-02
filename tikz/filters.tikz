@@ -26,13 +26,13 @@
         ytick = {0, 1},
         axis lines = center,
         %
-        extra x tick style = {xticklabel = {$\omega_c$}},
+        extra x tick style = {xticklabel = {\(\omega_c\)}},
         extra x ticks = {4},
         %
         xmin = 0, xmax = 8,
         ymin = 0, ymax = 1.5,
         %
-        xlabel = {$\omega$},
+        xlabel = {\(\omega\)},
         ylabel = {Gain}
     ]
         \draw[blue] (0, 1) -| (4, 0) -- (8, 0);
@@ -40,20 +40,20 @@
     \end{axis}
     \begin{axis}[
         name = plot2, 
-        at = {($(plot1.south)-(0, 1cm)$)},
+        at = {(\((plot1.south)-(0, 1cm)\))},
         anchor = north,
         xticklabels = \empty,
         xtick = \empty,
         ytick = {0, 1},
         axis lines = center,
         %
-        extra x tick style = {xticklabel = {$\omega_c$}},
+        extra x tick style = {xticklabel = {\(\omega_c\)}},
         extra x ticks = {4},
         %
         xmin = 0, xmax = 8,
         ymin = 0, ymax = 1.5,
         %
-        xlabel = {$\omega$},
+        xlabel = {\(\omega\)},
         ylabel = {Gain}
     ]
         \draw[blue] (0, 0) -| (4, 1) -- (8, 1);
@@ -61,7 +61,7 @@
     \end{axis}
     \begin{axis}[
         name = plot3, 
-        at = {($(plot2.south)-(0, 1cm)$)},
+        at = {(\((plot2.south)-(0, 1cm)\))},
         anchor = north,
         xticklabels = \empty,
         xtick = \empty,
@@ -74,7 +74,7 @@
         xmin = 0, xmax = 8,
         ymin = 0, ymax = 1.5,
         %
-        xlabel = {$\omega$},
+        xlabel = {\(\omega\)},
         ylabel = {Gain}
     ]
         \draw[blue] (0, 0) -| (2.5, 1) -| (5.5, 0) -- (8, 0);
@@ -82,7 +82,7 @@
     \end{axis}
     \begin{axis}[
         name = plot4, 
-        at = {($(plot3.south)-(0, 1cm)$)},
+        at = {(\((plot3.south)-(0, 1cm)\))},
         anchor = north,
         xticklabels = \empty,
         xtick = \empty,
@@ -95,7 +95,7 @@
         xmin = 0, xmax = 8,
         ymin = 0, ymax = 1.5,
         %
-        xlabel = {$\omega$},
+        xlabel = {\(\omega\)},
         ylabel = {Gain}
     ]
         \draw[blue] (0, 1) -| (2.5, 0) -| (5.5, 1) -- (8, 1);

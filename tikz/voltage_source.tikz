@@ -9,7 +9,7 @@
 
 \begin{document}
 \begin{circuitikz}[american]
-    \draw[line cap=rect] (0, 3) to[V=$v$] (0, 0) to[short] (3, 0) to[generic, name = comp, /tikz/circuitikz/bipoles/length=2cm] (3, 3) to[short] (0, 3);
-    \draw (comp) node {$A$};
+    \draw[line cap=rect] (0, 3) to[V=\(v\)] (0, 0) to[short] (3, 0) to[generic, name = comp, /tikz/circuitikz/bipoles/length=2cm] (3, 3) to[short] (0, 3);
+    \draw (comp) node {\(A\)};
 \end{circuitikz}
 \end{document}
