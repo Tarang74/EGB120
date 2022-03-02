@@ -97,19 +97,19 @@
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
     \centering
-    \begin{tabular}{c | >{\centering}p{0.5\textwidth} | c | c}
+    \begin{tabular}{c >{\centering}p{0.5\textwidth} c c}
         \toprule
         \textbf{Name} & \textbf{Definition}                                                                                                      & \textbf{Symbol}           & \textbf{Unit} \\
         \midrule
         Charge        & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
                       & $q$                                                                                                                      & Coulomb (\unit{\coulomb})                 \\
-        \hline
+        \midrule
         Current       & $\displaystyle i = \dv{q}{t}\iff\SI{1}{\ampere} = \SI{1}{\coulomb\per\s}$
                       & $i$                                                                                                                      & Ampere (\unit{\ampere})                   \\
-        \hline
+        \midrule
         Voltage       & $\displaystyle v = \dv{w}{q}\iff\SI{1}{\volt} = \SI{1}{\joule\per\coulomb}$
                       & $v$                                                                                                                      & Volt (\unit{\volt})                       \\
-        \hline
+        \midrule
         Power         & $\displaystyle p = \dv{w}{t}\iff\SI{1}{\watt} = \SI{1}{\joule\per\s}$
                       & $p$                                                                                                                      & Watt (\unit{\watt})                       \\
         \bottomrule
@@ -155,7 +155,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{voltage_source}
-    \caption{Voltage source -- $v$ is specified, $i$ varies depending on circuit element $A$.}
+    \caption{Voltage source --- $v$ is specified, $i$ varies depending on circuit element $A$.}
 \end{figure}
 \begin{definition}[Current Source]
     Produces or dissipates power at a specified current with whatever voltage is required.
@@ -163,7 +163,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{current_source}
-    \caption{Current source -- $i$ is specified, $v$ varies depending on circuit element $A$.}
+    \caption{Current source --- $i$ is specified, $v$ varies depending on circuit element $A$.}
 \end{figure}
 \subsection{Resistors}
 \begin{definition}[Resistor]
@@ -211,7 +211,7 @@
 \end{definition}
 \begin{table}[H]
     \centering
-    \begin{tabular}{c | c c}
+    \begin{tabular}{c c c}
         \toprule
         \textbf{Element} & \textbf{Series}                                                         & \textbf{Parallel}                                                       \\
         \midrule
@@ -609,7 +609,7 @@ where $R_L = R_{Th}$.
     By solving this differential equation, we can determine the step response of a
     RC circuit.
     \begin{equation*}
-        v(t) = I_sR + \left(V_0 - I_sR\right) \exp{\left( -\frac{t}{RC} \right)}
+        v(t) = I_s R + \left(V_0 - I_s R\right) \exp{\left( -\frac{t}{RC} \right)}
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -619,8 +619,8 @@ where $R_L = R_{Th}$.
     \end{figure}
     The voltage at $t = \tau$ is equal to
     \begin{align*}
-        v(\tau) & = \left(1 - \e^{-1}\right)I_sR + V_0 \\
-                & \approx 0.632I_sR + V_0.
+        v(\tau) & = \left(1 - \e^{-1}\right)I_s R + V_0 \\
+                & \approx 0.632I_s R + V_0.
     \end{align*}
 \end{definition}
 \begin{definition}[RL Circuit Step Response]
@@ -751,7 +751,7 @@ range, to prevent damaging the op amp, and to avoid excessive output currents.
 \newpage
 \section{Sinusoidal Signals}
 \begin{definition}
-    A sinusoidal signal is commonly referred to as Alternating Current or AC.
+    A sinusoidal signal is commonly referred to as Alternating Current or AC\@.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -860,7 +860,7 @@ The following equations relate the angular frequency, period and frequency toget
 \end{definition}
 \subsection{Phasor Operations}
 As phasors are quantities with a magnitude and angle, they can be represented as complex numbers.
-Using \hyperref[theorem:eulers_formula]{Theorem \ref{theorem:eulers_formula}}, we can represent a phasor in rectangular form
+Using \hyperref[theorem:eulers_formula]{Theorem~\ref{theorem:eulers_formula}}, we can represent a phasor in rectangular form
 \begin{equation*}
     \symbf{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
 \end{equation*}
@@ -1119,7 +1119,7 @@ where $\displaystyle \omega_c = \frac{1}{R_1C}$.
     An AC plugpack steps the mains AC voltage (\SI{240}{\volt} RMS) down to a safe AC voltage level.
 \end{definition}
 \begin{definition}[Rectifier]
-    A rectifier is designed to convert AC signals to DC.
+    A rectifier is designed to convert AC signals to DC\@.
 \end{definition}
 By using a diode, a rectifier only allows current to pass when an AC
 voltage is positive.
