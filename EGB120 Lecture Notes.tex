@@ -61,14 +61,14 @@
             \toprule
             \textbf{Factor} & \textbf{Name} & \textbf{Symbol}       \\
             \midrule
-            \(10^{24}\)       & yotta         & \unit{\yotta\nothing} \\
-            \(10^{21}\)       & zetta         & \unit{\zetta\nothing} \\
-            \(10^{18}\)       & exa           & \unit{\exa\nothing}   \\
-            \(10^{15}\)       & peta          & \unit{\peta\nothing}  \\
-            \(10^{12}\)       & tera          & \unit{\tera\nothing}  \\
-            \(10^{9}\)        & giga          & \unit{\giga\nothing}  \\
-            \(10^{6}\)        & mega          & \unit{\mega\nothing}  \\
-            \(10^{3}\)        & kilo          & \unit{\kilo\nothing}  \\
+            \(10^{24}\)     & yotta         & \unit{\yotta\nothing} \\
+            \(10^{21}\)     & zetta         & \unit{\zetta\nothing} \\
+            \(10^{18}\)     & exa           & \unit{\exa\nothing}   \\
+            \(10^{15}\)     & peta          & \unit{\peta\nothing}  \\
+            \(10^{12}\)     & tera          & \unit{\tera\nothing}  \\
+            \(10^{9}\)      & giga          & \unit{\giga\nothing}  \\
+            \(10^{6}\)      & mega          & \unit{\mega\nothing}  \\
+            \(10^{3}\)      & kilo          & \unit{\kilo\nothing}  \\
             \bottomrule
         \end{tabular}
     \end{minipage}
@@ -78,14 +78,14 @@
             \toprule
             \textbf{Factor} & \textbf{Name} & \textbf{Symbol}       \\
             \midrule
-            \(10^{-3}\)       & milli         & \unit{\milli\nothing} \\
-            \(10^{-6}\)       & micro         & \unit{\micro\nothing} \\
-            \(10^{-9}\)       & nano          & \unit{\nano\nothing}  \\
-            \(10^{-12}\)      & pico          & \unit{\pico\nothing}  \\
-            \(10^{-15}\)      & femto         & \unit{\femto\nothing} \\
-            \(10^{-18}\)      & atto          & \unit{\atto\nothing}  \\
-            \(10^{-21}\)      & zepto         & \unit{\zepto\nothing} \\
-            \(10^{-24}\)      & yocto         & \unit{\yocto\nothing} \\
+            \(10^{-3}\)     & milli         & \unit{\milli\nothing} \\
+            \(10^{-6}\)     & micro         & \unit{\micro\nothing} \\
+            \(10^{-9}\)     & nano          & \unit{\nano\nothing}  \\
+            \(10^{-12}\)    & pico          & \unit{\pico\nothing}  \\
+            \(10^{-15}\)    & femto         & \unit{\femto\nothing} \\
+            \(10^{-18}\)    & atto          & \unit{\atto\nothing}  \\
+            \(10^{-21}\)    & zepto         & \unit{\zepto\nothing} \\
+            \(10^{-24}\)    & yocto         & \unit{\yocto\nothing} \\
             \bottomrule
         \end{tabular}
     \end{minipage}
@@ -102,24 +102,24 @@
         \textbf{Name} & \textbf{Definition}                                                                                                      & \textbf{Symbol}           & \textbf{Unit} \\
         \midrule
         Charge        & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
-                      & \(q\)                                                                                                                      & Coulomb (\unit{\coulomb})                 \\
+                      & \(q\)                                                                                                                    & Coulomb (\unit{\coulomb})                 \\
         \midrule
-        Current       & \(\displaystyle i = \dv{q}{t}\iff\SI{1}{\ampere} = \SI{1}{\coulomb\per\s}\)
-                      & \(i\)                                                                                                                      & Ampere (\unit{\ampere})                   \\
+        Current       & \(\displaystyle i = \odv{q}{t}\iff\qty{1}{A} = \qty{1}{C.s^{-1}}\)
+                      & \(i\)                                                                                                                    & Ampere (\unit{\ampere})                   \\
         \midrule
-        Voltage       & \(\displaystyle v = \dv{w}{q}\iff\SI{1}{\volt} = \SI{1}{\joule\per\coulomb}\)
-                      & \(v\)                                                                                                                      & Volt (\unit{\volt})                       \\
+        Voltage       & \(\displaystyle v = \odv{w}{q}\iff\qty{1}{V} = \qty{1}{J.C^{-1}}\)
+                      & \(v\)                                                                                                                    & Volt (\unit{\volt})                       \\
         \midrule
-        Power         & \(\displaystyle p = \dv{w}{t}\iff\SI{1}{\watt} = \SI{1}{\joule\per\s}\)
-                      & \(p\)                                                                                                                      & Watt (\unit{\watt})                       \\
+        Power         & \(\displaystyle p = \odv{w}{t}\iff\qty{1}{W} = \qty{1}{J.s^{-1}}\)
+                      & \(p\)                                                                                                                    & Watt (\unit{\watt})                       \\
         \bottomrule
     \end{tabular}
     \caption{Fundamental quantities in electrical circuits.}
 \end{table}
 \endgroup
 \begin{description}
-    \item[Charge in an electron.] \(q = \SI{1.6022e-19}{\coulomb}\).
-    \item[Electric Power.] \(\displaystyle p = \dv{w}{t} = vi\).
+    \item[Charge in an electron.] \(q = \qty{1.6022e-19}{C}\).
+    \item[Electric Power.] \(\displaystyle p = \odv{w}{t} = vi\).
 \end{description}
 \subsection{Passive Sign Convention}
 \begin{figure}[H]
@@ -142,7 +142,7 @@
 \end{theorem}
 \begin{theorem}[Energy]
     \begin{equation*}
-        w\left( \tau \right) = \int_0^\tau p\left( t \right) \dd{t}
+        w\left( \tau \right) = \int_0^\tau p\left( t \right) \odif{t}
     \end{equation*}
 \end{theorem}
 \subsection{Circuits and Sources}
@@ -213,7 +213,7 @@
     \centering
     \begin{tabular}{c c c}
         \toprule
-        \textbf{Element} & \textbf{Series}                                                         & \textbf{Parallel}                                                       \\
+        \textbf{Element} & \textbf{Series}                                                           & \textbf{Parallel}                                                         \\
         \midrule
         Current Source   & \(\displaystyle i_{\mathrm{eq}} = i_{k\geq1}\)                            & \(i_{\mathrm{eq}} = \displaystyle \sum_{k\geq1} i_k\)                     \\
         Voltage Source   & \(\displaystyle v_{\mathrm{eq}} = \sum_{k\geq1} v_k\)                     & \(\displaystyle v_{\mathrm{eq}} = v_{k\geq1}\)                            \\
@@ -283,7 +283,7 @@ These equations can be used to simplify a complex circuit.
 \section{Diodes}
 \begin{definition}[Diode]
     A diode is a semiconductor component in which current flows only in one direction. A diode requires a voltage to start the flow of current in the forward direction.
-    The forward voltage is commonly \SI{0.7}{\volt}.
+    The forward voltage is commonly \qty{0.7}{V}.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -443,8 +443,8 @@ Theorem.
 \begin{definition}[Turning Sources ``off'']
     Turning a source ``off'' means to set its value to 0.
     \begin{description}
-        \item[For a voltage source:] \(v = \SI{0}{\volt}\), hence we can treat it as a short circuit.
-        \item[For a current source:] \(i = \SI{0}{\ampere}\), hence we can treat it as an open circuit.
+        \item[For a voltage source:] \(v = \qty{0}{V}\), hence we can treat it as a short circuit.
+        \item[For a current source:] \(i = \qty{0}{V}\), hence we can treat it as an open circuit.
     \end{description}
 \end{definition}
 \subsubsection{Equivalent Sources}
@@ -471,17 +471,17 @@ where \(R_L = R_{Th}\).
 \subsection{Capacitors}
 \begin{definition}
     Capacitors store electrical energy as a voltage. The ratio of voltage
-    to charge across a capacitor is its capacitance, measured in Farads (\si{\farad}).
+    to charge across a capacitor is its capacitance, measured in Farads (\unit{F}).
     \begin{equation*}
         q = C v
     \end{equation*}
 \end{definition}
 \begin{definition}[VI Relationship]
     \begin{equation*}
-        i = C \dv{v}{t}
+        i = C \odv{v}{t}
     \end{equation*}
     \begin{equation*}
-        v(t) = \frac{1}{C} \int_0^t i(\tau) \dd{\tau} + v(0)
+        v(t) = \frac{1}{C} \int_0^t i(\tau) \odif{\tau} + v(0)
     \end{equation*}
 \end{definition}
 \begin{definition}[Energy Stored by an Capacitor]
@@ -495,14 +495,14 @@ where \(R_L = R_{Th}\).
 \subsection{Inductors}
 \begin{definition}
     Inductors create voltage to oppose a change in current. The ratio of voltage
-    to the rate of change of current through an inductor is its inductance, measured in Henrys (\si{\henry}).
+    to the rate of change of current through an inductor is its inductance, measured in Henrys (\unit{H}).
 \end{definition}
 \begin{definition}[VI Relationship]
     \begin{equation*}
-        v = L \dv{i}{t}
+        v = L \odv{i}{t}
     \end{equation*}
     \begin{equation*}
-        i(t) = \frac{1}{L} \int_0^t v(\tau) \dd{\tau} + i(0)
+        i(t) = \frac{1}{L} \int_0^t v(\tau) \odif{\tau} + i(0)
     \end{equation*}
 \end{definition}
 \begin{definition}[Energy Stored by an Inductor]
@@ -531,7 +531,7 @@ where \(R_L = R_{Th}\).
 \begin{definition}[RC Circuit Natural Response]
     For the circuit shown below, using KCL gives the following relationship
     \begin{equation*}
-        -C \dv{v}{t} = \frac{v}{R}.
+        -C \odv{v}{t} = \frac{v}{R}.
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -564,7 +564,7 @@ where \(R_L = R_{Th}\).
 \begin{definition}[RL Circuit Natural Response]
     For the circuit shown below, using mesh analysis gives the following relationship
     \begin{equation*}
-        L \dv{i}{t} = -iR.
+        L \odv{i}{t} = -iR.
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -598,7 +598,7 @@ where \(R_L = R_{Th}\).
 \begin{definition}[RC Circuit Step Response]
     For the circuit shown below, using KCL at the top node gives the following relationship
     \begin{equation*}
-        i_s = C\dv{v}{t} + \frac{v}{R}.
+        i_s = C\odv{v}{t} + \frac{v}{R}.
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -626,7 +626,7 @@ where \(R_L = R_{Th}\).
 \begin{definition}[RL Circuit Step Response]
     For the circuit shown below, using mesh analysis gives the following relationship
     \begin{equation*}
-        L\dv{i}{t} + iR = V_s.
+        L\odv{i}{t} + iR = V_s.
     \end{equation*}
     \begin{figure}[H]
         \centering
@@ -746,7 +746,7 @@ where the ratio of \(\displaystyle \frac{R_2}{R_1}\) must be equal on both legs.
     \caption{Difference amplifier.}
 \end{figure}
 \subsection{Designing Op Amps}
-When designing op amps, it is important to choose resistors in the \(\qtyrange{1}{100}{\kilo\ohm}\)
+When designing op amps, it is important to choose resistors in the \(\qtyrange{1}{100}{k\Omega}\)
 range, to prevent damaging the op amp, and to avoid excessive output currents.
 \newpage
 \section{Sinusoidal Signals}
@@ -761,7 +761,7 @@ range, to prevent damaging the op amp, and to avoid excessive output currents.
 \subsection{Properties of Sinusoidal Signals}
 These signals are described using cosine functions in the following form.
 \begin{equation*}
-    v(t) = V_{\mathrm{m}} \cos{\left( \omega t + \phi\si{\degree} \right)}
+    v(t) = V_{\mathrm{m}} \cos{\left( \omega t + \phi\unit{\degree} \right)}
 \end{equation*}
 \subsubsection{Magnitude}
 \begin{definition}
@@ -770,16 +770,16 @@ These signals are described using cosine functions in the following form.
 \end{definition}
 \subsubsection{Angular Frequency}
 \begin{definition}
-    The angular frequency \(\omega\) is measured in radians per second (\si{\radian\per\second}), and it allows
+    The angular frequency \(\omega\) is measured in radians per second (\unit{rad.s^{-1}}), and it allows
     us to compute the cosine function in radians.
 \end{definition}
 \subsubsection{Period and Frequency}
 \begin{definition}[Period]
-    The period of a signal \(T\) is its cycle time in seconds (\si{\second}).
+    The period of a signal \(T\) is its cycle time in seconds (\unit{s}).
 \end{definition}
 \begin{definition}[Frequency]
     The frequency of a signal \(f\) is the number of cycles per second, or
-    the inverse of the period. The frequency is measured in Hertz (\si{\hertz}).
+    the inverse of the period. The frequency is measured in Hertz (\unit{Hz}).
 \end{definition}
 The following equations relate the angular frequency, period and frequency together.
 \begin{align*}
@@ -788,7 +788,7 @@ The following equations relate the angular frequency, period and frequency toget
 \subsubsection{Phase}
 \begin{definition}
     The phase \(\phi\) of a signal is the position of a signal relative to a zero phase signal,
-    measured in degrees (\si{\degree}). A \textbf{positive} phase corresponds to a ``leading''
+    measured in degrees (\unit{\degree}). A \textbf{positive} phase corresponds to a ``leading''
     signal, and a \textbf{negative} phase corresponds to a ``lagging'' signal.
     The phase can be determined by calculating the difference in time \(\tau\) between two signals.
     \begin{equation*}
@@ -804,16 +804,14 @@ The following equations relate the angular frequency, period and frequency toget
     \begin{equation*}
         V_{\mathrm{rms}} = \frac{V_{\mathrm{m}}}{\sqrt{2}}
     \end{equation*}
-    The units in rms quantities are also subscripted with rms, for example, rms voltage, \(\si{\volt}_{\mathrm{rms}}\).
+    The units in rms quantities are also subscripted with rms, for example, rms voltage, \unit{V_{rms}}.
 \end{definition}
 \subsection{Power}
 \begin{definition}
     In a resistive load, the power can be determined using the rms current and rms voltage.
     \begin{align*}
-        p & = vi                                                                                         \\
-        % p & = \sqrt{2}V_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)}\sqrt{2}I_{\mathrm{rms}}\cos{\left( \omega t + \phi \right)} \\
-        % p & = 2V_{\mathrm{rms}}I_{\mathrm{rms}}\cos^2{\left( \omega t + \phi \right)}                                                  \\
-        p & = V_{\mathrm{rms}}I_{\mathrm{rms}}\bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
+        p & = vi                                                                                           \\
+        p & = V_{\mathrm{rms}} I_{\mathrm{rms}} \bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
     \end{align*}
     The average power is given by
     \begin{equation*}
@@ -852,7 +850,7 @@ The following equations relate the angular frequency, period and frequency toget
     A phasor can be converted back to a sinusoidal signal using the Inverse Phasor Transform
     \begin{align*}
         v(t) & = \mathscr{P}^{-1}\left\{ \symbf{V} \right\}         \\
-             & = \Re\left\{ \symbf{V} e^{j\omega t} \right\}       \\
+             & = \Re\left\{ \symbf{V} e^{j\omega t} \right\}        \\
              & = V_{\mathrm{m}}\cos{\left( \omega t + \phi \right)}
     \end{align*}
 \end{definition}
@@ -918,17 +916,17 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
     \end{equation*}
     the voltage drop across an inductor is given by:
     \begin{align*}
-        v & = L \dv{i}{t}                                                                      \\
-          & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
-          & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+        v & = L \odv{i}{t}                                                                      \\
+          & = -\omega L I_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                     \\
+          & = -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \qty{90}{\degree} \right)}
     \end{align*}
     taking the Phasor Transform gives
     \begin{align*}
-        \mathscr{P}\left\{ v \right\} & = \mathscr{P}\left\{ L \dv{i}{t} \right\}                                                                      \\
-        \symbf{V}                     & = \mathscr{P}\left\{ -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
-        \symbf{V}                     & = -\omega L I_{\mathrm{m}} e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
-        \symbf{V}                     & = -\omega L I_{\mathrm{m}} e^{j \phi} e^{-j\SI{90}{\degree}}                                                 \\
-        \symbf{V}                     & = j\omega L I_{\mathrm{m}} e^{j \phi}                                                                         \\
+        \mathscr{P}\left\{ v \right\} & = \mathscr{P}\left\{ L \odv{i}{t} \right\}                                                                      \\
+        \symbf{V}                     & = \mathscr{P}\left\{ -\omega L I_{\mathrm{m}} \cos{\left( \omega t + \phi - \qty{90}{\degree} \right)} \right\} \\
+        \symbf{V}                     & = -\omega L I_{\mathrm{m}} e^{j\left( \phi - \qty{90}{\degree} \right)}                                         \\
+        \symbf{V}                     & = -\omega L I_{\mathrm{m}} e^{j \phi} e^{-j\qty{90}{\degree}}                                                   \\
+        \symbf{V}                     & = j\omega L I_{\mathrm{m}} e^{j \phi}                                                                           \\
         \symbf{V}                     & = j\omega L \symbf{I}
     \end{align*}
 \end{proof}
@@ -944,24 +942,24 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
     \end{equation*}
     the voltage-current relationship across a capacitor is given by:
     \begin{align*}
-        i & = C \dv{v}{t}                                                                      \\
-          & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                    \\
-          & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)}
+        i & = C \odv{v}{t}                                                                      \\
+          & = -\omega C V_{\mathrm{m}} \sin{\left( \omega t + \phi \right)}                     \\
+          & = -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \qty{90}{\degree} \right)}
     \end{align*}
     taking the Phasor Transform gives
     \begin{align*}
-        \mathscr{P}\left\{ i \right\} & = \mathscr{P}\left\{ C \dv{v}{t} \right\}                                                                      \\
-        \symbf{I}                     & = \mathscr{P}\left\{ -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \SI{90}{\degree} \right)} \right\} \\
-        \symbf{I}                     & = -\omega C V_{\mathrm{m}} e^{j\left( \phi - \SI{90}{\degree} \right)}                                        \\
-        \symbf{I}                     & = -\omega C V_{\mathrm{m}} e^{j \phi} e^{-j\SI{90}{\degree}}                                                 \\
-        \symbf{I}                     & = j\omega C V_{\mathrm{m}} e^{j \phi}                                                                         \\
-        \symbf{I}                     & = j\omega C \symbf{V}                                                                                          \\
+        \mathscr{P}\left\{ i \right\} & = \mathscr{P}\left\{ C \odv{v}{t} \right\}                                                                      \\
+        \symbf{I}                     & = \mathscr{P}\left\{ -\omega C V_{\mathrm{m}} \cos{\left( \omega t + \phi - \qty{90}{\degree} \right)} \right\} \\
+        \symbf{I}                     & = -\omega C V_{\mathrm{m}} e^{j\left( \phi - \qty{90}{\degree} \right)}                                         \\
+        \symbf{I}                     & = -\omega C V_{\mathrm{m}} e^{j \phi} e^{-j\qty{90}{\degree}}                                                   \\
+        \symbf{I}                     & = j\omega C V_{\mathrm{m}} e^{j \phi}                                                                           \\
+        \symbf{I}                     & = j\omega C \symbf{V}                                                                                           \\
         \symbf{V}                     & = \frac{1}{j\omega C} \symbf{I}
     \end{align*}
 \end{proof}
 \subsection{Impedance}
 \begin{definition}
-    The impedance \(\symbf{Z}\) of an element, measured in Ohms (\si{\ohm}), is its opposition to alternating current.
+    The impedance \(\symbf{Z}\) of an element, measured in Ohms (\unit{\Omega}), is its opposition to alternating current.
     Impedance is represented as the sum of a real resistance \(R\) and imaginary reactance \(X\).
     \begin{equation*}
         \symbf{Z} = R + jX
@@ -1006,8 +1004,8 @@ Frequency response is a measure of the magnitude and phase of a system as a func
 \begin{definition}[Linear Gain]
     The magnitude of the transfer function \(\norm{\symbf{H}}\) measures the linear gain of a system.
 \end{definition}
-\begin{definition}[Gain in \si{\decibel}]
-    The gain of a system is often represented in \si{\decibel} using the following formula
+\begin{definition}[Gain in \unit{decibel}]
+    The gain of a system is often represented in \unit{dB} using the following formula
     \begin{equation*}
         \mathrm{gain} = 20 \log_{10}{\norm{\symbf{H}}}
     \end{equation*}
@@ -1017,17 +1015,17 @@ Frequency response is a measure of the magnitude and phase of a system as a func
 \end{definition}
 \subsection{Bode Plots}
 A Bode plot is a graph of the frequency response of a system.
-In this plot, the frequency (in \si{\hertz}) is plotted on the horizontal axis using a logarithmic scale.
-\begin{definition}[\SI{3}{\decibel} Point]
+In this plot, the frequency (in \unit{Hz}) is plotted on the horizontal axis using a logarithmic scale.
+\begin{definition}[\qty{3}{dB} Point]
     The frequency \(f\) at which the transfer function equals
     \begin{equation*}
-        \symbf{H}(2\pi f) = \frac{1}{\sqrt{2}}\phase{\SI{-45}{\degree}}
+        \symbf{H}(2\pi f) = \frac{1}{\sqrt{2}}\phase{\qty{-45}{\degree}}
     \end{equation*}
     is known as the break frequency, corner frequency,
-    \SI{3}{\decibel} frequency, or half power point.
+    \qty{3}{dB} frequency, or half power point.
 
-    This is because the gain at this point is equal to \(\SI{0.707} \approx \SI{-3.01}{\decibel}\),
-    and the angle \SI{-45}{\degree} is the halfway point between \SI{0}{\degree} and \SI{-90}{\degree}.
+    This is because the gain at this point is equal to \(\num{0.707} \approx \qty{-3.01}{dB}\),
+    and the angle \qty{-45}{\degree} is the halfway point between \qty{0}{\degree} and \qty{-90}{\degree}.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -1114,7 +1112,7 @@ where \(\displaystyle \omega_c = \frac{1}{R_1C}\).
 \end{figure}
 \subsection{Rectifiers}
 \begin{definition}[Plugpack]
-    An AC plugpack steps the mains AC voltage (\SI{240}{\volt} RMS) down to a safe AC voltage level.
+    An AC plugpack steps the mains AC voltage (\qty{240}{V_{rms}}) down to a safe AC voltage level.
 \end{definition}
 \begin{definition}[Rectifier]
     A rectifier is designed to convert AC signals to DC\@.
@@ -1208,7 +1206,7 @@ The ripple in a dual half-wave rectifier is calculated using
 \section{Zener Diodes and Voltage Regulators}
 \subsection{Zener Diodes}
 A Zener diode is similar to a regular diode, but it has a specific
-reverse breakdown voltage. The reverse breakdown voltage is commonly \SI{5}{\volt}.
+reverse breakdown voltage. The reverse breakdown voltage is commonly \qty{5}{V}.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 3cm, keepaspectratio = true]{figures/zener_diode.pdf}
@@ -1281,8 +1279,8 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
     Series regulators regulate the output voltage by limiting the load current by varying the series element.
 \end{definition}
 \subsubsection{Series Linear Regulators}
-LM-series integrated circuits (IC) are a three-terminal linear regulator that regulate fixed voltages of \SI{0.5}{\volt} to \SI{24}{\volt}.
-They require an input voltage at least \SI{2}{\volt} greater than the regulated output voltage.
+LM-series integrated circuits (IC) are a three-terminal linear regulator that regulate fixed voltages of \qty{0.5}{V} to \qty{24}{V}.
+They require an input voltage at least \qty{2}{V} greater than the regulated output voltage.
 An LM-series regulator circuit is shown below.
 \begin{figure}[H]
     \centering
@@ -1293,8 +1291,8 @@ An LM-series regulator circuit is shown below.
 
 The naming convention is as follows,
 \begin{enumerate}
-    \item LM78XX regulates a positive voltage XX\si{\volt}.
-    \item LM79XX regulates a negative voltage -XX\si{\volt}.
+    \item LM78XX regulates a positive voltage XX\unit{V}.
+    \item LM79XX regulates a negative voltage -XX\unit{V}.
 \end{enumerate}
 The power dissipation can be calculated by assuming 0 ground current.
 \subsubsection{Power Supply Design}

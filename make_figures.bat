@@ -18,6 +18,8 @@ SET /A recursive=0
 SET /A verbose=0
 SET /A open=0
 
+SET /A tex="a"
+
 @REM Set mode
 IF "%1"=="" GOTO :noMode
 
@@ -25,7 +27,7 @@ IF "%1"=="recursive" (
     SET recursive=1
 ) ELSE (
     IF "%1"=="file" (
-        SET recursive=0
+        SET file=1
     ) ELSE (
         GOTO :invalidMode
     )
@@ -35,7 +37,10 @@ SHIFT
 SET directory=%~1
 SHIFT
 
-IF %file%==1 SET tex=%~1
+IF %file%==1 (
+    SET tex=%~1
+    SHIFT
+)
 
 @REM If no parameters, build without opening
 IF "%1"=="" GOTO :default
