@@ -6,6 +6,12 @@
 
 ---
 
+## Downloads
+
+Lecture notes download: [EGB120 Lecture Notes PDF](EGB120%20Lecture%20Notes.pdf)
+
+---
+
 This repository provides **lecture notes** for **EGB120 - Foundations of Electrical Engineering**.
 
 *The contents of the lecture notes are described below.*
