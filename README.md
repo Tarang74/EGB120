@@ -8,7 +8,7 @@
 
 ## Downloads
 
-Lecture notes download: [EGB120 Lecture Notes PDF](EGB120%20Lecture%20Notes.pdf)
+Lecture notes download: [EGB120 Lecture Notes PDF](https://www.github.com/Tarang74/EGB120/raw/main/EGB120%20Lecture%20Notes.pdf)
 
 ---
 
@@ -32,7 +32,7 @@ This repository provides **lecture notes** for **EGB120 - Foundations of Electri
 10. Frequency Response
 11. Filters and Rectifiers
 12. Zener Diodes and Voltage Regulators
- 
+
 ---
 
 ![Copyright](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
