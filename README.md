@@ -32,7 +32,7 @@ This repository provides **lecture notes** for **EGB120 - Foundations of Electri
 10. Frequency Response
 11. Filters and Rectifiers
 12. Zener Diodes and Voltage Regulators
-
+ 
 ---
 
 ![Copyright](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)
