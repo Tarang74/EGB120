@@ -1,4 +1,5 @@
-%!TEX program = xelatex
+%!TEX TS-program = xelatex
+%!TEX options = -aux-directory=Debug -shell-escape -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1 "%DOC%"
 \documentclass{article}
 \input{LaTeX-Submodule/template.tex}
 
@@ -746,7 +747,7 @@ where the ratio of \(\displaystyle \frac{R_2}{R_1}\) must be equal on both legs.
     \caption{Difference amplifier.}
 \end{figure}
 \subsection{Designing Op Amps}
-When designing op amps, it is important to choose resistors in the \(\qtyrange{1}{100}{k\Omega}\)
+When designing op amps, it is important to choose resistors in the \(\qtyrange{1}{100}{k\ohm}\)
 range, to prevent damaging the op amp, and to avoid excessive output currents.
 \newpage
 \section{Sinusoidal Signals}

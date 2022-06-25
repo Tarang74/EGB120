@@ -44,8 +44,9 @@
     \end{axis}
     \begin{axis}[
         name = plot2, 
-        at = {(\((plot1.south)-(0, 1cm)\))},
-        anchor = north,
+        at   = {(plot1.below south west)},
+        anchor=north west,
+        yshift=-1cm,
         xmode = log,
         xtick = {100, 1000, 10000, 100000},
         ytick = {-90, -75, -60, -45, -30, -15, 0},

@@ -40,8 +40,9 @@
     \end{axis}
     \begin{axis}[
         name = plot2, 
-        at = {(\((plot1.south)-(0, 1cm)\))},
-        anchor = north,
+        at   = {(plot1.below south west)},
+        anchor=north west,
+        yshift=-1cm,
         xticklabels = \empty,
         xtick = \empty,
         ytick = {0, 1},
@@ -61,8 +62,9 @@
     \end{axis}
     \begin{axis}[
         name = plot3, 
-        at = {(\((plot2.south)-(0, 1cm)\))},
-        anchor = north,
+        at   = {(plot2.below south west)},
+        anchor=north west,
+        yshift=-1cm,
         xticklabels = \empty,
         xtick = \empty,
         ytick = {0, 1},
@@ -82,8 +84,9 @@
     \end{axis}
     \begin{axis}[
         name = plot4, 
-        at = {(\((plot3.south)-(0, 1cm)\))},
-        anchor = north,
+        at   = {(plot3.below south west)},
+        anchor=north west,
+        yshift=-1cm,
         xticklabels = \empty,
         xtick = \empty,
         ytick = {0, 1},
