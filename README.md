@@ -38,3 +38,4 @@ This repository provides **lecture notes** for **EGB120 - Foundations of Electri
 [![license](https://forthebadge.com/images/badges/cc-sa.svg)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 This work is licensed under a [Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
