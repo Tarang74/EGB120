@@ -7,10 +7,6 @@
 \usepackage{circuitikz} % TikZ circuit figures
 \usepackage{steinmetz} % Electronics notation
 
-\DeclareSIUnit{\nothing}{\relax}
-
-\setlength\parindent{0pt}
-
 % Header and footer
 \newcommand{\unitName}{Foundations of Electrical Engineering}
 \newcommand{\unitTime}{Semester 2, 2021}
@@ -60,16 +56,16 @@
         \centering
         \begin{tabular}{c c c}
             \toprule
-            \textbf{Factor} & \textbf{Name} & \textbf{Symbol}       \\
+            \textbf{Factor} & \textbf{Name} & \textbf{Symbol}     \\
             \midrule
-            \(10^{24}\)     & yotta         & \unit{\yotta\nothing} \\
-            \(10^{21}\)     & zetta         & \unit{\zetta\nothing} \\
-            \(10^{18}\)     & exa           & \unit{\exa\nothing}   \\
-            \(10^{15}\)     & peta          & \unit{\peta\nothing}  \\
-            \(10^{12}\)     & tera          & \unit{\tera\nothing}  \\
-            \(10^{9}\)      & giga          & \unit{\giga\nothing}  \\
-            \(10^{6}\)      & mega          & \unit{\mega\nothing}  \\
-            \(10^{3}\)      & kilo          & \unit{\kilo\nothing}  \\
+            \(10^{24}\)     & yotta         & \unit{\yotta\relax} \\
+            \(10^{21}\)     & zetta         & \unit{\zetta\relax} \\
+            \(10^{18}\)     & exa           & \unit{\exa\relax}   \\
+            \(10^{15}\)     & peta          & \unit{\peta\relax}  \\
+            \(10^{12}\)     & tera          & \unit{\tera\relax}  \\
+            \(10^{9}\)      & giga          & \unit{\giga\relax}  \\
+            \(10^{6}\)      & mega          & \unit{\mega\relax}  \\
+            \(10^{3}\)      & kilo          & \unit{\kilo\relax}  \\
             \bottomrule
         \end{tabular}
     \end{minipage}
@@ -77,16 +73,16 @@
         \centering
         \begin{tabular}{c c c}
             \toprule
-            \textbf{Factor} & \textbf{Name} & \textbf{Symbol}       \\
+            \textbf{Factor} & \textbf{Name} & \textbf{Symbol}     \\
             \midrule
-            \(10^{-3}\)     & milli         & \unit{\milli\nothing} \\
-            \(10^{-6}\)     & micro         & \unit{\micro\nothing} \\
-            \(10^{-9}\)     & nano          & \unit{\nano\nothing}  \\
-            \(10^{-12}\)    & pico          & \unit{\pico\nothing}  \\
-            \(10^{-15}\)    & femto         & \unit{\femto\nothing} \\
-            \(10^{-18}\)    & atto          & \unit{\atto\nothing}  \\
-            \(10^{-21}\)    & zepto         & \unit{\zepto\nothing} \\
-            \(10^{-24}\)    & yocto         & \unit{\yocto\nothing} \\
+            \(10^{-3}\)     & milli         & \unit{\milli\relax} \\
+            \(10^{-6}\)     & micro         & \unit{\micro\relax} \\
+            \(10^{-9}\)     & nano          & \unit{\nano\relax}  \\
+            \(10^{-12}\)    & pico          & \unit{\pico\relax}  \\
+            \(10^{-15}\)    & femto         & \unit{\femto\relax} \\
+            \(10^{-18}\)    & atto          & \unit{\atto\relax}  \\
+            \(10^{-21}\)    & zepto         & \unit{\zepto\relax} \\
+            \(10^{-24}\)    & yocto         & \unit{\yocto\relax} \\
             \bottomrule
         \end{tabular}
     \end{minipage}
@@ -98,7 +94,8 @@
 \renewcommand{\arraystretch}{1.5}
 \begin{table}[H]
     \centering
-    \begin{tabular}{c >{\centering}p{0.5\textwidth} c c}
+    \begin{tabular}
+        {c >{\centering}p{0.5\textwidth} c c}
         \toprule
         \textbf{Name} & \textbf{Definition}                                                                                                      & \textbf{Symbol}           & \textbf{Unit} \\
         \midrule
@@ -129,7 +126,8 @@
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/passive_component.pdf}
         \caption{Energy dissipation.}
-    \end{minipage}\hfill
+    \end{minipage}
+    \hfill
     \begin{minipage}[H]{0.48\textwidth}
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/active_component.pdf}
@@ -189,8 +187,10 @@
 \section{Simple Resistive Circuits}
 \subsection{Ignored Physics}
 \begin{enumerate}
-    \item Electrical effects occur instantaneously, so there is no time delay along the wires.
-    \item The net charge on every component is zero. Charge is never lost or gained.
+    \item Electrical effects occur instantaneously, so there is no time
+          delay along the wires.
+    \item The net charge on every component is zero. Charge is never
+          lost or gained.
     \item There is no magnetic coupling between the components.
 \end{enumerate}
 \subsection{Kirchhoff's Laws}
@@ -292,7 +292,8 @@ These equations can be used to simplify a complex circuit.
     \caption{Diode circuit symbol.}
 \end{figure}
 \subsection{VI Characteristic}
-The Voltage-Current characteristic of linear circuit elements can be plotted as shown below.
+The Voltage-Current characteristic of linear circuit elements can be
+plotted as shown below.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{figures/vi_characteristic_voltage_source.pdf}
@@ -309,7 +310,8 @@ The Voltage-Current characteristic of linear circuit elements can be plotted as 
     \caption{VI characteristic for a resistor.}
 \end{figure}
 \subsection{VI Characteristic for Diodes}
-A diode has a non-linear characteristic curve, hence it is often simplified.
+A diode has a non-linear characteristic curve, hence it is often
+simplified.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{figures/vi_characteristic_diode.pdf}
@@ -371,14 +373,17 @@ open circuit nodes of the component.
 \subsection{Mesh Analysis Steps}
 \begin{enumerate}
     \item Label the unknown mesh currents.
-    \item Find the voltage across each of the circuit elements in terms of mesh currents.
+    \item Find the voltage across each of the circuit elements in terms
+          of mesh currents.
     \item Use KVL around each mesh to create simultaneous equations.
     \item Solve simultaneous equations for mesh currents.
 \end{enumerate}
 \subsection{Mesh Analysis with Current Sources}
-If the current source is in a single mesh, then treat the mesh current as known and solve as before.
+If the current source is in a single mesh, then treat the mesh current
+as known and solve as before.
 
-If the current source is between two meshes, then we must use a supermesh.
+If the current source is between two meshes, then we must use a
+supermesh.
 \begin{definition}[Supermesh]
     A supermesh is a special mesh that surrounds the current source.
 \end{definition}
@@ -390,9 +395,9 @@ If the current source is between two meshes, then we must use a supermesh.
 \end{enumerate}
 \newpage
 \section{Source Transformations}
-Real sources often have many limitations in terms of voltage and current delivery.
-The most commonly modelled and most useful for linear circuit theory is some form of
-resistance associated with the source.
+Real sources often have many limitations in terms of voltage and
+current delivery. The most commonly modelled and most useful for linear
+circuit theory is some form of resistance associated with the source.
 \subsection{Thévenin Equivalent Circuit}
 \begin{definition}
     The Thévenin equivalent circuit is a voltage source with a series resistance.
@@ -405,7 +410,8 @@ resistance associated with the source.
     This circuit has the following properties:
     \begin{description}
         \item[Open circuit voltage.] \(v_{oc} = v_{Th}\)
-        \item[Short circuit current.] \(i_{sc} = \frac{v_{Th}}{R_{Th}}\)
+        \item[Short circuit current.] \(i_{sc} =
+              \frac{v_{Th}}{R_{Th}}\)
     \end{description}
 \end{definition}
 \subsection{Norton Equivalent Circuit}
@@ -425,9 +431,9 @@ resistance associated with the source.
     \end{description}
 \end{definition}
 \subsection{Source Transformations}
-A source transformation is the process of simplifying a circuit by transforming
-voltage sources into current sources, and vice versa, using Thévenin's Theorem and Norton's
-Theorem.
+A source transformation is the process of simplifying a circuit by
+transforming voltage sources into current sources, and vice versa,
+using Thévenin's Theorem and Norton's Theorem.
 \begin{theorem}
     Thévenin and Norton equivalent circuits have the following relationship
     \begin{equation*}
@@ -444,20 +450,24 @@ Theorem.
 \begin{definition}[Turning Sources ``off'']
     Turning a source ``off'' means to set its value to 0.
     \begin{description}
-        \item[For a voltage source:] \(v = \qty{0}{V}\), hence we can treat it as a short circuit.
-        \item[For a current source:] \(i = \qty{0}{V}\), hence we can treat it as an open circuit.
+        \item[For a voltage source:] \(v = \qty{0}{V}\), hence we can
+              treat it as a short circuit.
+        \item[For a current source:] \(i = \qty{0}{V}\), hence we can
+              treat it as an open circuit.
     \end{description}
 \end{definition}
 \subsubsection{Equivalent Sources}
-To determine the equivalent voltage or current source between two nodes, we must
-turn on each source in the circuit one by one, and calculate the voltage or current
-between those nodes.
-The equivalent voltage or current is equal to the sum of contributions from each source.
+To determine the equivalent voltage or current source between two
+nodes, we must turn on each source in the circuit one by one, and
+calculate the voltage or current between those nodes. The equivalent
+voltage or current is equal to the sum of contributions from each
+source.
 \subsubsection{Equivalent Resistance}
-The equivalent resistance is determined by turning off all sources and calculating the
-equivalent resistance between the two nodes.
+The equivalent resistance is determined by turning off all sources and
+calculating the equivalent resistance between the two nodes.
 \subsection{Maximum Power Transfer}
-In the circuit shown below, the maximum power transfer to the load is given by
+In the circuit shown below, the maximum power transfer to the load is
+given by
 \begin{equation*}
     P_L = \frac{v_{Th}^2}{4R_L}
 \end{equation*}
@@ -694,11 +704,13 @@ where \(R_L = R_{Th}\).
 \subsection{Golden Rules for Op Amps}
 \begin{enumerate}
     \item Infinite input impedance, therefore, zero input current.
-    \item In a closed loop, the output drives the voltage difference at the inputs to zero.
+    \item In a closed loop, the output drives the voltage difference at
+          the inputs to zero.
 \end{enumerate}
 Note that the second rule only applies when the op amp has external negative feedback.
 \subsection{Op Amp Analysis}
-Using the golden rules above, the following circuits can be constructed.
+Using the golden rules above, the following circuits can be
+constructed.
 \subsubsection{Inverting Amplifier}
 \begin{equation*}
     v_{out} = -\frac{R_2}{R_1}v_{in}
@@ -747,9 +759,9 @@ where the ratio of \(\displaystyle \frac{R_2}{R_1}\) must be equal on both legs.
     \caption{Difference amplifier.}
 \end{figure}
 \subsection{Designing Op Amps}
-When designing op amps, it is important to choose resistors in the \(\qtyrange{1}{100}{k\ohm}\)
-range, to prevent damaging the op amp, and to avoid excessive output currents.
-\newpage
+When designing op amps, it is important to choose resistors in the
+\(\qtyrange{1}{100}{k\ohm}\) range, to prevent damaging the op amp, and
+to avoid excessive output currents. \newpage
 \section{Sinusoidal Signals}
 \begin{definition}
     A sinusoidal signal is commonly referred to as Alternating Current or AC\@.
@@ -760,7 +772,8 @@ range, to prevent damaging the op amp, and to avoid excessive output currents.
     \caption{Sinusoidal signals.}
 \end{figure}
 \subsection{Properties of Sinusoidal Signals}
-These signals are described using cosine functions in the following form.
+These signals are described using cosine functions in the following
+form.
 \begin{equation*}
     v(t) = V_{\mathrm{m}} \cos{\left( \omega t + \phi\unit{\degree} \right)}
 \end{equation*}
@@ -820,7 +833,8 @@ The following equations relate the angular frequency, period and frequency toget
     \end{equation*}
 \end{definition}
 \subsection{Euler's Formula}
-\begin{theorem}\label{theorem:eulers_formula}
+\begin{theorem}
+    \label{theorem:eulers_formula}
     \begin{equation*}
         e^{j\phi} = \cos{\left( \phi \right)} + j \sin{\left( \phi \right)}
     \end{equation*}
@@ -856,8 +870,10 @@ The following equations relate the angular frequency, period and frequency toget
     \end{align*}
 \end{definition}
 \subsection{Phasor Operations}
-As phasors are quantities with a magnitude and angle, they can be represented as complex numbers.
-Using \hyperref[theorem:eulers_formula]{Theorem~\ref{theorem:eulers_formula}}, we can represent a phasor in rectangular form
+As phasors are quantities with a magnitude and angle, they can be
+represented as complex numbers. Using
+\hyperref[theorem:eulers_formula]{Theorem~\ref{theorem:eulers_formula}},
+we can represent a phasor in rectangular form
 \begin{equation*}
     \symbf{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
 \end{equation*}
@@ -871,13 +887,15 @@ and the angle
 \end{equation*}
 where \(-\pi < \phi \leq \pi\).
 \subsubsection{Addition with Phasors}
-Phasors in rectangular form can be added using their real and imaginary parts.
+Phasors in rectangular form can be added using their real and imaginary
+parts.
 \begin{align*}
     \symbf{A} + \symbf{B} & = \Re\left\{ \symbf{A} + \symbf{B} \right\} + \Im\left\{ \symbf{A} + \symbf{B} \right\}                                                                                                                      \\
                           & = \bigl( A_{\mathrm{m}}\cos{\left( \phi_1 \right)} + B_{\mathrm{m}}\cos{\left( \phi_2 \right)} \bigr) + j\bigl( A_{\mathrm{m}}\sin{\left( \phi_1 \right)} + B_{\mathrm{m}}\sin{\left( \phi_2 \right)} \bigr)
 \end{align*}
 \subsubsection{Multiplication with Phasors}
-Phasors in polar form can be multiplied using their magnitudes and phases.
+Phasors in polar form can be multiplied using their magnitudes and
+phases.
 \begin{align*}
     \symbf{A} \symbf{B} & = \norm{\symbf{A}} \norm{\symbf{B}} \phase{\arg{\left( \symbf{A} \right)} + \arg{\left( \symbf{B} \right)}} \\
                         & = A_{\mathrm{m}} B_{\mathrm{m}} \phase{\phi_1 + \phi_2}
@@ -988,7 +1006,8 @@ Phasors in polar form can be multiplied using their magnitudes and phases.
 \end{theorem}
 \newpage
 \section{Frequency Response}
-Frequency response is a measure of the magnitude and phase of a system as a function of (angular) frequency \(\omega\).
+Frequency response is a measure of the magnitude and phase of a system
+as a function of (angular) frequency \(\omega\).
 \subsection{Circuit Analysis with AC Circuits}
 \begin{theorem}
     Any DC analysis technique can be used with AC circuits, as long as
@@ -1015,18 +1034,19 @@ Frequency response is a measure of the magnitude and phase of a system as a func
     The phase of the transfer function \(\arg{\left( \symbf{H} \right)}\) measures the phase shift of a system.
 \end{definition}
 \subsection{Bode Plots}
-A Bode plot is a graph of the frequency response of a system.
-In this plot, the frequency (in \unit{\hertz}) is plotted on the horizontal axis using a logarithmic scale.
+A Bode plot is a graph of the frequency response of a system. In this
+plot, the frequency (in \unit{\hertz}) is plotted on the horizontal
+axis using a logarithmic scale.
 \begin{definition}[\qty{3}{dB} Point]
     The frequency \(f\) at which the transfer function equals
     \begin{equation*}
         \symbf{H}(2\pi f) = \frac{1}{\sqrt{2}}\phase{\qty{-45}{\degree}}
     \end{equation*}
     is known as the break frequency, corner frequency,
-    \qty{3}{dB} frequency, or half power point.
-
-    This is because the gain at this point is equal to \(\num{0.707} \approx \qty{-3.01}{dB}\),
-    and the angle \qty{-45}{\degree} is the halfway point between \qty{0}{\degree} and \qty{-90}{\degree}.
+    \qty{3}{dB} frequency, or half power point. This is because the gain
+    at this point is equal to \(\num{0.707} \approx \qty{-3.01}{dB}\),
+    and the angle \qty{-45}{\degree} is the halfway point between
+    \qty{0}{\degree} and \qty{-90}{\degree}.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -1052,11 +1072,10 @@ In this plot, the frequency (in \unit{\hertz}) is plotted on the horizontal axis
     \caption{Different types of filters.}
 \end{figure}
 \subsection{Passive Filters}
-Passive filters are circuits containing only passive elements
-(such as resistors, capacitors and inductors),
-which filter unwanted parts of a signal.
-Passive filters are affected by loading, such that a varied load will
-affect the cut-off frequency.
+Passive filters are circuits containing only passive elements (such as
+resistors, capacitors and inductors), which filter unwanted parts of a
+signal. Passive filters are affected by loading, such that a varied
+load will affect the cut-off frequency.
 \subsubsection{Low Pass Filter}
 The following low pass filter has the following transfer function.
 \begin{equation*}
@@ -1080,12 +1099,11 @@ where \(\displaystyle \omega_c = \frac{1}{RC}\).
     \caption{Passive high pass filter.}
 \end{figure}
 \subsection{Active Filters}
-Active filters are circuits containing active elements (such as op amps),
-which filter unwanted parts of a signal.
-Active filters are not affected by loading, such that a varied load will
-not affect the cut-off frequency.
-
-For the following active filters, the gain component is given by
+Active filters are circuits containing active elements (such as op
+amps), which filter unwanted parts of a signal. Active filters are not
+affected by loading, such that a varied load will not affect the
+cut-off frequency. For the following active filters, the gain component
+is given by
 \begin{equation*}
     \mathrm{gain} = -\frac{R_2}{R_1}
 \end{equation*}
@@ -1136,7 +1154,8 @@ voltage is positive.
 
     Ripple can be calculated using the following assumptions:
     \begin{enumerate}
-        \item The capacitor instantly charges when the diode is forward biased.
+        \item The capacitor instantly charges when the diode is forward
+              biased.
         \item The capacitor discharges with a constant current.
     \end{enumerate}
     The VI relationship for a capacitor gives the following formula for ripple
@@ -1207,7 +1226,8 @@ The ripple in a dual half-wave rectifier is calculated using
 \section{Zener Diodes and Voltage Regulators}
 \subsection{Zener Diodes}
 A Zener diode is similar to a regular diode, but it has a specific
-reverse breakdown voltage. The reverse breakdown voltage is commonly \qty{5}{V}.
+reverse breakdown voltage. The reverse breakdown voltage is commonly
+\qty{5}{V}.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 3cm, keepaspectratio = true]{figures/zener_diode.pdf}
@@ -1220,8 +1240,9 @@ The ideal VI characteristic for a Zener diode is shown below.
     \caption{VI characteristic for an ideal Zener diode.}
 \end{figure}
 \subsection{Voltage Regulators}
-Most circuits require a clean DC power supply to operate.
-A voltage regulator ensures that a DC power supply behaves like an ideal voltage source.
+Most circuits require a clean DC power supply to operate. A voltage
+regulator ensures that a DC power supply behaves like an ideal voltage
+source.
 \subsection{Shunt Regulators}
 \begin{definition}[Shunt Regulator]
     A shunt regulator regulates the output voltage by shunting excess current away from the load.
@@ -1230,9 +1251,12 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
 \begin{remark}
     When designing a Zener voltage regulator, the following should be taken into account:
     \begin{itemize}
-        \item Power dissipation particularly when dropping large voltages.
-        \item Large series resistances reduces power dissipation but also reduces the regulated current.
-        \item A Zener voltage regulator always draws power from the source, regardless of the load.
+        \item Power dissipation particularly when dropping large
+              voltages.
+        \item Large series resistances reduces power dissipation but
+              also reduces the regulated current.
+        \item A Zener voltage regulator always draws power from the
+              source, regardless of the load.
         \item The load has an effect on the regulator.
     \end{itemize}
 \end{remark}
@@ -1273,16 +1297,19 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
 
     Hence the maximum load current is when \(v_s\) is maximal.
 
-    And the maximum source resistance is when \(v_s\) is minimal, and \(i_L\) is maximal.
+    And the maximum source resistance is when \(v_s\) is minimal, and
+    \(i_L\) is maximal.
 \end{proof}
 \subsection{Series Regulators}
 \begin{definition}[Series Regulator]
     Series regulators regulate the output voltage by limiting the load current by varying the series element.
 \end{definition}
 \subsubsection{Series Linear Regulators}
-LM-series integrated circuits (IC) are a three-terminal linear regulator that regulate fixed voltages of \qty{0.5}{V} to \qty{24}{V}.
-They require an input voltage at least \qty{2}{V} greater than the regulated output voltage.
-An LM-series regulator circuit is shown below.
+LM-series integrated circuits (IC) are a three-terminal linear
+regulator that regulate fixed voltages of \qty{0.5}{V} to \qty{24}{V}.
+They require an input voltage at least \qty{2}{V} greater than the
+regulated output voltage. An LM-series regulator circuit is shown
+below.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{figures/series_linear_regulator.pdf}
@@ -1297,7 +1324,8 @@ The naming convention is as follows,
 \end{enumerate}
 The power dissipation can be calculated by assuming 0 ground current.
 \subsubsection{Power Supply Design}
-A rectifier and regulator circuit can be combined to create a power supply from an AC voltage plugpack.
+A rectifier and regulator circuit can be combined to create a power
+supply from an AC voltage plugpack.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{figures/power_supply.pdf}
@@ -1316,20 +1344,20 @@ The maximum ripple for these circuits is shown below.
     \max{v_{in}} - v_f - \left( 2 + v_{out} \right) & > \frac{i}{fC}
 \end{align*}
 \subsubsection{Series Op Amp Regulators}
-Op amps can be utilised to stabilise the output from a regulator.
-The op amp is powered by the source voltage and the series resistance is chosen to minimise the current through the Zener diode.
+Op amps can be utilised to stabilise the output from a regulator. The
+op amp is powered by the source voltage and the series resistance is
+chosen to minimise the current through the Zener diode.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 8cm, keepaspectratio = true]{figures/series_op_amp_regulator.pdf}
     \caption{Series op amp regulator circuit.}
 \end{figure}
-In the circuit above, \(i_Z + i_S = 0\).
-
-The power dissipated by the circuit can be determined by finding the power produced at the voltage source
-which is given by
+In the circuit above, \(i_Z + i_S = 0\). The power dissipated by the
+circuit can be determined by finding the power produced at the voltage
+source which is given by
 \begin{equation*}
     p = v_{in} \left( i_L - i_Z \right).
 \end{equation*}
 \newpage
 \listoffigures
-\end{document} 
+\end{document}
