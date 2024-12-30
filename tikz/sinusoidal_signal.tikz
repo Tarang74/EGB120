@@ -32,7 +32,7 @@
         ylabel = {\(v(t)\)}
     ]
         %
-        \addplot+ [domain=0:3*pi, samples=300, mark=none] {3*cos(deg(x))};  
+        \addplot+ [domain=0:3*pi, samples=300, mark=none] {3*cos(deg(x))};
         \addplot+ [domain=0:3*pi, samples=300, mark=none, color=red, dashed] {3*cos(deg(x - pi/2))};
         % Period
         \coordinate (leftperiod) at (0, 3) {};
