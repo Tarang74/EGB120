@@ -97,19 +97,22 @@
     \begin{tabular}
         {c >{\centering}p{0.5\textwidth} c c}
         \toprule
-        \textbf{Name} & \textbf{Definition}                                                                                                      & \textbf{Symbol}           & \textbf{Unit} \\
+        \textbf{Name} & \textbf{Definition}                                                                                                                                        & \textbf{Symbol}           & \textbf{Unit} \\
         \midrule
         Charge        & Electric charge is a fundamental property of matter that governs how particles are affected by an electromagnetic field.
-                      & \(q\)                                                                                                                    & Coulomb (\unit{\coulomb})                 \\
+                      & \(q\)                                                                                                                                                      & Coulomb (\unit{\coulomb})                 \\
         \midrule
-        Current       & \(\displaystyle i = \odv{q}{t}\iff\qty{1}{A} = \qty{1}{C.s^{-1}}\)
-                      & \(i\)                                                                                                                    & Ampere (\unit{\ampere})                   \\
+        Work          & Work is the energy transferred by an electric charge moving through an electric field.
+                      & \(w\)                                                                                                                                                      & Joule (\unit{\joule})                     \\
         \midrule
-        Voltage       & \(\displaystyle v = \odv{w}{q}\iff\qty{1}{V} = \qty{1}{J.C^{-1}}\)
-                      & \(v\)                                                                                                                    & Volt (\unit{\volt})                       \\
+        Current       & Current is the rate of flow of electric charge past a point in an electric circuit: \(\displaystyle i = \odv{q}{t}\iff\qty{1}{A} = \qty{1}{C.s^{-1}}\)
+                      & \(i\)                                                                                                                                                      & Ampere (\unit{\ampere})                   \\
         \midrule
-        Power         & \(\displaystyle p = \odv{w}{t}\iff\qty{1}{W} = \qty{1}{J.s^{-1}}\)
-                      & \(p\)                                                                                                                    & Watt (\unit{\watt})                       \\
+        Voltage       & Voltage is the electric potential difference between two points in an electric circuit: \(\displaystyle v = \odv{w}{q}\iff\qty{1}{V} = \qty{1}{J.C^{-1}}\)
+                      & \(v\)                                                                                                                                                      & Volt (\unit{\volt})                       \\
+        \midrule
+        Power         & Power is the rate at which work is done in an electric circuit: \(\displaystyle p = \odv{w}{t}\iff\qty{1}{W} = \qty{1}{J.s^{-1}}\)
+                      & \(p\)                                                                                                                                                      & Watt (\unit{\watt})                       \\
         \bottomrule
     \end{tabular}
     \caption{Fundamental quantities in electrical circuits.}
@@ -146,18 +149,18 @@
 \end{theorem}
 \subsection{Circuits and Sources}
 \begin{definition}[Circuits]
-    A circuit is a mathematical model that approximates a real system. It is built from ideal circuit elements connected by ideal wires.
+    A circuit is a mathematical model that approximates a real electronic system. It is built from ideal circuit elements connected by ideal wires.
 \end{definition}
-\begin{definition}[Voltage Source]
-    Produces or dissipates power at a specified voltage with whatever current is required.
+\begin{definition}[Voltage source]
+    A voltage source produces or dissipates power at a specified voltage with the current required.
 \end{definition}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{figures/voltage_source.pdf}
     \caption{Voltage source --- \(v\) is specified, \(i\) varies depending on circuit element \(A\).}
 \end{figure}
-\begin{definition}[Current Source]
-    Produces or dissipates power at a specified current with whatever voltage is required.
+\begin{definition}[Current source]
+    A current source produces or dissipates power at a specified current with the voltage required.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -166,7 +169,7 @@
 \end{figure}
 \subsection{Resistors}
 \begin{definition}[Resistor]
-    Resistors dissipate power, and the voltage across both terminals is proportional to the current.
+    Resistors dissipate power and the voltage across both terminals is proportional to the current through the resistor.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -174,13 +177,15 @@
     \caption{Resistor circuit symbol.}
 \end{figure}
 \begin{theorem}[Voltage through a resistor]
+    The voltage across a resistor is given by Ohm's Law which states
     \begin{equation*}
-        v = iR
+        v = iR.
     \end{equation*}
 \end{theorem}
 \begin{corollary}[Power dissipated by a resistor]
+    The power dissipated by a resistor can therefore be calculated as
     \begin{equation*}
-        p = vi = i^2 R = \frac{v^2}{R}
+        p = vi = i^2 R = \frac{v^2}{R}.
     \end{equation*}
 \end{corollary}
 \newpage
@@ -194,22 +199,24 @@
     \item There is no magnetic coupling between the components.
 \end{enumerate}
 \subsection{Kirchhoff's Laws}
-\begin{theorem}[Kirchhoff's Current Law (KCL)]
-    The sum of all currents into a node equals zero.
+\begin{theorem}[Kirchhoff's current law (KCL)]
+    The sum of all currents into a node is zero:
     \begin{equation*}
-        \sum i_{\mathrm{node}} = 0
+        \sum i_{\mathrm{node}} = 0.
     \end{equation*}
 \end{theorem}
-\begin{theorem}[Kirchhoff's Voltage Law (KVL)]
-    The sum of all voltages around a loop equals zero.
+\begin{theorem}[Kirchhoff's voltage law (KVL)]
+    The sum of all voltages around a loop is zero:
     \begin{equation*}
-        \sum v_{\mathrm{loop}} = 0
+        \sum v_{\mathrm{loop}} = 0.
     \end{equation*}
 \end{theorem}
 \subsection{Series and Parallel Circuits}
 \begin{definition}
     Elements connected end-to-end are in series. If both ends of an element are connected directly to another element, the two elements are in parallel.
 \end{definition}
+The following table can be used to simplify quantities for components
+connected in series and parallel.
 \begin{table}[H]
     \centering
     \begin{tabular}{c c c}
@@ -225,57 +232,60 @@
     \end{tabular}
     \caption{Equivalent values for various components connected in series and parallel.}
 \end{table}
-These equations can be used to simplify a complex circuit.
 \subsection{Voltage and Current Dividers}
-\begin{definition}[Voltage Divider]
-    A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
+\begin{definition}[Voltage divider]
+    A voltage divider is a circuit that distributes voltage among series resistors in proportion to their resistances.
 \end{definition}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 4cm, keepaspectratio = true]{figures/voltage_divider.pdf}
     \caption{Voltage divider circuit.}
 \end{figure}
-\begin{theorem}[Voltage Divider]
+\begin{theorem}[Voltage divider]
     \begin{equation*}
         v_k = v \frac{R_k}{R_{\mathrm{eq}}}
     \end{equation*}
+    where \(R_{\mathrm{eq}}\) is the equivalent resistance of the circuit.
 \end{theorem}
 \begin{proof}
-    The current through any resistor is
+    The current through any resistor is the same,
     \begin{equation*}
         i = \frac{v}{R_{\mathrm{eq}}}.
     \end{equation*}
-    Therefore the voltage drop in any resistor is
+    Therefore, the voltage drop across the \(k\)th resistor is given by
     \begin{align*}
         v_k & = i R_k                          \\
         v_k & = \frac{v}{R_{\mathrm{eq}}} R_k.
     \end{align*}
 \end{proof}
-\begin{definition}[Current Divider]
-    A voltage divider is a circuit that divides a voltage in the proportion of the series resistances.
+\begin{definition}[Current divider]
+    A current divider is a circuit that distributes current among parallel resistors in proportion to their resistances.
 \end{definition}
 \begin{figure}[H]
     \centering
     \includegraphics[height = 3cm, keepaspectratio = true]{figures/current_divider.pdf}
     \caption{Current divider circuit.}
 \end{figure}
-\begin{theorem}[Current Divider]
+\begin{theorem}[Current divider]
     \begin{equation*}
         i_k = i \frac{R_{\mathrm{eq}}}{R_k}
     \end{equation*}
+    where \(R_{\mathrm{eq}}\) is the equivalent resistance of the circuit.
 \end{theorem}
 \begin{proof}
-    Using KCL we have
+    Using KCL, we find
     \begin{align*}
         i & = \sum_{k\geq1} i_k           \\
-        i & = \sum_{k\geq1} \frac{v}{R_k} \\
-        i & = \frac{v}{R_{\mathrm{eq}}}.
+          & = \sum_{k\geq1} \frac{v}{R_k} \\
+          & = \frac{v}{R_{\mathrm{eq}}}.
     \end{align*}
-    Solving for \(v\) gives
+    Solving for the voltage \(v\) across the current source gives us the
+    relationship:
     \begin{align*}
         v & = i R_{\mathrm{eq}}.
     \end{align*}
-    Hence the current through any resistor in parallel is given by
+    Hence, the current through the \(k\)th resistor in parallel is given
+    by
     \begin{align*}
         i_k = \frac{v}{R_k} = \frac{iR_{\mathrm{eq}}}{R_k}.
     \end{align*}
@@ -283,8 +293,10 @@ These equations can be used to simplify a complex circuit.
 \newpage
 \section{Diodes}
 \begin{definition}[Diode]
-    A diode is a semiconductor component in which current flows only in one direction. A diode requires a voltage to start the flow of current in the forward direction.
-    The forward voltage is commonly \qty{0.7}{V}.
+    A diode is a semiconductor component in which current only flows in
+    one direction. A diode requires a voltage to start the flow of
+    current in the forward direction. This forward voltage is commonly
+    \qty{0.7}{V}.
 \end{definition}
 \begin{figure}[H]
     \centering
@@ -310,28 +322,29 @@ plotted as shown below.
     \caption{VI characteristic for a resistor.}
 \end{figure}
 \subsection{VI Characteristic for Diodes}
-A diode has a non-linear characteristic curve, hence it is often
-simplified.
+As the diode has a non-linear characteristic curve, it is often
+simplified using the following model.
 \begin{figure}[H]
     \centering
     \includegraphics[height = 5cm, keepaspectratio = true]{figures/vi_characteristic_diode.pdf}
     \caption{VI characteristic for a diode.}
 \end{figure}
-\begin{theorem}[Shockley's Diode Equation]
-    A diode can be better modelled using Shockley's equation.
+\begin{theorem}[Shockley's diode equation]
+    A diode can be modelled more precisely using the equation
     \begin{equation*}
         i = I_S \exp{\left( \frac{v}{0.026} \right)}
     \end{equation*}
     where \(I_S\) is the saturation current and \(0.026\) is the thermal voltage.
 \end{theorem}
 \subsection{Operating Points and Load Lines}
-\begin{definition}[Operating Point]
+\begin{definition}[Operating points]
     The operating point for two elements can be found by determining the intersection
     of the two VI characteristic curves.
 \end{definition}
-\begin{definition}[Load Lines]
-    If a circuit contains three or more elements including a diode, the VI characteristic curve
-    is found around the diode. This curve is called a load line.
+\begin{definition}[Load lines]
+    If a circuit contains three or more elements and includes a diode,
+    the VI characteristic curve is found around the diode. This curve is
+    called a load line.
 \end{definition}
 \subsection{Operating Point of Non-Linear Component}
 Given the following circuit with a non-linear component
@@ -361,7 +374,7 @@ open circuit nodes of the component.
 \begin{definition}[Node]
     A point where two or more circuit elements join.
 \end{definition}
-\begin{definition}[Essential Node]
+\begin{definition}[Essential node]
     A point where three or more circuit elements join.
 \end{definition}
 \begin{definition}[Loop]
@@ -375,32 +388,33 @@ open circuit nodes of the component.
     \item Label the unknown mesh currents.
     \item Find the voltage across each of the circuit elements in terms
           of mesh currents.
-    \item Use KVL around each mesh to create simultaneous equations.
-    \item Solve simultaneous equations for mesh currents.
+    \item Use KVL around each mesh to create a system of equations.
+    \item Solve the system of equations to determine mesh currents.
 \end{enumerate}
 \subsection{Mesh Analysis with Current Sources}
-If the current source is in a single mesh, then treat the mesh current
-as known and solve as before.
-
-If the current source is between two meshes, then we must use a
-supermesh.
+If the current source is in a single mesh, we can treat the mesh
+current as known and solve the circuit as normal. If the current source
+is between two meshes, then we must use a supermesh.
 \begin{definition}[Supermesh]
-    A supermesh is a special mesh that surrounds the current source.
+    A supermesh is a special mesh that surrounds a current source.
 \end{definition}
+In this case, we must use the following steps to solve the circuit.
 \begin{enumerate}
-    \item Label meshes and identify the supermesh.
-    \item Write KCL equation for the current source.
-    \item Write the supermesh equation.
+    \item Label meshes and identify supermeshes.
+    \item Use KCL for any current sources.
     \item Use KVL around the supermesh.
+    \item Solve the system of equations to determine mesh currents.
 \end{enumerate}
 \newpage
 \section{Source Transformations}
 Real sources often have many limitations in terms of voltage and
-current delivery. The most commonly modelled and most useful for linear
-circuit theory is some form of resistance associated with the source.
+current delivery. Additionally, most circuits in linear circuit theory
+are modelled as a source and a resistor. Therefore, let us consider the
+following circuits.
 \subsection{Thévenin Equivalent Circuit}
 \begin{definition}
-    The Thévenin equivalent circuit is a voltage source with a series resistance.
+    A Thévenin equivalent circuit consists of a single voltage source
+    and a series resistance.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/thevenin_equivalent.pdf}
@@ -416,8 +430,9 @@ circuit theory is some form of resistance associated with the source.
 \end{definition}
 \subsection{Norton Equivalent Circuit}
 \begin{definition}
-    Similar to the Thévenin equivalent model, we can use a current source with
-    a resistor in parallel to model the same circuit.
+    A Norton equivalent circuit consists of a single current source and
+    a parallel resistance. The Norton equivalent circuit is the dual of
+    the Thévenin equivalent circuit.
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/norton_equivalent.pdf}
@@ -431,40 +446,37 @@ circuit theory is some form of resistance associated with the source.
     \end{description}
 \end{definition}
 \subsection{Source Transformations}
-A source transformation is the process of simplifying a circuit by
+We can use source transformations to simplify linear circuits by
 transforming voltage sources into current sources, and vice versa,
 using Thévenin's Theorem and Norton's Theorem.
 \begin{theorem}
-    Thévenin and Norton equivalent circuits have the following relationship
+    Thévenin and Norton equivalent circuits have the following
+    relationship
     \begin{equation*}
         R_{Th} = R_{p}.
     \end{equation*}
 \end{theorem}
+\begin{theorem}[Thévenin's theorem]
+    Any linear circuit can be replaced by a single voltage source and a resistance in series.
+\end{theorem}
+\begin{theorem}[Norton's theorem]
+    Any linear circuit can be replaced by a single current source and a resistance in parallel.
+\end{theorem}
 \subsection{Superposition}
-\begin{theorem}[Thévenin's Theorem]
-    Any linear circuit can be replaced by a voltage source and a resistance in series.
-\end{theorem}
-\begin{theorem}[Norton's Theorem]
-    Any linear circuit can be replaced by a current source and a resistance in parallel.
-\end{theorem}
-\begin{definition}[Turning Sources ``off'']
-    Turning a source ``off'' means to set its value to 0.
-    \begin{description}
-        \item[For a voltage source:] \(v = \qty{0}{V}\), hence we can
-              treat it as a short circuit.
-        \item[For a current source:] \(i = \qty{0}{V}\), hence we can
-              treat it as an open circuit.
-    \end{description}
-\end{definition}
+The superposition theorem states that a circuit with multiple sources
+can be analysed by considering only a single source at a time.
+Individual component voltages and currents can then be added
+algebraically to determine the response of the circuit with all sources
+enabled. In this strategy, setting a voltage source to zero is
+equivalent to a short circuit, whereas setting a current source to zero
+is equivalent to an open circuit.
 \subsubsection{Equivalent Sources}
-To determine the equivalent voltage or current source between two
-nodes, we must turn on each source in the circuit one by one, and
-calculate the voltage or current between those nodes. The equivalent
-voltage or current is equal to the sum of contributions from each
-source.
+The equivalent voltage or current source across a load can be
+determined using superposition.
 \subsubsection{Equivalent Resistance}
-The equivalent resistance is determined by turning off all sources and
-calculating the equivalent resistance between the two nodes.
+The equivalent resistance across two nodes can be determined by
+removing all sources and calculating the equivalent resistance between
+the two nodes.
 \subsection{Maximum Power Transfer}
 In the circuit shown below, the maximum power transfer to the load is
 given by
@@ -487,7 +499,7 @@ where \(R_L = R_{Th}\).
         q = C v
     \end{equation*}
 \end{definition}
-\begin{definition}[VI Relationship]
+\begin{definition}[VI relationship]
     \begin{equation*}
         i = C \odv{v}{t}
     \end{equation*}
@@ -495,12 +507,12 @@ where \(R_L = R_{Th}\).
         v(t) = \frac{1}{C} \int_0^t i(\tau) \odif{\tau} + v(0)
     \end{equation*}
 \end{definition}
-\begin{definition}[Energy Stored by an Capacitor]
+\begin{definition}[Energy stored by an capacitor]
     \begin{equation*}
         W = \frac{1}{2}Cv^2
     \end{equation*}
 \end{definition}
-\begin{theorem}[Steady State Conditions]
+\begin{theorem}[Steady state conditions]
     When a circuit is in steady state, capacitors can be modelled as open circuits.
 \end{theorem}
 \subsection{Inductors}
@@ -508,7 +520,7 @@ where \(R_L = R_{Th}\).
     Inductors create voltage to oppose a change in current. The ratio of voltage
     to the rate of change of current through an inductor is its inductance, measured in Henrys (\unit{\henry}).
 \end{definition}
-\begin{definition}[VI Relationship]
+\begin{definition}[VI relationship]
     \begin{equation*}
         v = L \odv{i}{t}
     \end{equation*}
@@ -516,30 +528,30 @@ where \(R_L = R_{Th}\).
         i(t) = \frac{1}{L} \int_0^t v(\tau) \odif{\tau} + i(0)
     \end{equation*}
 \end{definition}
-\begin{definition}[Energy Stored by an Inductor]
+\begin{definition}[Energy stored by an inductor]
     \begin{equation*}
         W = \frac{1}{2}Li^2
     \end{equation*}
 \end{definition}
-\begin{theorem}[Steady State Conditions]
+\begin{theorem}[Steady state conditions]
     When a circuit is in steady state, inductors can be modelled as short circuits.
 \end{theorem}
 \newpage
 \section{RC and RL Circuits}
 \subsection{Switches}
 \begin{definition}
-    A switch will engage part of a circuit at a specified point in time, as indicated
-    on the circuit diagram.
+    A switch engages part of a circuit at a specified point in time, as
+    indicated on a circuit diagram.
 \end{definition}
 \begin{definition}[Poles]
-    ``Pole'' refers to the number of circuits one switch can control.
+    ``Pole'' refers to the number of circuits a switch can control.
 \end{definition}
 \begin{definition}[Throw]
-    ``Throw'' refers to the number of output connections each switch
-    pole can connect its input to.
+    ``Throw'' refers to the number of output connections a switch pole
+    can connect its input to.
 \end{definition}
 \subsection{Natural Response}
-\begin{definition}[RC Circuit Natural Response]
+\begin{definition}[RC circuit natural response]
     For the circuit shown below, using KCL gives the following relationship
     \begin{equation*}
         -C \odv{v}{t} = \frac{v}{R}.
@@ -550,7 +562,7 @@ where \(R_L = R_{Th}\).
         \caption{RC circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the natural response of a
+    By solving this differential equation, we can determine the natural response of an
     RC circuit.
     \begin{equation*}
         v(t) = v(0)\exp{\left( -\frac{t}{RC} \right)}
@@ -558,12 +570,12 @@ where \(R_L = R_{Th}\).
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/rc_natural_plot.pdf}
-        \caption{Natural response of a RC circuit.}
+        \caption{Natural response of an RC circuit.}
         % \label{}
     \end{figure}
 \end{definition}
-\begin{definition}[Time Constant]
-    The time constant \(\tau\) is a parameter for switching circuits. The time constant for a RC circuit is given by
+\begin{definition}[Time constant]
+    The time constant \(\tau\) is a parameter for switching circuits. The time constant for an RC circuit is given by
     \begin{equation*}
         \tau = RC
     \end{equation*}
@@ -572,7 +584,7 @@ where \(R_L = R_{Th}\).
         e^{-1}v(0) \approx 0.368v(0)
     \end{equation*}
 \end{definition}
-\begin{definition}[RL Circuit Natural Response]
+\begin{definition}[RL circuit natural response]
     For the circuit shown below, using mesh analysis gives the following relationship
     \begin{equation*}
         L \odv{i}{t} = -iR.
@@ -583,7 +595,7 @@ where \(R_L = R_{Th}\).
         \caption{RL circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the natural response of a
+    By solving this differential equation, we can determine the natural response of an
     RL circuit.
     \begin{equation*}
         i(t) = i(0)\exp{\left( -\frac{t}{\frac{1}{R}L} \right)}
@@ -591,12 +603,12 @@ where \(R_L = R_{Th}\).
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/rl_natural_plot.pdf}
-        \caption{Natural response of a RL circuit.}
+        \caption{Natural response of an RL circuit.}
         % \label{}
     \end{figure}
 \end{definition}
-\begin{definition}[Time Constant]
-    The time constant \(\tau\) is a parameter for switching circuits. The time constant for a RL circuit is given by
+\begin{definition}[Time constant]
+    The time constant \(\tau\) is a parameter for switching circuits. The time constant for an RL circuit is given by
     \begin{equation*}
         \tau = \frac{1}{R}L.
     \end{equation*}
@@ -606,7 +618,7 @@ where \(R_L = R_{Th}\).
     \end{equation*}
 \end{definition}
 \subsection{Step Response}
-\begin{definition}[RC Circuit Step Response]
+\begin{definition}[RC circuit step response]
     For the circuit shown below, using KCL at the top node gives the following relationship
     \begin{equation*}
         i_s = C\odv{v}{t} + \frac{v}{R}.
@@ -617,7 +629,7 @@ where \(R_L = R_{Th}\).
         \caption{RC circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the step response of a
+    By solving this differential equation, we can determine the step response of an
     RC circuit.
     \begin{equation*}
         v(t) = I_s R + \left(V_0 - I_s R\right) \exp{\left( -\frac{t}{RC} \right)}
@@ -625,7 +637,7 @@ where \(R_L = R_{Th}\).
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/rc_step_plot.pdf}
-        \caption{Step response of a RC circuit.}
+        \caption{Step response of an RC circuit.}
         % \label{}
     \end{figure}
     The voltage at \(t = \tau\) is equal to
@@ -634,7 +646,7 @@ where \(R_L = R_{Th}\).
                 & \approx 0.632I_s R + V_0.
     \end{align*}
 \end{definition}
-\begin{definition}[RL Circuit Step Response]
+\begin{definition}[RL circuit step response]
     For the circuit shown below, using mesh analysis gives the following relationship
     \begin{equation*}
         L\odv{i}{t} + iR = V_s.
@@ -645,7 +657,7 @@ where \(R_L = R_{Th}\).
         \caption{RL circuit.}
         % \label{}
     \end{figure}
-    By solving this differential equation, we can determine the step response of a
+    By solving this differential equation, we can determine the step response of an
     RL circuit.
     \begin{equation*}
         i(t) = \frac{V_s}{R} + \left(I_0 - \frac{V_s}{R}\right)\exp{\left( -\frac{t}{\frac{1}{R}L} \right)}
@@ -653,7 +665,7 @@ where \(R_L = R_{Th}\).
     \begin{figure}[H]
         \centering
         \includegraphics[height = 4cm, keepaspectratio = true]{figures/rl_step_plot.pdf}
-        \caption{Step response of a RL circuit.}
+        \caption{Step response of an RL circuit.}
         % \label{}
     \end{figure}
     The current at \(t = \tau\) is equal to
@@ -665,19 +677,19 @@ where \(R_L = R_{Th}\).
 \newpage
 \section{Operational Amplifiers}
 \begin{definition}[Amplifier]
-    An amplifier is a device for increasing the power of a signal through an external energy source.
-    In an electronic amplifier, the ``signal'' is usually a voltage or current.
+    An amplifier is a device used to increase the power of a signal
+    using an external energy source. In an electronic amplifier, this
+    signal is usually a voltage or current.
 \end{definition}
 \begin{definition}[Gain]
-    The gain \(K\) of an amplifier, is the ratio of the output signal to the input signal.
+    The gain \(K\) of an amplifier is the ratio of the output signal to the input signal.
     \begin{equation*}
         v_{out} = K v_{in}
     \end{equation*}
 \end{definition}
-\begin{definition}[Operational Amplifier]
-    An operational amplifier (op amp) amplifies the voltage difference between its input terminals.
-    Operational amplifiers require a power supply to amplify voltage.
-    In an operational amplifier:
+\begin{definition}[Operational amplifier]
+    An operational amplifier (op amp) amplifies the voltage difference between its input terminals
+    using a power supply. In an operational amplifier:
     \begin{enumerate}
         \item The output cannot exceed the power supply range.
         \item The inputs should remain within the power supply range.
@@ -702,8 +714,9 @@ where \(R_L = R_{Th}\).
     \end{description}
 \end{definition}
 \subsection{Golden Rules for Op Amps}
+When analysing op amps, we can refer to the following golden rules:
 \begin{enumerate}
-    \item Infinite input impedance, therefore, zero input current.
+    \item Assume infinite input impedance, so that input current is zero.
     \item In a closed loop, the output drives the voltage difference at
           the inputs to zero.
 \end{enumerate}
@@ -772,7 +785,7 @@ to avoid excessive output currents. \newpage
     \caption{Sinusoidal signals.}
 \end{figure}
 \subsection{Properties of Sinusoidal Signals}
-These signals are described using cosine functions in the following
+These signals are described using cosine functions of the following
 form.
 \begin{equation*}
     v(t) = V_{\mathrm{m}} \cos{\left( \omega t + \phi\unit{\degree} \right)}
@@ -795,7 +808,7 @@ form.
     The frequency of a signal \(f\) is the number of cycles per second, or
     the inverse of the period. The frequency is measured in Hertz (\unit{\hertz}).
 \end{definition}
-The following equations relate the angular frequency, period and frequency together.
+The following equations relate the angular frequency, period, and frequency together.
 \begin{align*}
     f = \frac{1}{T} &  & T = \frac{2\pi}{\omega} &  & \omega = 2 \pi f
 \end{align*}
@@ -818,11 +831,11 @@ The following equations relate the angular frequency, period and frequency toget
     \begin{equation*}
         V_{\mathrm{rms}} = \frac{V_{\mathrm{m}}}{\sqrt{2}}
     \end{equation*}
-    The units in rms quantities are also subscripted with rms, for example, rms voltage, \unit{V_{rms}}.
+    The units in rms quantities are also subscripted with rms, for instance, rms voltage, \unit{V_{rms}}.
 \end{definition}
 \subsection{Power}
 \begin{definition}
-    In a resistive load, the power can be determined using the rms current and rms voltage.
+    In a resistive load, power can be determined using the rms current and rms voltage.
     \begin{align*}
         p & = vi                                                                                           \\
         p & = V_{\mathrm{rms}} I_{\mathrm{rms}} \bigl( 1 + \cos{\left( 2 \omega t + 2 \phi \right)} \bigr)
@@ -843,7 +856,7 @@ The following equations relate the angular frequency, period and frequency toget
 \subsection{Phasors}
 \begin{definition}
     To assist in AC analysis, we can express the magnitude and phase of a sinusoidal signal
-    as a phasor.
+    using phasors.
 \end{definition}
 \subsection{Phasor Transforms}
 \begin{definition}
@@ -854,8 +867,8 @@ The following equations relate the angular frequency, period and frequency toget
                   & = V_{\mathrm{m}} e^{j\phi}
     \end{align*}
     Here \(\symbf{V}\) is the phase-domain representation of the
-    time-domain signal \(v(t)\).
-    The magnitude and phase of a phasor can be used to represent a phasor in polar form
+    time-domain signal \(v(t)\). The magnitude and phase of a phasor can
+    be used to represent a phasor in polar form
     \begin{equation*}
         \symbf{V} = V_{\mathrm{m}} \phase{\phi}
     \end{equation*}
@@ -871,17 +884,17 @@ The following equations relate the angular frequency, period and frequency toget
 \end{definition}
 \subsection{Phasor Operations}
 As phasors are quantities with a magnitude and angle, they can be
-represented as complex numbers. Using
+represented using complex numbers. Using
 \hyperref[theorem:eulers_formula]{Theorem~\ref{theorem:eulers_formula}},
 we can represent a phasor in rectangular form
 \begin{equation*}
     \symbf{V} = V_{\mathrm{m}} \cos{\left( \phi \right)} + j V_{\mathrm{m}} \sin{\left( \phi \right)}
 \end{equation*}
-in polar form, the magnitude is given by
+and in polar form, where the magnitude is given by
 \begin{equation*}
     \norm{\symbf{V}} = V_{\mathrm{m}} = \sqrt{\Re\left\{ \symbf{V} \right\}^2 + \Im\left\{ \symbf{V} \right\}^2}
 \end{equation*}
-and the angle
+and the angle is given by
 \begin{equation*}
     \arg{\left( \symbf{V} \right)} = \phi = \arctan{\left( \frac{\Im\left\{ \symbf{V} \right\}}{\Re\left\{ \symbf{V} \right\}} \right)}
 \end{equation*}
@@ -901,7 +914,7 @@ phases.
                         & = A_{\mathrm{m}} B_{\mathrm{m}} \phase{\phi_1 + \phi_2}
 \end{align*}
 \subsection{Circuit Analysis}
-\begin{theorem}[Phasor Relationship for Resistors]
+\begin{theorem}[Phasor relationship for resistors]
     \begin{equation*}
         \symbf{V} = \symbf{I} R
     \end{equation*}
@@ -923,7 +936,7 @@ phases.
         \symbf{V}                                                                      & = \symbf{I} R
     \end{align*}
 \end{proof}
-\begin{theorem}[Phasor Relationship for Inductors]
+\begin{theorem}[Phasor relationship for inductors]
     \begin{equation*}
         \symbf{V} = j\omega L\symbf{I}
     \end{equation*}
@@ -949,7 +962,7 @@ phases.
         \symbf{V}                     & = j\omega L \symbf{I}
     \end{align*}
 \end{proof}
-\begin{theorem}[Phasor Relationship for Capacitors]
+\begin{theorem}[Phasor relationship for capacitors]
     \begin{equation*}
         \symbf{V} = \frac{1}{j\omega C}\symbf{I}
     \end{equation*}
@@ -979,23 +992,23 @@ phases.
 \subsection{Impedance}
 \begin{definition}
     The impedance \(\symbf{Z}\) of an element, measured in Ohms (\unit{\ohm}), is its opposition to alternating current.
-    Impedance is represented as the sum of a real resistance \(R\) and imaginary reactance \(X\).
+    Impedance is represented as the sum of a real resistance \(R\) and an imaginary reactance \(X\).
     \begin{equation*}
         \symbf{Z} = R + jX
     \end{equation*}
     Impedance captures the magnitude and phase change associated with a circuit element.
 \end{definition}
-\begin{theorem}[Impedance of Resistors]
+\begin{theorem}[Impedance of resistors]
     \begin{equation*}
         \symbf{Z} = R
     \end{equation*}
 \end{theorem}
-\begin{theorem}[Impedance of Inductors]
+\begin{theorem}[Impedance of inductors]
     \begin{equation*}
         \symbf{Z} = j\omega L
     \end{equation*}
 \end{theorem}
-\begin{theorem}[Impedance of Capacitors]
+\begin{theorem}[Impedance of capacitors]
     \begin{equation*}
         \symbf{Z} = \frac{1}{j\omega C}
     \end{equation*}
@@ -1010,7 +1023,7 @@ Frequency response is a measure of the magnitude and phase of a system
 as a function of (angular) frequency \(\omega\).
 \subsection{Circuit Analysis with AC Circuits}
 \begin{theorem}
-    Any DC analysis technique can be used with AC circuits, as long as
+    Any DC analysis techniques can be used with AC circuits as long as
     resistive elements are represented using complex impedances.
 \end{theorem}
 \subsection{Transfer Function}
@@ -1030,14 +1043,14 @@ as a function of (angular) frequency \(\omega\).
         \mathrm{gain} = 20 \log_{10}{\norm{\symbf{H}}}
     \end{equation*}
 \end{definition}
-\begin{definition}[Phase Shift]
+\begin{definition}[Phase shift]
     The phase of the transfer function \(\arg{\left( \symbf{H} \right)}\) measures the phase shift of a system.
 \end{definition}
 \subsection{Bode Plots}
 A Bode plot is a graph of the frequency response of a system. In this
 plot, the frequency (in \unit{\hertz}) is plotted on the horizontal
 axis using a logarithmic scale.
-\begin{definition}[\qty{3}{dB} Point]
+\begin{definition}[\qty{3}{dB} point]
     The frequency \(f\) at which the transfer function equals
     \begin{equation*}
         \symbf{H}(2\pi f) = \frac{1}{\sqrt{2}}\phase{\qty{-45}{\degree}}
@@ -1059,7 +1072,7 @@ axis using a logarithmic scale.
     A filter is designed to allow certain ranges of frequencies to pass,
     while other ranges of frequencies are stopped.
 \end{definition}
-\begin{definition}[Cut-off Frequncy]
+\begin{definition}[Cut-off frequncy]
     The cut-off (angular) frequency \(\omega_c\) for a filter is given by
     \begin{equation*}
         \omega_c = \frac{1}{RC}
@@ -1151,7 +1164,6 @@ voltage is positive.
 \begin{definition}[Ripple]
     Ripple is the residual variation of the DC voltage after rectification.
     In the circuit shown above, a capacitor can be used to smooth ripples.
-
     Ripple can be calculated using the following assumptions:
     \begin{enumerate}
         \item The capacitor instantly charges when the diode is forward
@@ -1214,7 +1226,7 @@ The ripple in a full-wave rectifier is calculated using
     \caption{Dual half-wave rectified signal.}
 \end{figure}
 \begin{itemize}
-    \item The diodes conducts on both cycles
+    \item The diodes conduct on both cycles
     \item The output loses the forward voltage of one diode
     \item Useful for powering op amps
 \end{itemize}
@@ -1226,7 +1238,7 @@ The ripple in a dual half-wave rectifier is calculated using
 \section{Zener Diodes and Voltage Regulators}
 \subsection{Zener Diodes}
 A Zener diode is similar to a regular diode, but it has a specific
-reverse breakdown voltage. The reverse breakdown voltage is commonly
+reverse breakdown voltage. This reverse breakdown voltage is commonly
 \qty{5}{V}.
 \begin{figure}[H]
     \centering
@@ -1244,17 +1256,17 @@ Most circuits require a clean DC power supply to operate. A voltage
 regulator ensures that a DC power supply behaves like an ideal voltage
 source.
 \subsection{Shunt Regulators}
-\begin{definition}[Shunt Regulator]
+\begin{definition}[Shunt regulator]
     A shunt regulator regulates the output voltage by shunting excess current away from the load.
 \end{definition}
 A Zener diode can be used as a shunt regulator to drop voltages to the reverse bias voltage of the diode.
 \begin{remark}
     When designing a Zener voltage regulator, the following should be taken into account:
     \begin{itemize}
-        \item Power dissipation particularly when dropping large
-              voltages.
-        \item Large series resistances reduces power dissipation but
-              also reduces the regulated current.
+        \item Power dissipation (particularly when dropping large
+              voltages).
+        \item Large series resistances reduce power dissipation but
+              also reduce the regulated current.
         \item A Zener voltage regulator always draws power from the
               source, regardless of the load.
         \item The load has an effect on the regulator.
@@ -1265,7 +1277,7 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
     \includegraphics[height = 4cm, keepaspectratio = true]{figures/zener_regulator.pdf}
     \caption{Zener diode regulator.}
 \end{figure}
-\begin{theorem}[Maximum Load Current.]
+\begin{theorem}[Maximum load current]
     Given a source voltage range \(v_s\) and source resistance \(R_s\), the maximum current an ideal
     Zener diode can regulate is given by
     \begin{equation*}
@@ -1273,7 +1285,7 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
     \end{equation*}
     where the largest value in \(v_s\) is chosen.
 \end{theorem}
-\begin{theorem}[Maximum Source Resistance.]
+\begin{theorem}[Maximum source resistance]
     Given a source voltage range \(v_s\) and load current range \(i_L\), the maximum source resistance required
     to regulate the output voltage is given by
     \begin{equation*}
@@ -1293,15 +1305,13 @@ A Zener diode can be used as a shunt regulator to drop voltages to the reverse b
         0 < \frac{v_s - v_Z}{R_s} - i_L
     \end{equation*}
     We must now consider the worst case scenario, namely, when
-    \(\displaystyle \frac{v_s - v_Z}{R_s}\) is minimised, and when \(i_L\) is maximised.
-
-    Hence the maximum load current is when \(v_s\) is maximal.
-
-    And the maximum source resistance is when \(v_s\) is minimal, and
-    \(i_L\) is maximal.
+    \(\displaystyle \frac{v_s - v_Z}{R_s}\) is minimised, and when
+    \(i_L\) is maximised. Hence, the maximum load current occurs when
+    \(v_s\) is maximal and \(i_L\) is minimal; and the maximum source
+    resistance occurs when \(v_s\) is minimal and \(i_L\) is maximal.
 \end{proof}
 \subsection{Series Regulators}
-\begin{definition}[Series Regulator]
+\begin{definition}[Series regulator]
     Series regulators regulate the output voltage by limiting the load current by varying the series element.
 \end{definition}
 \subsubsection{Series Linear Regulators}
@@ -1316,7 +1326,6 @@ below.
     \caption{Series Linear Regulator using an LM-series IC.}
 \end{figure}
 \emph{Note that the capacitors remain the same for any output voltage.}
-
 The naming convention is as follows,
 \begin{enumerate}
     \item LM78XX regulates a positive voltage XX\unit{\volt}.
@@ -1331,17 +1340,17 @@ supply from an AC voltage plugpack.
     \includegraphics[height = 4cm, keepaspectratio = true]{figures/power_supply.pdf}
     \caption{AC to DC power supply circuit.}
 \end{figure}
-A dual half-wave rectifier can be used to supply positive and negative voltage.
+A dual half-wave rectifier can be used to supply both positive and negative voltage.
 \begin{figure}[H]
     \centering
     \includegraphics[width = \linewidth, keepaspectratio = true]{figures/dual_power_supply.pdf}
     \caption{AC to DC dual power supply circuit.}
 \end{figure}
-The maximum ripple for these circuits is shown below.
+The maximum ripple for these circuits is calculated below.
 \begin{align*}
     \max{\Delta v}                                  & = \max{v_{in}} - v_f - \left( 2 + v_{out} \right) \\
     \therefore\: \Delta v                           & > \frac{i}{fC}                                    \\
-    \max{v_{in}} - v_f - \left( 2 + v_{out} \right) & > \frac{i}{fC}
+    \max{v_{in}} - v_f - \left( 2 + v_{out} \right) & > \frac{i}{fC}.
 \end{align*}
 \subsubsection{Series Op Amp Regulators}
 Op amps can be utilised to stabilise the output from a regulator. The
